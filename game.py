@@ -226,7 +226,7 @@ class Request:
         return self.make_request("getItems")
     
     def getTanks(self):
-        return self.make_request("getTanks")    
+        return self.make_request("getTanks")
 
 
 
@@ -813,7 +813,6 @@ def rotate_right(request, clock):
         theta += 360
     
     request.setState(x, y, theta, health, nb_bullets, nb_bricks, lastshot)
-
     clock.tick(250)
     
 
@@ -895,7 +894,6 @@ def add_wall(request, clock):
         dy = -math.sin(theta/180*math.pi) * 50
         request.setState(xpos, ypos, theta, health, nb_bullets, nb_bricks - 1, lastshot)
         request.addWall(xpos + dx, ypos + dy, theta)
-    
 
 
 ################################ FIN FONCTION INTERFACE TANKS ############################
