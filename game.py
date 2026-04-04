@@ -526,7 +526,11 @@ class Game:
         # on a récupéré les coordonées de la caisse
         box_type = random.choice(['bullets', 'bricks'])
         self.items.append(Item(x, y, orientation, 'box', self.box_image, box_type))
-
+    
+    def add_tree(self):
+        x, y = self.get_free_coord()
+        # on a récupéré les coordonées du nouvel arbre
+        self.items.append(Item(x, y, 0, 'tree', self.item_images['tree'], None))
 
     def update_objects(self, tankname, x, y): # enlève les objets que rencontre le projectile. Si le projectile en a rencontrés, la fonction renvoie True
         for obj in self.items:            
@@ -907,8 +911,9 @@ def launch_game(players, map, graphics):
     # Boucle principale du jeu
     running = True
 
-    t0 = time.monotonic()
+    t_box = t_tree = time.monotonic()
     apparition_box = 40 # temps d'apparition des caisses
+    apparition_tree = 60 # temps d'apparition des arbres
 
     while running:
         if graphics:
@@ -922,9 +927,14 @@ def launch_game(players, map, graphics):
         if not graphics and winner:
             break
         
-        if time.monotonic() - t0 > apparition_box:
+        # Ajout d'une boîte
+        if time.monotonic() - t_box > apparition_box:
             game.add_box()
-            t0 = time.monotonic()
+            t_box = time.monotonic()
+        # Plantage d'un arbre
+        if time.monotonic() - t_tree > apparition_tree:
+            game.add_tree()
+            t_tree = time.monotonic()
 
 
     # finit tous les threads
