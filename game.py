@@ -894,12 +894,16 @@ def grab_box(request, clock):
 
 def add_wall(request, clock):    
     xpos, ypos, theta, health, nb_bullets, nb_bricks, lastshot = request.getState()
+    dx = math.cos(theta/180*math.pi) * 50
+    dy = -math.sin(theta/180*math.pi) * 50
+    wall_x, wall_y = xpos + dx, ypos + dy
     
-    if nb_bricks > 0:
-        dx = math.cos(theta/180*math.pi) * 50
-        dy = -math.sin(theta/180*math.pi) * 50
+    if nb_bricks > 0 and request.validate_position(wall_x, wall_y, wall_x, wall_y):
         request.setState(xpos, ypos, theta, health, nb_bullets, nb_bricks - 1, lastshot)
-        request.addWall(xpos + dx, ypos + dy, theta)
+        request.addWall(wall_x, wall_y, theta)
+        return True
+    else:
+        return False
 
 
 ################################ FIN FONCTION INTERFACE TANKS ############################
