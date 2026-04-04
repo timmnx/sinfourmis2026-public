@@ -17,6 +17,7 @@ BACKWARD_DOP = -1
 
 if 'linux' in sys.platform:
     import signal
+    multiprocessing.set_start_method("fork")
 
 
 def platformSpecificExit():
