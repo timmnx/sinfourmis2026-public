@@ -307,7 +307,6 @@ def load_map(filename): # renvoie les données de la map
 
 def load_image(path):
     try:
-        a = 1//0
         return pygame.image.load(path + '.png').convert_alpha()
     except:
         return pygame.image.load(path + '.bmp').convert_alpha()
