@@ -5,6 +5,9 @@ start:
   - [500, 1000]
   - [1800, 50]
 
+bullets: 10
+bricks: 20
+
 objects:
   - type: tree
     position: [100, 100]

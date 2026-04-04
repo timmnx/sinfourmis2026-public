@@ -124,12 +124,12 @@ class Bullet:
 
 
 class Tank:
-    def __init__(self, xpos, ypos, file, image, name):
+    def __init__(self, xpos, ypos, file, image, name, bullets = 200, bricks = 0):
         self.xpos = xpos
         self.ypos = ypos
         self.file = file
-        self.nb_bullets = 200
-        self.nb_bricks = 0
+        self.nb_bullets = bullets
+        self.nb_bricks = bricks
         self.orientation = random.randint(0,360)
         self.health = 100
         self.image = image
@@ -447,10 +447,10 @@ def read_map(map, nc_func, graphics):
             orientation = 0
         items.append(Item(object['position'][0], object['position'][1], orientation, object['type'], item_images[object['type']], None))
     
-    return items, map_data['start'], item_images
+    return items, map_data['start'], item_images, map_data['bullets'], map_data['bricks']
 
 
-def load_tanks(players, start_pos, get_free_coord, nc_func, graphics):
+def load_tanks(players, start_pos, nb_bullets, nb_bricks, get_free_coord, nc_func, graphics):
     if len(players) > len(start_pos):
         while len(start_pos) < len(players):
             start_pos.append(get_free_coord())
@@ -460,7 +460,7 @@ def load_tanks(players, start_pos, get_free_coord, nc_func, graphics):
     for player, coord in zip(players_data, start_pos):
         if coord == 'random':
             coord = get_free_coord()
-        tanks[player['name']] = Tank(coord[0], coord[1], player['program'], load_tank_image(player['color'], nc_func, graphics), player['name'])
+        tanks[player['name']] = Tank(coord[0], coord[1], player['program'], load_tank_image(player['color'], nc_func, graphics), player['name'], bullets = nb_bullets, bricks = nb_bricks)
     
     return tanks
 
@@ -498,11 +498,11 @@ class Game:
         self.reference_width, self.reference_height = 1920, 1080
         
         # Initialisation des objets
-        self.items, start_pos, self.item_images = read_map(map, self.nc, self.graphics)
+        self.items, start_pos, self.item_images, nb_bullets, nb_bricks = read_map(map, self.nc, self.graphics)
 
         # Initialisation des tanks
         self.tanks = {}
-        self.tanks = load_tanks(players, start_pos, self.get_free_coord, self.nc, self.graphics)
+        self.tanks = load_tanks(players, start_pos, nb_bullets, nb_bricks, self.get_free_coord, self.nc, self.graphics)
 
         self.nb_players = len(self.tanks)
 
