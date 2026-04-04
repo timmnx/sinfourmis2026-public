@@ -5,7 +5,7 @@ start:
   - [500, 1000]
   - [1800, 50]
 
-bullets: 10
+bullets: 200
 bricks: 20
 
 objects:

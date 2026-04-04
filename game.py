@@ -13,6 +13,8 @@ if __name__ != '__main__':
 
 FORWARD_DOP = 3
 BACKWARD_DOP = -1
+LEGAL_CHEATING_SCORE = 1500
+MAX_CHEATING_SCORE = 10000
 
 
 if 'linux' in sys.platform:
@@ -123,6 +125,20 @@ class Bullet:
         game.screen.blit(self.image, rect.topleft)
 
 
+
+def skip_request(cheating_score):
+    if cheating_score < LEGAL_CHEATING_SCORE:
+        return False
+    elif cheating_score > MAX_CHEATING_SCORE:
+        return True
+    else:
+        # probabilité que l'on n'exécute pas une requête
+        proba = (cheating_score - LEGAL_CHEATING_SCORE)/(MAX_CHEATING_SCORE - LEGAL_CHEATING_SCORE)
+        return random.random() <= proba
+
+
+
+
 class Tank:
     def __init__(self, xpos, ypos, file, image, name, bullets = 200, bricks = 0):
         self.xpos = xpos
@@ -135,11 +151,17 @@ class Tank:
         self.image = image
         self.name = name
         self.lastshot = 0
+        self.cheating_score = 0
+        self.nb_requests = 0
 
         # Précalcul de l'image du tank pour toutes les orientations
         if self.image: # On ne précalcule les rotations que si self.image est une image valide
             self.angles = [pygame.transform.rotate(self.image, angle) for angle in range(360)]
     
+
+    def update_cheating_score(self, args1, args2, norm):
+        self.cheating_score = (self.cheating_score * self.nb_requests + cheating_score(args1, args2, norm))/(self.nb_requests + 1)
+        self.nb_requests += 1
     
     def display(self, game):
         # display the sprite
@@ -175,7 +197,6 @@ class Tank:
 
 
 
-
 class Request:
     def __init__(self, requestEntry, responseEnd):
         self.requestEntry = requestEntry
@@ -188,9 +209,9 @@ class Request:
             response = "DIEPLZ"
         
         if response == "DIEPLZ":
-            self.responseEnd.close()
+            #self.responseEnd.close()
             self.requestEntry.send("OKIMDEAD")
-            self.requestEntry.close()
+            #self.requestEntry.close()
             platformSpecificExit()
         else:
             return response
@@ -230,6 +251,13 @@ class Request:
 
 
 
+def cheating_score(args1, args2, norm):
+    assert len(args1) == len(args2)
+    score = sum([abs(arg1-arg2)*10000/max_value for (arg1, arg2, max_value) in zip(args1, args2, norm)])/len(args1)
+    return score
+
+
+
 def serverFunction(requestEnd, responseEntry, game, name):
     tank = game.tanks[name]
 
@@ -237,7 +265,7 @@ def serverFunction(requestEnd, responseEntry, game, name):
         # Si le tank est mort, on close la connexion pour qu'il soit au courant qu'il est mort, et on arrête le serveur de requêtes
         if tank.health < 0:
             responseEntry.send("DIEPLZ")
-            responseEntry.close()
+            #responseEntry.close()
             
             response = None
             while response != "OKIMDEAD":
@@ -245,7 +273,7 @@ def serverFunction(requestEnd, responseEntry, game, name):
                     response = requestEnd.recv()
                 except:
                     break
-            requestEnd.close()
+            #requestEnd.close()
             del game.tanks[name]
             return
 
@@ -254,32 +282,52 @@ def serverFunction(requestEnd, responseEntry, game, name):
             request = requestEnd.recv()
         except:
             return
-        
+
         opcode = request[0]
         args = request[1:]
+        
+        # Liste des requêtes "critiques", que l'on s'autorise à skipper
+        if skip_request(tank.cheating_score) and opcode in ("setState", "addBullet", "addWall"):
+            continue
 
         if opcode == "getState":
             ret = (tank.xpos, tank.ypos, tank.orientation, tank.health, tank.nb_bullets, tank.nb_bricks, tank.lastshot)
             responseEntry.send(ret)
         
         elif opcode == "setState":
+            tank.update_cheating_score(
+                [tank.xpos, tank.ypos, tank.orientation, tank.health, tank.nb_bullets, tank.nb_bricks],
+                args[:-1],
+                [1920, 1080, 360, 100, 600, 100]
+            )
+
             tank.xpos, tank.ypos, tank.orientation, tank.health, tank.nb_bullets, tank.nb_bricks, tank.lastshot = args
 
         elif opcode == "addBullet":
             xpos, ypos, orientation, ttl = args
+            tank.update_cheating_score(
+                [xpos, ypos, orientation, ttl**2],
+                [tank.xpos, tank.ypos, tank.orientation, 30**2],
+                [1920, 1080, 360, 100]
+            )
             game.bullets.append(Bullet(xpos, ypos, orientation, name, game.bullet_image, ttl))
         
         elif opcode == "addWall":
             xpos, ypos, theta = args
+            tank.update_cheating_score(
+                [xpos, ypos, theta],
+                [tank.xpos, tank.ypos, tank.orientation],
+                [1920, 1080, 360]
+            )
             game.items.append(Item(xpos, ypos, theta, 'wall', game.item_images['wall'], None))
         
+
         elif opcode == "removeBox":
             x, y = args            
             for i, it in enumerate(game.items):
                 if it.type == 'box' and (it.xpos, it.ypos) == (x, y):
                     del game.items[i]
                     break
-
             
         elif opcode == "getItems":
             responseEntry.send([Item(item.xpos, item.ypos, item.orientation, item.type, None, item.box_type) for item in game.items])
@@ -291,7 +339,6 @@ def serverFunction(requestEnd, responseEntry, game, name):
         elif opcode == "validatePosition":
             xp, yp, x, y = args
             responseEntry.send(game.validate_position(xp, yp, x, y))
-
 
 
 
@@ -512,6 +559,7 @@ class Game:
         self.box_image = self.item_images['box']
         self.bullet_image = self.item_images['bullet']
     
+
     def get_tanks(self):
         return list(self.tanks.values()).copy()
 
