@@ -1,0 +1,80 @@
+start:
+  - [50, 1000]
+  - [1800, 540]
+  - [500, 500]
+  - [500, 1000]
+  - [1800, 50]
+
+objects:
+  - type: tree
+    position: [100, 100]
+    
+  - type: tree
+    position: [150, 200]
+    
+  - type: rock
+    position: [500, 100]
+    
+  - type: rock
+    position: [600, 300]
+
+  - type: tower
+    position: [700, 400]
+    
+  - type: tower
+    position: [800, 200]
+    
+  - type: tree
+    position: [100, 600]
+    
+  - type: tree
+    position: [150, 700]
+    
+  - type: rock
+    position: [500, 600]
+    
+  - type: rock
+    position: [600, 800]
+    
+  - type: tower
+    position: [700, 900]
+    
+  - type: tower
+    position: [800, 700]
+    
+  - type: tree
+    position: [1100, 100]
+    
+  - type: tree
+    position: [1150, 200]
+    
+  - type: rock
+    position: [1500, 100]
+    
+  - type: rock
+    position: [1600, 300]
+    
+  - type: tower
+    position: [1700, 400]
+    
+  - type: tower
+    position: [1800, 200]
+    
+  - type: tree
+    position: [1100, 600]
+    
+  - type: tree
+    position: [1150, 700]
+    
+  - type: rock
+    position: [1500, 600]
+    
+  - type: rock
+    position: [1600, 800]
+    
+  - type: tower
+    position: [1700, 900]
+    
+  - type: tower
+    position: [1800, 700]
+
