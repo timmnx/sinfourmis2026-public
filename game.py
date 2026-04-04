@@ -960,8 +960,8 @@ if __name__ == '__main__':
 
     args = parser.parse_args()
 
-    map = args.map
-    players = args.players
+    map = args.map[0]
+    players = args.players[0]
     graphics = args.nographics is None
 
     if graphics:
