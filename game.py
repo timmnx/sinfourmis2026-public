@@ -181,10 +181,24 @@ class Request:
         self.requestEntry = requestEntry
         self.responseEnd = responseEnd
     
+    def safe_recv(self):
+        try:
+            response = self.responseEnd.recv()
+        except:
+            response = "DIEPLZ"
+        
+        if response == "DIEPLZ":
+            self.responseEnd.close()
+            self.requestEntry.send("OKIMDEAD")
+            self.requestEntry.close()
+            platformSpecificExit()
+        else:
+            return response
+    
     def make_request(*args):
         self = args[0]
         self.requestEntry.send(args[1:])
-        return self.responseEnd.recv()
+        return self.safe_recv()
 
     def make_unidirectional_request(*args): # pour les requêtes n'attendant pas de réponse
         self = args[0]
@@ -212,18 +226,7 @@ class Request:
         return self.make_request("getItems")
     
     def getTanks(self):
-        return self.make_request("getTanks")
-    
-    def die(self):
-        self.make_unidirectional_request("die")
-    
-    def stop_thread_if_necessary(self, health):
-        if health < 0:
-            self.die()
-            self.requestEntry.close()
-            self.responseEnd.close()
-            
-            platformSpecificExit()
+        return self.make_request("getTanks")    
 
 
 
@@ -231,6 +234,22 @@ def serverFunction(requestEnd, responseEntry, game, name):
     tank = game.tanks[name]
 
     while True:
+        # Si le tank est mort, on close la connexion pour qu'il soit au courant qu'il est mort, et on arrête le serveur de requêtes
+        if tank.health < 0:
+            responseEntry.send("DIEPLZ")
+            responseEntry.close()
+            
+            response = None
+            while response != "OKIMDEAD":
+                try:
+                    response = requestEnd.recv()
+                except:
+                    break
+            requestEnd.close()
+            del game.tanks[name]
+            return
+
+        # Attente d'une requête
         try:
             request = requestEnd.recv()
         except:
@@ -272,9 +291,6 @@ def serverFunction(requestEnd, responseEntry, game, name):
         elif opcode == "validatePosition":
             xp, yp, x, y = args
             responseEntry.send(game.validate_position(xp, yp, x, y))
-        
-        elif opcode == "die":
-            del game.tanks[name]
 
 
 
@@ -526,11 +542,7 @@ class Game:
         # on a récupéré les coordonées de la caisse
         box_type = random.choice(['bullets', 'bricks'])
         self.items.append(Item(x, y, orientation, 'box', self.box_image, box_type))
-    
-    def add_tree(self):
-        x, y = self.get_free_coord()
-        # on a récupéré les coordonées du nouvel arbre
-        self.items.append(Item(x, y, 0, 'tree', self.item_images['tree'], None))
+
 
     def update_objects(self, tankname, x, y): # enlève les objets que rencontre le projectile. Si le projectile en a rencontrés, la fonction renvoie True
         for obj in self.items:            
@@ -642,7 +654,7 @@ class Game:
         tanks = self.get_tanks()
         for tank in tanks:
             tank.health = -1
-    
+
 
     def wait_key(self):
         if self.graphics:
@@ -701,6 +713,7 @@ class Game:
             variables = {
                 "fire":             make_func(fire, request, self.clock),
                 "get_position":     make_func(get_position, request, self.clock),
+                "get_health":       make_func(get_health, request, self.clock),
                 "get_orientation":  make_func(get_orientation, request, self.clock),
                 "get_nb_bullets":   make_func(get_nb_bullets, request, self.clock),
                 "get_nb_bricks":    make_func(get_nb_bricks, request, self.clock),
@@ -740,33 +753,32 @@ elles utilisent des pipes pour communiquer avec leur thread serveur
 '''
 
 def get_position(request, clock):
-    xpos, ypos, _, health, _, _, _ = request.getState()
-    request.stop_thread_if_necessary(health)
+    xpos, ypos, _, _, _, _, _ = request.getState()
     return xpos, ypos
     
 
+def get_health(request, clock):
+    _, _, _, health, _, _, _ = request.getState()
+    return health
+
 
 def get_orientation(request, clock):
-    _, _, orientation, health, _, _, _ = request.getState()
-    request.stop_thread_if_necessary(health)
+    _, _, orientation, _, _, _, _ = request.getState()
     return orientation
 
 def get_nb_bricks(request, clock):
-    _, _, _, health, _, nb_bricks, _ = request.getState()
-    request.stop_thread_if_necessary(health)
+    _, _, _, _, _, nb_bricks, _ = request.getState()
     return nb_bricks
 
 
 def get_nb_bullets(request, clock):
-    _, _, _, health, nb_bullets, _, _ = request.getState()
-    request.stop_thread_if_necessary(health)
+    _, _, _, _, nb_bullets, _, _ = request.getState()
     return nb_bullets
 
 
 # bibliothèque de déplacement des joueurs
 def move(request, clock):    
     x, y, theta, health, nb_bullets, nb_bricks, lastshot = request.getState()
-    request.stop_thread_if_necessary(health)
 
     dx = math.cos(theta/180*math.pi) * FORWARD_DOP
     dy = -math.sin(theta/180*math.pi) * FORWARD_DOP
@@ -782,7 +794,6 @@ def move(request, clock):
 
 def back(request, clock):    
     x, y, theta, health, nb_bullets, nb_bricks, lastshot = request.getState()
-    request.stop_thread_if_necessary(health)
 
     dx = math.cos(theta/180*math.pi) * BACKWARD_DOP
     dy = -math.sin(theta/180*math.pi) * BACKWARD_DOP
@@ -790,13 +801,11 @@ def back(request, clock):
         request.setState(x+dx, y+dy, theta, health, nb_bullets, nb_bricks, lastshot)
     
     clock.tick(200)
-    
 
 
 
 def rotate_right(request, clock):    
     x, y, theta, health, nb_bullets, nb_bricks, lastshot = request.getState()
-    request.stop_thread_if_necessary(health)
 
     dtheta = 1
     theta -= dtheta
@@ -812,7 +821,6 @@ def rotate_right(request, clock):
 
 def rotate_left(request, clock):
     x, y, theta, health, nb_bullets, nb_bricks, lastshot = request.getState()
-    request.stop_thread_if_necessary(health)
 
     dtheta = 1
     theta += dtheta
@@ -828,7 +836,6 @@ def rotate_left(request, clock):
 
 def fire(request, clock):
     x, y, theta, health, nb_bullets, nb_bricks, lastshot = request.getState()
-    request.stop_thread_if_necessary(health)
 
     if nb_bullets <= 0 or time.monotonic() - lastshot < 0.3 :
         return # on ne peut plus tirer, il n'y a plus de projectiles
@@ -841,7 +848,6 @@ def fire(request, clock):
 
 def detect(request, clock): # chaque tank est doté d'un capteur qui pointe devant lui et renvoie une liste des objets rencontrés et leur distance
     x, y, theta, health, _, _, _ = request.getState()
-    request.stop_thread_if_necessary(health)
 
     items = request.getItems()
     tanks = request.getTanks()
@@ -866,7 +872,6 @@ def detect(request, clock): # chaque tank est doté d'un capteur qui pointe deva
 
 def grab_box(request, clock):    
     xpos, ypos, theta, health, nb_bullets, nb_bricks, lastshot = request.getState()
-    request.stop_thread_if_necessary(health)
 
     items = request.getItems()
     
@@ -884,7 +889,6 @@ def grab_box(request, clock):
 
 def add_wall(request, clock):    
     xpos, ypos, theta, health, nb_bullets, nb_bricks, lastshot = request.getState()
-    request.stop_thread_if_necessary(health)
     
     if nb_bricks > 0:
         dx = math.cos(theta/180*math.pi) * 50
@@ -911,9 +915,8 @@ def launch_game(players, map, graphics):
     # Boucle principale du jeu
     running = True
 
-    t_box = t_tree = time.monotonic()
+    t0 = time.monotonic()
     apparition_box = 40 # temps d'apparition des caisses
-    apparition_tree = 60 # temps d'apparition des arbres
 
     while running:
         if graphics:
@@ -927,14 +930,9 @@ def launch_game(players, map, graphics):
         if not graphics and winner:
             break
         
-        # Ajout d'une boîte
-        if time.monotonic() - t_box > apparition_box:
+        if time.monotonic() - t0 > apparition_box:
             game.add_box()
-            t_box = time.monotonic()
-        # Plantage d'un arbre
-        if time.monotonic() - t_tree > apparition_tree:
-            game.add_tree()
-            t_tree = time.monotonic()
+            t0 = time.monotonic()
 
 
     # finit tous les threads
