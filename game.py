@@ -305,13 +305,20 @@ def load_map(filename): # renvoie les données de la map
         return yaml.safe_load(file)
 
 
+def load_image(path):
+    try:
+        a = 1//0
+        return pygame.image.load(path + '.png').convert_alpha()
+    except:
+        return pygame.image.load(path + '.bmp').convert_alpha()
+
 
 # Charger les images
 def load_item_images(nc_func, graphics): # renvoie la liste des sprites nécessaires au dessin de la map
     items = ['tree', 'rock', 'tower', 'bullet', 'box', 'wall']
 
     if graphics:
-        images = {item: pygame.image.load(f"assets/{item}.png").convert_alpha() for item in items}
+        images = {item: load_image(f"assets/{item}") for item in items}
         # Rescales the images with the nc_func scaling function
         for (key, item) in images.items():
             images[key] = pygame.transform.scale(images[key], nc_func(images[key].get_width(), images[key].get_height()))
@@ -324,7 +331,7 @@ def load_item_images(nc_func, graphics): # renvoie la liste des sprites nécessa
 
 def load_tank_image(color, nc_func, graphics):
     if graphics:
-        image = pygame.image.load(os.path.join('assets', color + '.png')).convert_alpha()
+        image = load_image(os.path.join('assets', color))
         return pygame.transform.scale(image, nc_func(image.get_width(), image.get_height()))
     else:
         return None
@@ -481,7 +488,7 @@ class Game:
             pygame.display.flip()
 
             # Charger et redimensionner l'image de fond
-            self.background = pygame.image.load(os.path.join('assets', 'background.png')).convert()
+            self.background = load_image(os.path.join('assets', 'background'))
             self.background = pygame.transform.scale(self.background, (self.screen_width, self.screen_height))
         else:
             self.clock = UselessClock()
