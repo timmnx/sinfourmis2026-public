@@ -900,7 +900,7 @@ def launch_game(players, map, graphics):
         ctypes.windll.user32.SetProcessDPIAware()
 
     game = Game(players, map, graphics)
-    game.countdown()
+    #game.countdown()
 
     game.launch_players()
 
