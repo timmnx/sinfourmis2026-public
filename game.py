@@ -13,8 +13,8 @@ if __name__ != '__main__':
 
 FORWARD_DOP = 3
 BACKWARD_DOP = -1
-LEGAL_CHEATING_SCORE = 1500
-MAX_CHEATING_SCORE = 10000
+LEGAL_CHEATING_SCORE = 1000
+MAX_CHEATING_SCORE = 5000
 
 
 if 'linux' in sys.platform:
@@ -126,15 +126,10 @@ class Bullet:
 
 
 
-def skip_request(cheating_score):
-    if cheating_score < LEGAL_CHEATING_SCORE:
-        return False
-    elif cheating_score > MAX_CHEATING_SCORE:
-        return True
-    else:
-        # probabilité que l'on n'exécute pas une requête
-        proba = (cheating_score - LEGAL_CHEATING_SCORE)/(MAX_CHEATING_SCORE - LEGAL_CHEATING_SCORE)
-        return random.random() <= proba
+
+
+def skip_request(reqType, tank):
+    return random.random() <= tank.cheating_proba() and reqType in ("setState", "addBullet", "addWall")
 
 
 
@@ -162,6 +157,16 @@ class Tank:
     def update_cheating_score(self, args1, args2, norm):
         self.cheating_score = (self.cheating_score * self.nb_requests + cheating_score(args1, args2, norm))/(self.nb_requests + 1)
         self.nb_requests += 1
+    
+    def cheating_proba(self):
+        if self.cheating_score < LEGAL_CHEATING_SCORE:
+            return 0
+        elif self.cheating_score > MAX_CHEATING_SCORE:
+            return 1
+        else:
+            # probabilité que l'on n'exécute pas une requête
+            proba = (self.cheating_score - LEGAL_CHEATING_SCORE)/(MAX_CHEATING_SCORE - LEGAL_CHEATING_SCORE)
+            return proba
     
     def display(self, game):
         # display the sprite
@@ -283,27 +288,27 @@ def serverFunction(requestEnd, responseEntry, game, name):
         except:
             return
 
-        opcode = request[0]
+        reqType = request[0]
         args = request[1:]
         
         # Liste des requêtes "critiques", que l'on s'autorise à skipper
-        if skip_request(tank.cheating_score) and opcode in ("setState", "addBullet", "addWall"):
+        if skip_request(reqType, tank):
             continue
 
-        if opcode == "getState":
+        if reqType == "getState":
             ret = (tank.xpos, tank.ypos, tank.orientation, tank.health, tank.nb_bullets, tank.nb_bricks, tank.lastshot)
             responseEntry.send(ret)
         
-        elif opcode == "setState":
+        elif reqType == "setState":
             tank.update_cheating_score(
-                [tank.xpos, tank.ypos, tank.orientation, tank.health, tank.nb_bullets, tank.nb_bricks],
-                args[:-1],
-                [1920, 1080, 360, 100, 600, 100]
+                [tank.xpos, tank.ypos, tank.orientation, tank.health],
+                args[:-3],
+                [1920, 1080, 360, 100]
             )
 
             tank.xpos, tank.ypos, tank.orientation, tank.health, tank.nb_bullets, tank.nb_bricks, tank.lastshot = args
 
-        elif opcode == "addBullet":
+        elif reqType == "addBullet":
             xpos, ypos, orientation, ttl = args
             tank.update_cheating_score(
                 [xpos, ypos, orientation, ttl**2],
@@ -312,7 +317,7 @@ def serverFunction(requestEnd, responseEntry, game, name):
             )
             game.bullets.append(Bullet(xpos, ypos, orientation, name, game.bullet_image, ttl))
         
-        elif opcode == "addWall":
+        elif reqType == "addWall":
             xpos, ypos, theta = args
             tank.update_cheating_score(
                 [xpos, ypos, theta],
@@ -322,21 +327,21 @@ def serverFunction(requestEnd, responseEntry, game, name):
             game.items.append(Item(xpos, ypos, theta, 'wall', game.item_images['wall'], None))
         
 
-        elif opcode == "removeBox":
+        elif reqType == "removeBox":
             x, y = args            
             for i, it in enumerate(game.items):
                 if it.type == 'box' and (it.xpos, it.ypos) == (x, y):
                     del game.items[i]
                     break
             
-        elif opcode == "getItems":
+        elif reqType == "getItems":
             responseEntry.send([Item(item.xpos, item.ypos, item.orientation, item.type, None, item.box_type) for item in game.items])
             
-        elif opcode == "getTanks":
+        elif reqType == "getTanks":
             tanks = game.get_tanks()
             responseEntry.send([Tank(tank.xpos, tank.ypos, None, None, tank.name) for tank in tanks])
         
-        elif opcode == "validatePosition":
+        elif reqType == "validatePosition":
             xp, yp, x, y = args
             responseEntry.send(game.validate_position(xp, yp, x, y))
 
@@ -614,6 +619,7 @@ class Game:
                 
                 if tank.health < 0: # le tank va mourir, mais il va mourir de lui-même lorsqu'il verra que sa vie sera < 0
                     print(tank.name, "s'est fait tuer par", tankname)
+                    print(f"{tank.name} est estimé à {int(tank.cheating_proba()*100)}% comme étant un tricheur\n")
                 return True
         
         return False
@@ -675,7 +681,7 @@ class Game:
             
             # affiche le gagnant s'il y en a un
             if winner := self.winner():
-                self.draw_text("Le gagnant est " + winner)
+                self.draw_text("Le gagnant est " + winner.name)
 
             pygame.display.flip()
             self.clock.tick(30)
@@ -697,13 +703,14 @@ class Game:
             tanks = self.get_tanks()
             for tank in tanks:
                 if tank.health >= 0:
-                    return tank.name
+                    return tank
     
     def close(self):
         w = self.winner()
 
         if w != None:
-            print("Le gagnant est", w)
+            print("Le gagnant est", w.name)
+            print(f"{w.name} est estimé à {int(w.cheating_proba()*100)}% comme étant un tricheur\n")
         
         tanks = self.get_tanks()
         for tank in tanks:
@@ -891,10 +898,11 @@ def fire(request, clock):
     x, y, theta, health, nb_bullets, nb_bricks, lastshot = request.getState()
 
     if nb_bullets <= 0 or time.monotonic() - lastshot < 0.3 :
-        return # on ne peut plus tirer, il n'y a plus de projectiles
+        return False # on ne peut plus tirer, il n'y a plus de projectiles
     
     request.setState(x, y, theta, health, nb_bullets - 1, nb_bricks, time.monotonic())
     request.addBullet(x, y, theta)
+    return True
 
 
 
