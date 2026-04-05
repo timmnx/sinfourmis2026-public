@@ -13,8 +13,8 @@ if __name__ != '__main__':
 
 FORWARD_DOP = 3
 BACKWARD_DOP = -1
-LEGAL_CHEATING_SCORE = 1000
-MAX_CHEATING_SCORE = 5000
+LEGAL_CHEATING_SCORE = 500
+MAX_CHEATING_SCORE = 2000
 
 
 if 'linux' in sys.platform:
