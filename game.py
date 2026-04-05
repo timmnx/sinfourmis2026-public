@@ -519,7 +519,7 @@ def load_tanks(players, start_pos, nb_bullets, nb_bricks, get_free_coord, nc_fun
 
 
 class Game:
-    def __init__(self, players, map, graphics):
+    def __init__(self, players, map, graphics, fullscreen):
         # Initialisation des graphiques
         # Initialisation de Pygame en plein écran
         self.graphics = graphics
@@ -530,10 +530,17 @@ class Game:
 
             # Résolution actuelle de l'écran
             infoObject = pygame.display.Info()
-            self.screen_width, self.screen_height = infoObject.current_w, infoObject.current_h
 
             # Ouverture d'une fenêtre
-            self.screen = pygame.display.set_mode(flags=pygame.FULLSCREEN)
+            if fullscreen:
+                self.screen = pygame.display.set_mode(flags=pygame.FULLSCREEN)
+                self.screen_width, self.screen_height = infoObject.current_w, infoObject.current_h
+            else:
+                frac = 0.8
+                self.screen_width, self.screen_height = int(infoObject.current_w * frac), int(infoObject.current_h * frac)
+                self.screen = pygame.display.set_mode((self.screen_width, self.screen_height), pygame.RESIZABLE)
+
+
             pygame.display.set_caption("Sinfourmis")
 
             pygame.display.flip()
@@ -563,6 +570,14 @@ class Game:
 
         self.box_image = self.item_images['box']
         self.bullet_image = self.item_images['bullet']
+    
+
+    def resize_window(self, new_w, new_h):
+        self.screen_width, self.screen_height = new_w, new_h
+
+        # Charger et redimensionner l'image de fond
+        self.background = load_image(os.path.join('assets', 'background'))
+        self.background = pygame.transform.scale(self.background, (self.screen_width, self.screen_height))
     
 
     def get_tanks(self):
@@ -966,12 +981,12 @@ def add_wall(request, clock):
 
 
 
-def launch_game(players, map, graphics):
+def launch_game(players, map, graphics, fullscreen):
     # ignore le facteur d'agrandissement d'interface de windows
     if 'win' in sys.platform:
         ctypes.windll.user32.SetProcessDPIAware()
 
-    game = Game(players, map, graphics)
+    game = Game(players, map, graphics, fullscreen)
     #game.countdown()
 
     game.launch_players()
@@ -987,6 +1002,11 @@ def launch_game(players, map, graphics):
             for event in pygame.event.get():
                 if event.type == pygame.QUIT:
                     running = False
+                elif event.type == pygame.VIDEORESIZE:
+                    game.resize_window(event.w, event.h)
+
+                elif event.type == pygame.WINDOWSIZECHANGED:
+                    game.resize_window(event.x, event.y)
 
         # Dessiner la map
         winner = game.draw_screen()
@@ -1013,14 +1033,16 @@ if __name__ == '__main__':
     parser.add_argument('--map', nargs = 1, default = "settings/map.yaml", help = "YAML file to use for the map")
     parser.add_argument('--players', nargs = 1, default = "settings/players.yaml", help = "YAML file to use for the players")
     parser.add_argument('--nographics', nargs = '?', const = True, help = "Disables graphics")
+    parser.add_argument('--fullscreen', nargs = '?', const = True, help = "Opens the game in fullscreen mode")
 
     args = parser.parse_args()
 
     map = args.map
     players = args.players
     graphics = args.nographics is None
+    fullscreen = not (args.fullscreen is None)
 
     if graphics:
         import pygame
 
-    launch_game(players, map, graphics)
+    launch_game(players, map, graphics, fullscreen)
