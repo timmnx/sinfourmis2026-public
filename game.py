@@ -1030,15 +1030,15 @@ def launch_game(players, map, graphics, fullscreen):
 
 if __name__ == '__main__':
     parser = argparse.ArgumentParser()
-    parser.add_argument('--map', nargs = 1, default = "settings/map.yaml", help = "YAML file to use for the map")
-    parser.add_argument('--players', nargs = 1, default = "settings/players.yaml", help = "YAML file to use for the players")
+    parser.add_argument('--map', nargs = 1, default = ["settings/map.yaml"], help = "YAML file to use for the map")
+    parser.add_argument('--players', nargs = 1, default = ["settings/players.yaml"], help = "YAML file to use for the players")
     parser.add_argument('--nographics', nargs = '?', const = True, help = "Disables graphics")
     parser.add_argument('--fullscreen', nargs = '?', const = True, help = "Opens the game in fullscreen mode")
 
     args = parser.parse_args()
 
-    map = args.map
-    players = args.players
+    map = args.map[0]
+    players = args.players[0]
     graphics = args.nographics is None
     fullscreen = not (args.fullscreen is None)
 
