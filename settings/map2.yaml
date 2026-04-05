@@ -1,0 +1,2464 @@
+bricks: 0
+bullets: 0
+objects:
+- position:
+  - 431
+  - 627
+  type: rock
+- position:
+  - 441
+  - 612
+  type: rock
+- position:
+  - 433
+  - 660
+  type: rock
+- position:
+  - 358
+  - 648
+  type: rock
+- position:
+  - 452
+  - 646
+  type: rock
+- position:
+  - 434
+  - 632
+  type: rock
+- position:
+  - 449
+  - 651
+  type: rock
+- position:
+  - 409
+  - 606
+  type: rock
+- position:
+  - 487
+  - 608
+  type: rock
+- position:
+  - 421
+  - 607
+  type: rock
+- position:
+  - 413
+  - 644
+  type: rock
+- position:
+  - 469
+  - 643
+  type: rock
+- position:
+  - 386
+  - 642
+  type: rock
+- position:
+  - 465
+  - 632
+  type: rock
+- position:
+  - 411
+  - 718
+  type: rock
+- position:
+  - 419
+  - 649
+  type: rock
+- position:
+  - 391
+  - 611
+  type: rock
+- position:
+  - 379
+  - 628
+  type: rock
+- position:
+  - 416
+  - 622
+  type: rock
+- position:
+  - 461
+  - 675
+  type: rock
+- position:
+  - 375
+  - 614
+  type: rock
+- position:
+  - 404
+  - 629
+  type: rock
+- position:
+  - 460
+  - 628
+  type: rock
+- position:
+  - 437
+  - 621
+  type: rock
+- position:
+  - 434
+  - 595
+  type: rock
+- position:
+  - 417
+  - 647
+  type: rock
+- position:
+  - 429
+  - 668
+  type: rock
+- position:
+  - 467
+  - 631
+  type: rock
+- position:
+  - 446
+  - 662
+  type: rock
+- position:
+  - 420
+  - 591
+  type: rock
+- position:
+  - 357
+  - 639
+  type: rock
+- position:
+  - 485
+  - 610
+  type: rock
+- position:
+  - 422
+  - 580
+  type: rock
+- position:
+  - 392
+  - 579
+  type: rock
+- position:
+  - 377
+  - 643
+  type: rock
+- position:
+  - 390
+  - 639
+  type: rock
+- position:
+  - 429
+  - 637
+  type: rock
+- position:
+  - 462
+  - 615
+  type: rock
+- position:
+  - 411
+  - 620
+  type: rock
+- position:
+  - 433
+  - 673
+  type: rock
+- position:
+  - 430
+  - 615
+  type: rock
+- position:
+  - 397
+  - 632
+  type: rock
+- position:
+  - 450
+  - 646
+  type: rock
+- position:
+  - 370
+  - 624
+  type: rock
+- position:
+  - 410
+  - 610
+  type: rock
+- position:
+  - 363
+  - 646
+  type: rock
+- position:
+  - 340
+  - 656
+  type: rock
+- position:
+  - 436
+  - 677
+  type: rock
+- position:
+  - 407
+  - 668
+  type: rock
+- position:
+  - 436
+  - 666
+  type: rock
+- position:
+  - 1285
+  - 895
+  type: rock
+- position:
+  - 1273
+  - 939
+  type: rock
+- position:
+  - 1258
+  - 852
+  type: rock
+- position:
+  - 1263
+  - 911
+  type: rock
+- position:
+  - 1287
+  - 897
+  type: rock
+- position:
+  - 1304
+  - 920
+  type: rock
+- position:
+  - 1206
+  - 906
+  type: rock
+- position:
+  - 1257
+  - 876
+  type: rock
+- position:
+  - 1200
+  - 940
+  type: rock
+- position:
+  - 1227
+  - 899
+  type: rock
+- position:
+  - 1302
+  - 903
+  type: rock
+- position:
+  - 1221
+  - 932
+  type: rock
+- position:
+  - 1296
+  - 936
+  type: rock
+- position:
+  - 1231
+  - 927
+  type: rock
+- position:
+  - 1256
+  - 898
+  type: rock
+- position:
+  - 1231
+  - 915
+  type: rock
+- position:
+  - 1251
+  - 951
+  type: rock
+- position:
+  - 1257
+  - 926
+  type: rock
+- position:
+  - 1313
+  - 907
+  type: rock
+- position:
+  - 1252
+  - 935
+  type: rock
+- position:
+  - 1238
+  - 866
+  type: rock
+- position:
+  - 1233
+  - 906
+  type: rock
+- position:
+  - 1270
+  - 898
+  type: rock
+- position:
+  - 1244
+  - 854
+  type: rock
+- position:
+  - 1247
+  - 893
+  type: rock
+- position:
+  - 1228
+  - 956
+  type: rock
+- position:
+  - 1222
+  - 909
+  type: rock
+- position:
+  - 1232
+  - 915
+  type: rock
+- position:
+  - 1241
+  - 890
+  type: rock
+- position:
+  - 1269
+  - 846
+  type: rock
+- position:
+  - 1240
+  - 916
+  type: rock
+- position:
+  - 1247
+  - 909
+  type: rock
+- position:
+  - 1286
+  - 919
+  type: rock
+- position:
+  - 1257
+  - 862
+  type: rock
+- position:
+  - 1235
+  - 897
+  type: rock
+- position:
+  - 1219
+  - 880
+  type: rock
+- position:
+  - 1202
+  - 932
+  type: rock
+- position:
+  - 1289
+  - 875
+  type: rock
+- position:
+  - 1237
+  - 881
+  type: rock
+- position:
+  - 1245
+  - 858
+  type: rock
+- position:
+  - 1249
+  - 891
+  type: rock
+- position:
+  - 1228
+  - 900
+  type: rock
+- position:
+  - 1235
+  - 918
+  type: rock
+- position:
+  - 1276
+  - 888
+  type: rock
+- position:
+  - 1236
+  - 889
+  type: rock
+- position:
+  - 1271
+  - 902
+  type: rock
+- position:
+  - 1240
+  - 884
+  type: rock
+- position:
+  - 1285
+  - 894
+  type: rock
+- position:
+  - 1220
+  - 929
+  type: rock
+- position:
+  - 1254
+  - 915
+  type: rock
+- position:
+  - 1908
+  - 468
+  type: rock
+- position:
+  - 1902
+  - 521
+  type: rock
+- position:
+  - 1868
+  - 518
+  type: rock
+- position:
+  - 1967
+  - 446
+  type: rock
+- position:
+  - 1944
+  - 513
+  type: rock
+- position:
+  - 1908
+  - 595
+  type: rock
+- position:
+  - 1874
+  - 526
+  type: rock
+- position:
+  - 1856
+  - 572
+  type: rock
+- position:
+  - 1935
+  - 531
+  type: rock
+- position:
+  - 1935
+  - 476
+  type: rock
+- position:
+  - 1914
+  - 514
+  type: rock
+- position:
+  - 1931
+  - 525
+  type: rock
+- position:
+  - 1911
+  - 492
+  type: rock
+- position:
+  - 1914
+  - 543
+  type: rock
+- position:
+  - 1893
+  - 575
+  type: rock
+- position:
+  - 1909
+  - 557
+  type: rock
+- position:
+  - 1928
+  - 520
+  type: rock
+- position:
+  - 1891
+  - 519
+  type: rock
+- position:
+  - 1918
+  - 534
+  type: rock
+- position:
+  - 1894
+  - 559
+  type: rock
+- position:
+  - 1975
+  - 546
+  type: rock
+- position:
+  - 1920
+  - 540
+  type: rock
+- position:
+  - 1865
+  - 517
+  type: rock
+- position:
+  - 1965
+  - 553
+  type: rock
+- position:
+  - 1866
+  - 518
+  type: rock
+- position:
+  - 1908
+  - 556
+  type: rock
+- position:
+  - 1877
+  - 508
+  type: rock
+- position:
+  - 1961
+  - 464
+  type: rock
+- position:
+  - 1890
+  - 532
+  type: rock
+- position:
+  - 1922
+  - 571
+  type: rock
+- position:
+  - 1902
+  - 544
+  type: rock
+- position:
+  - 1923
+  - 500
+  type: rock
+- position:
+  - 1893
+  - 569
+  type: rock
+- position:
+  - 1918
+  - 513
+  type: rock
+- position:
+  - 1978
+  - 545
+  type: rock
+- position:
+  - 1985
+  - 529
+  type: rock
+- position:
+  - 1893
+  - 526
+  type: rock
+- position:
+  - 1884
+  - 527
+  type: rock
+- position:
+  - 1894
+  - 600
+  type: rock
+- position:
+  - 1874
+  - 519
+  type: rock
+- position:
+  - 1910
+  - 549
+  type: rock
+- position:
+  - 1867
+  - 572
+  type: rock
+- position:
+  - 1892
+  - 470
+  type: rock
+- position:
+  - 1894
+  - 495
+  type: rock
+- position:
+  - 1974
+  - 505
+  type: rock
+- position:
+  - 1903
+  - 515
+  type: rock
+- position:
+  - 1915
+  - 497
+  type: rock
+- position:
+  - 1926
+  - 504
+  type: rock
+- position:
+  - 1911
+  - 504
+  type: rock
+- position:
+  - 1874
+  - 520
+  type: rock
+- position:
+  - 387
+  - 804
+  type: rock
+- position:
+  - 378
+  - 900
+  type: rock
+- position:
+  - 423
+  - 856
+  type: rock
+- position:
+  - 346
+  - 813
+  type: rock
+- position:
+  - 343
+  - 832
+  type: rock
+- position:
+  - 402
+  - 854
+  type: rock
+- position:
+  - 404
+  - 827
+  type: rock
+- position:
+  - 318
+  - 868
+  type: rock
+- position:
+  - 367
+  - 794
+  type: rock
+- position:
+  - 382
+  - 845
+  type: rock
+- position:
+  - 312
+  - 821
+  type: rock
+- position:
+  - 345
+  - 808
+  type: rock
+- position:
+  - 349
+  - 863
+  type: rock
+- position:
+  - 375
+  - 839
+  type: rock
+- position:
+  - 418
+  - 817
+  type: rock
+- position:
+  - 368
+  - 897
+  type: rock
+- position:
+  - 349
+  - 793
+  type: rock
+- position:
+  - 392
+  - 857
+  type: rock
+- position:
+  - 389
+  - 893
+  type: rock
+- position:
+  - 384
+  - 921
+  type: rock
+- position:
+  - 310
+  - 876
+  type: rock
+- position:
+  - 348
+  - 875
+  type: rock
+- position:
+  - 333
+  - 882
+  type: rock
+- position:
+  - 363
+  - 845
+  type: rock
+- position:
+  - 391
+  - 828
+  type: rock
+- position:
+  - 399
+  - 815
+  type: rock
+- position:
+  - 373
+  - 881
+  type: rock
+- position:
+  - 357
+  - 886
+  type: rock
+- position:
+  - 425
+  - 827
+  type: rock
+- position:
+  - 334
+  - 858
+  type: rock
+- position:
+  - 347
+  - 849
+  type: rock
+- position:
+  - 312
+  - 788
+  type: rock
+- position:
+  - 388
+  - 876
+  type: rock
+- position:
+  - 410
+  - 818
+  type: rock
+- position:
+  - 400
+  - 822
+  type: rock
+- position:
+  - 391
+  - 837
+  type: rock
+- position:
+  - 346
+  - 855
+  type: rock
+- position:
+  - 373
+  - 834
+  type: rock
+- position:
+  - 362
+  - 718
+  type: rock
+- position:
+  - 363
+  - 868
+  type: rock
+- position:
+  - 309
+  - 882
+  type: rock
+- position:
+  - 404
+  - 868
+  type: rock
+- position:
+  - 382
+  - 822
+  type: rock
+- position:
+  - 339
+  - 801
+  type: rock
+- position:
+  - 387
+  - 854
+  type: rock
+- position:
+  - 384
+  - 869
+  type: rock
+- position:
+  - 346
+  - 853
+  type: rock
+- position:
+  - 377
+  - 861
+  type: rock
+- position:
+  - 378
+  - 844
+  type: rock
+- position:
+  - 355
+  - 821
+  type: rock
+- position:
+  - 1532
+  - 937
+  type: rock
+- position:
+  - 1473
+  - 992
+  type: rock
+- position:
+  - 1473
+  - 986
+  type: rock
+- position:
+  - 1485
+  - 892
+  type: rock
+- position:
+  - 1525
+  - 921
+  type: rock
+- position:
+  - 1517
+  - 923
+  type: rock
+- position:
+  - 1488
+  - 973
+  type: rock
+- position:
+  - 1580
+  - 1011
+  type: rock
+- position:
+  - 1538
+  - 974
+  type: rock
+- position:
+  - 1492
+  - 985
+  type: rock
+- position:
+  - 1551
+  - 945
+  type: rock
+- position:
+  - 1510
+  - 983
+  type: rock
+- position:
+  - 1530
+  - 958
+  type: rock
+- position:
+  - 1566
+  - 968
+  type: rock
+- position:
+  - 1574
+  - 920
+  type: rock
+- position:
+  - 1505
+  - 963
+  type: rock
+- position:
+  - 1600
+  - 993
+  type: rock
+- position:
+  - 1570
+  - 977
+  type: rock
+- position:
+  - 1551
+  - 975
+  type: rock
+- position:
+  - 1505
+  - 982
+  type: rock
+- position:
+  - 1613
+  - 976
+  type: rock
+- position:
+  - 1563
+  - 970
+  type: rock
+- position:
+  - 1509
+  - 912
+  type: rock
+- position:
+  - 1498
+  - 1024
+  type: rock
+- position:
+  - 1521
+  - 989
+  type: rock
+- position:
+  - 1517
+  - 969
+  type: rock
+- position:
+  - 1468
+  - 949
+  type: rock
+- position:
+  - 1506
+  - 969
+  type: rock
+- position:
+  - 1548
+  - 939
+  type: rock
+- position:
+  - 1497
+  - 941
+  type: rock
+- position:
+  - 1541
+  - 1017
+  type: rock
+- position:
+  - 1498
+  - 899
+  type: rock
+- position:
+  - 1501
+  - 1000
+  type: rock
+- position:
+  - 1526
+  - 987
+  type: rock
+- position:
+  - 1539
+  - 978
+  type: rock
+- position:
+  - 1585
+  - 966
+  type: rock
+- position:
+  - 1540
+  - 937
+  type: rock
+- position:
+  - 1562
+  - 944
+  type: rock
+- position:
+  - 1531
+  - 984
+  type: rock
+- position:
+  - 1507
+  - 923
+  type: rock
+- position:
+  - 1496
+  - 1006
+  type: rock
+- position:
+  - 1511
+  - 994
+  type: rock
+- position:
+  - 1566
+  - 976
+  type: rock
+- position:
+  - 1537
+  - 936
+  type: rock
+- position:
+  - 1481
+  - 989
+  type: rock
+- position:
+  - 1504
+  - 941
+  type: rock
+- position:
+  - 1490
+  - 948
+  type: rock
+- position:
+  - 1493
+  - 979
+  type: rock
+- position:
+  - 1546
+  - 931
+  type: rock
+- position:
+  - 1528
+  - 983
+  type: rock
+- position:
+  - 219
+  - 555
+  type: rock
+- position:
+  - 186
+  - 540
+  type: rock
+- position:
+  - 226
+  - 586
+  type: rock
+- position:
+  - 222
+  - 599
+  type: rock
+- position:
+  - 201
+  - 596
+  type: rock
+- position:
+  - 280
+  - 580
+  type: rock
+- position:
+  - 235
+  - 547
+  type: rock
+- position:
+  - 254
+  - 574
+  type: rock
+- position:
+  - 224
+  - 576
+  type: rock
+- position:
+  - 242
+  - 600
+  type: rock
+- position:
+  - 204
+  - 564
+  type: rock
+- position:
+  - 233
+  - 598
+  type: rock
+- position:
+  - 204
+  - 587
+  type: rock
+- position:
+  - 228
+  - 627
+  type: rock
+- position:
+  - 220
+  - 588
+  type: rock
+- position:
+  - 179
+  - 588
+  type: rock
+- position:
+  - 202
+  - 555
+  type: rock
+- position:
+  - 236
+  - 546
+  type: rock
+- position:
+  - 262
+  - 586
+  type: rock
+- position:
+  - 175
+  - 583
+  type: rock
+- position:
+  - 169
+  - 566
+  type: rock
+- position:
+  - 216
+  - 584
+  type: rock
+- position:
+  - 259
+  - 530
+  type: rock
+- position:
+  - 217
+  - 571
+  type: rock
+- position:
+  - 232
+  - 613
+  type: rock
+- position:
+  - 219
+  - 588
+  type: rock
+- position:
+  - 178
+  - 537
+  type: rock
+- position:
+  - 247
+  - 620
+  type: rock
+- position:
+  - 258
+  - 580
+  type: rock
+- position:
+  - 206
+  - 519
+  type: rock
+- position:
+  - 235
+  - 575
+  type: rock
+- position:
+  - 209
+  - 600
+  type: rock
+- position:
+  - 189
+  - 570
+  type: rock
+- position:
+  - 291
+  - 541
+  type: rock
+- position:
+  - 235
+  - 589
+  type: rock
+- position:
+  - 209
+  - 564
+  type: rock
+- position:
+  - 213
+  - 535
+  type: rock
+- position:
+  - 238
+  - 600
+  type: rock
+- position:
+  - 206
+  - 567
+  type: rock
+- position:
+  - 259
+  - 580
+  type: rock
+- position:
+  - 228
+  - 534
+  type: rock
+- position:
+  - 205
+  - 600
+  type: rock
+- position:
+  - 262
+  - 575
+  type: rock
+- position:
+  - 208
+  - 603
+  type: rock
+- position:
+  - 217
+  - 623
+  type: rock
+- position:
+  - 178
+  - 539
+  type: rock
+- position:
+  - 216
+  - 608
+  type: rock
+- position:
+  - 237
+  - 560
+  type: rock
+- position:
+  - 173
+  - 530
+  type: rock
+- position:
+  - 189
+  - 594
+  type: rock
+- position:
+  - 1276
+  - 1000
+  type: rock
+- position:
+  - 1327
+  - 965
+  type: rock
+- position:
+  - 1325
+  - 1091
+  type: rock
+- position:
+  - 1326
+  - 1033
+  type: rock
+- position:
+  - 1361
+  - 1010
+  type: rock
+- position:
+  - 1356
+  - 1017
+  type: rock
+- position:
+  - 1340
+  - 1057
+  type: rock
+- position:
+  - 1304
+  - 1036
+  type: rock
+- position:
+  - 1298
+  - 1048
+  type: rock
+- position:
+  - 1368
+  - 1010
+  type: rock
+- position:
+  - 1360
+  - 1049
+  type: rock
+- position:
+  - 1388
+  - 1036
+  type: rock
+- position:
+  - 1352
+  - 1086
+  type: rock
+- position:
+  - 1339
+  - 1023
+  type: rock
+- position:
+  - 1350
+  - 1048
+  type: rock
+- position:
+  - 1329
+  - 973
+  type: rock
+- position:
+  - 1289
+  - 1039
+  type: rock
+- position:
+  - 1332
+  - 1057
+  type: rock
+- position:
+  - 1319
+  - 1074
+  type: rock
+- position:
+  - 1339
+  - 1049
+  type: rock
+- position:
+  - 1405
+  - 1003
+  type: rock
+- position:
+  - 1346
+  - 1058
+  type: rock
+- position:
+  - 1354
+  - 1011
+  type: rock
+- position:
+  - 1315
+  - 1003
+  type: rock
+- position:
+  - 1365
+  - 1041
+  type: rock
+- position:
+  - 1302
+  - 988
+  type: rock
+- position:
+  - 1344
+  - 986
+  type: rock
+- position:
+  - 1324
+  - 1034
+  type: rock
+- position:
+  - 1368
+  - 1067
+  type: rock
+- position:
+  - 1283
+  - 1014
+  type: rock
+- position:
+  - 1355
+  - 1055
+  type: rock
+- position:
+  - 1325
+  - 1027
+  type: rock
+- position:
+  - 1333
+  - 1058
+  type: rock
+- position:
+  - 1366
+  - 1057
+  type: rock
+- position:
+  - 1352
+  - 1040
+  type: rock
+- position:
+  - 1363
+  - 1009
+  type: rock
+- position:
+  - 1301
+  - 1050
+  type: rock
+- position:
+  - 1350
+  - 1053
+  type: rock
+- position:
+  - 1349
+  - 1049
+  type: rock
+- position:
+  - 1332
+  - 976
+  type: rock
+- position:
+  - 1338
+  - 1054
+  type: rock
+- position:
+  - 1310
+  - 1048
+  type: rock
+- position:
+  - 1331
+  - 1046
+  type: rock
+- position:
+  - 1334
+  - 1042
+  type: rock
+- position:
+  - 1287
+  - 1016
+  type: rock
+- position:
+  - 1364
+  - 1017
+  type: rock
+- position:
+  - 1324
+  - 1039
+  type: rock
+- position:
+  - 1338
+  - 1018
+  type: rock
+- position:
+  - 1312
+  - 1038
+  type: rock
+- position:
+  - 1361
+  - 1053
+  type: rock
+- position:
+  - 357
+  - 384
+  type: rock
+- position:
+  - 394
+  - 388
+  type: rock
+- position:
+  - 402
+  - 395
+  type: rock
+- position:
+  - 372
+  - 371
+  type: rock
+- position:
+  - 410
+  - 343
+  type: rock
+- position:
+  - 384
+  - 362
+  type: rock
+- position:
+  - 407
+  - 414
+  type: rock
+- position:
+  - 388
+  - 406
+  type: rock
+- position:
+  - 369
+  - 360
+  type: rock
+- position:
+  - 356
+  - 410
+  type: rock
+- position:
+  - 422
+  - 415
+  type: rock
+- position:
+  - 428
+  - 365
+  type: rock
+- position:
+  - 344
+  - 410
+  type: rock
+- position:
+  - 348
+  - 407
+  type: rock
+- position:
+  - 398
+  - 381
+  type: rock
+- position:
+  - 349
+  - 381
+  type: rock
+- position:
+  - 339
+  - 320
+  type: rock
+- position:
+  - 342
+  - 335
+  type: rock
+- position:
+  - 405
+  - 343
+  type: rock
+- position:
+  - 403
+  - 408
+  type: rock
+- position:
+  - 405
+  - 381
+  type: rock
+- position:
+  - 382
+  - 383
+  type: rock
+- position:
+  - 355
+  - 379
+  type: rock
+- position:
+  - 390
+  - 344
+  type: rock
+- position:
+  - 390
+  - 389
+  type: rock
+- position:
+  - 422
+  - 440
+  type: rock
+- position:
+  - 397
+  - 410
+  type: rock
+- position:
+  - 468
+  - 355
+  type: rock
+- position:
+  - 409
+  - 387
+  type: rock
+- position:
+  - 482
+  - 362
+  type: rock
+- position:
+  - 410
+  - 392
+  type: rock
+- position:
+  - 401
+  - 319
+  type: rock
+- position:
+  - 374
+  - 369
+  type: rock
+- position:
+  - 396
+  - 382
+  type: rock
+- position:
+  - 361
+  - 402
+  type: rock
+- position:
+  - 363
+  - 378
+  type: rock
+- position:
+  - 331
+  - 407
+  type: rock
+- position:
+  - 354
+  - 339
+  type: rock
+- position:
+  - 419
+  - 319
+  type: rock
+- position:
+  - 386
+  - 370
+  type: rock
+- position:
+  - 351
+  - 339
+  type: rock
+- position:
+  - 359
+  - 362
+  type: rock
+- position:
+  - 378
+  - 353
+  type: rock
+- position:
+  - 378
+  - 402
+  type: rock
+- position:
+  - 383
+  - 347
+  type: rock
+- position:
+  - 371
+  - 422
+  type: rock
+- position:
+  - 410
+  - 377
+  type: rock
+- position:
+  - 440
+  - 397
+  type: rock
+- position:
+  - 423
+  - 406
+  type: rock
+- position:
+  - 380
+  - 383
+  type: rock
+- position:
+  - 1405
+  - 716
+  type: rock
+- position:
+  - 1379
+  - 701
+  type: rock
+- position:
+  - 1407
+  - 686
+  type: rock
+- position:
+  - 1449
+  - 616
+  type: rock
+- position:
+  - 1418
+  - 654
+  type: rock
+- position:
+  - 1398
+  - 665
+  type: rock
+- position:
+  - 1379
+  - 662
+  type: rock
+- position:
+  - 1360
+  - 716
+  type: rock
+- position:
+  - 1347
+  - 664
+  type: rock
+- position:
+  - 1361
+  - 637
+  type: rock
+- position:
+  - 1363
+  - 673
+  type: rock
+- position:
+  - 1394
+  - 619
+  type: rock
+- position:
+  - 1333
+  - 709
+  type: rock
+- position:
+  - 1413
+  - 733
+  type: rock
+- position:
+  - 1317
+  - 688
+  type: rock
+- position:
+  - 1375
+  - 673
+  type: rock
+- position:
+  - 1328
+  - 657
+  type: rock
+- position:
+  - 1342
+  - 646
+  type: rock
+- position:
+  - 1427
+  - 660
+  type: rock
+- position:
+  - 1446
+  - 704
+  type: rock
+- position:
+  - 1347
+  - 646
+  type: rock
+- position:
+  - 1404
+  - 659
+  type: rock
+- position:
+  - 1356
+  - 651
+  type: rock
+- position:
+  - 1325
+  - 731
+  type: rock
+- position:
+  - 1323
+  - 702
+  type: rock
+- position:
+  - 1377
+  - 745
+  type: rock
+- position:
+  - 1376
+  - 660
+  type: rock
+- position:
+  - 1398
+  - 690
+  type: rock
+- position:
+  - 1358
+  - 673
+  type: rock
+- position:
+  - 1335
+  - 680
+  type: rock
+- position:
+  - 1362
+  - 684
+  type: rock
+- position:
+  - 1380
+  - 633
+  type: rock
+- position:
+  - 1407
+  - 671
+  type: rock
+- position:
+  - 1374
+  - 670
+  type: rock
+- position:
+  - 1373
+  - 753
+  type: rock
+- position:
+  - 1332
+  - 686
+  type: rock
+- position:
+  - 1359
+  - 684
+  type: rock
+- position:
+  - 1314
+  - 673
+  type: rock
+- position:
+  - 1375
+  - 668
+  type: rock
+- position:
+  - 1344
+  - 697
+  type: rock
+- position:
+  - 1397
+  - 649
+  type: rock
+- position:
+  - 1387
+  - 731
+  type: rock
+- position:
+  - 1436
+  - 648
+  type: rock
+- position:
+  - 1336
+  - 712
+  type: rock
+- position:
+  - 1339
+  - 648
+  type: rock
+- position:
+  - 1358
+  - 679
+  type: rock
+- position:
+  - 1386
+  - 606
+  type: rock
+- position:
+  - 1341
+  - 617
+  type: rock
+- position:
+  - 1378
+  - 704
+  type: rock
+- position:
+  - 1376
+  - 711
+  type: rock
+- position:
+  - 1311
+  - 651
+  type: rock
+- position:
+  - 1334
+  - 658
+  type: rock
+- position:
+  - 1294
+  - 616
+  type: rock
+- position:
+  - 1312
+  - 614
+  type: rock
+- position:
+  - 1309
+  - 652
+  type: rock
+- position:
+  - 1325
+  - 670
+  type: rock
+- position:
+  - 1324
+  - 712
+  type: rock
+- position:
+  - 1324
+  - 702
+  type: rock
+- position:
+  - 1249
+  - 660
+  type: rock
+- position:
+  - 1262
+  - 618
+  type: rock
+- position:
+  - 1232
+  - 670
+  type: rock
+- position:
+  - 1345
+  - 676
+  type: rock
+- position:
+  - 1305
+  - 679
+  type: rock
+- position:
+  - 1332
+  - 660
+  type: rock
+- position:
+  - 1288
+  - 658
+  type: rock
+- position:
+  - 1312
+  - 635
+  type: rock
+- position:
+  - 1247
+  - 653
+  type: rock
+- position:
+  - 1304
+  - 697
+  type: rock
+- position:
+  - 1257
+  - 633
+  type: rock
+- position:
+  - 1337
+  - 681
+  type: rock
+- position:
+  - 1325
+  - 717
+  type: rock
+- position:
+  - 1293
+  - 600
+  type: rock
+- position:
+  - 1280
+  - 593
+  type: rock
+- position:
+  - 1356
+  - 678
+  type: rock
+- position:
+  - 1317
+  - 646
+  type: rock
+- position:
+  - 1345
+  - 671
+  type: rock
+- position:
+  - 1282
+  - 586
+  type: rock
+- position:
+  - 1294
+  - 657
+  type: rock
+- position:
+  - 1291
+  - 732
+  type: rock
+- position:
+  - 1377
+  - 653
+  type: rock
+- position:
+  - 1306
+  - 702
+  type: rock
+- position:
+  - 1341
+  - 639
+  type: rock
+- position:
+  - 1280
+  - 647
+  type: rock
+- position:
+  - 1355
+  - 627
+  type: rock
+- position:
+  - 1303
+  - 628
+  type: rock
+- position:
+  - 1306
+  - 657
+  type: rock
+- position:
+  - 1286
+  - 708
+  type: rock
+- position:
+  - 1324
+  - 675
+  type: rock
+- position:
+  - 1338
+  - 656
+  type: rock
+- position:
+  - 1306
+  - 669
+  type: rock
+- position:
+  - 1282
+  - 638
+  type: rock
+- position:
+  - 1278
+  - 617
+  type: rock
+- position:
+  - 1334
+  - 641
+  type: rock
+- position:
+  - 1300
+  - 664
+  type: rock
+- position:
+  - 1288
+  - 614
+  type: rock
+- position:
+  - 1312
+  - 629
+  type: rock
+- position:
+  - 1305
+  - 602
+  type: rock
+- position:
+  - 1327
+  - 612
+  type: rock
+- position:
+  - 1292
+  - 640
+  type: rock
+- position:
+  - 1297
+  - 623
+  type: rock
+- position:
+  - 179
+  - 395
+  type: tree
+- position:
+  - 213
+  - 877
+  type: tree
+- position:
+  - 913
+  - 165
+  type: tree
+- position:
+  - 1478
+  - 487
+  type: tree
+- position:
+  - 462
+  - 340
+  type: tree
+- position:
+  - 1361
+  - 465
+  type: tree
+- position:
+  - 727
+  - 221
+  type: tree
+- position:
+  - 1379
+  - 606
+  type: tree
+- position:
+  - 1786
+  - 849
+  type: tree
+- position:
+  - 441
+  - 805
+  type: tree
+- position:
+  - 448
+  - 83
+  type: tree
+- position:
+  - 26
+  - 485
+  type: tree
+- position:
+  - 684
+  - 295
+  type: tree
+- position:
+  - 1623
+  - 260
+  type: tree
+- position:
+  - 1697
+  - 238
+  type: tree
+- position:
+  - 1328
+  - 652
+  type: tree
+- position:
+  - 644
+  - 279
+  type: tree
+- position:
+  - 1267
+  - 763
+  type: tree
+- position:
+  - 1290
+  - 393
+  type: tree
+- position:
+  - 925
+  - 432
+  type: tree
+- position:
+  - 671
+  - 140
+  type: tree
+- position:
+  - 1477
+  - 240
+  type: tree
+- position:
+  - 131
+  - 141
+  type: tree
+- position:
+  - 458
+  - 883
+  type: tree
+- position:
+  - 521
+  - 738
+  type: tree
+- position:
+  - 1190
+  - 742
+  type: tree
+- position:
+  - 824
+  - 175
+  type: tree
+- position:
+  - 770
+  - 283
+  type: tree
+- position:
+  - 75
+  - 364
+  type: tree
+- position:
+  - 1647
+  - 32
+  type: tree
+- position:
+  - 1425
+  - 512
+  type: tree
+- position:
+  - 1361
+  - 725
+  type: tree
+- position:
+  - 814
+  - 55
+  type: tree
+- position:
+  - 937
+  - 191
+  type: tree
+- position:
+  - 701
+  - 659
+  type: tree
+- position:
+  - 375
+  - 256
+  type: tree
+- position:
+  - 300
+  - 463
+  type: tree
+- position:
+  - 1084
+  - 996
+  type: tree
+- position:
+  - 1043
+  - 270
+  type: tree
+- position:
+  - 1072
+  - 560
+  type: tree
+- position:
+  - 1371
+  - 257
+  type: tree
+- position:
+  - 1653
+  - 623
+  type: tree
+- position:
+  - 660
+  - 300
+  type: tree
+- position:
+  - 785
+  - 648
+  type: tree
+- position:
+  - 628
+  - 244
+  type: tree
+- position:
+  - 1146
+  - 762
+  type: tree
+- position:
+  - 380
+  - 294
+  type: tree
+- position:
+  - 1641
+  - 162
+  type: tree
+- position:
+  - 1543
+  - 822
+  type: tree
+- position:
+  - 678
+  - 35
+  type: tree
+- position:
+  - 80
+  - 223
+  type: tree
+- position:
+  - 643
+  - 422
+  type: tree
+- position:
+  - 1111
+  - 506
+  type: tree
+- position:
+  - 1790
+  - 797
+  type: tree
+- position:
+  - 35
+  - 453
+  type: tree
+- position:
+  - 949
+  - 24
+  type: tree
+- position:
+  - 280
+  - 261
+  type: tree
+- position:
+  - 795
+  - 214
+  type: tree
+- position:
+  - 843
+  - 567
+  type: tree
+- position:
+  - 1350
+  - 536
+  type: tree
+- position:
+  - 975
+  - 938
+  type: tree
+- position:
+  - 446
+  - 62
+  type: tree
+- position:
+  - 1541
+  - 555
+  type: tree
+- position:
+  - 1559
+  - 233
+  type: tree
+- position:
+  - 1397
+  - 744
+  type: tree
+- position:
+  - 1032
+  - 403
+  type: tree
+- position:
+  - 650
+  - 320
+  type: tree
+- position:
+  - 1274
+  - 528
+  type: tree
+- position:
+  - 374
+  - 402
+  type: tree
+- position:
+  - 476
+  - 502
+  type: tree
+- position:
+  - 1445
+  - 582
+  type: tower
+- position:
+  - 358
+  - 945
+  type: tower
+- position:
+  - 1783
+  - 824
+  type: tower
+- position:
+  - 443
+  - 11
+  type: tower
+- position:
+  - 1474
+  - 385
+  type: tower
+- position:
+  - 1145
+  - 991
+  type: tower
+- position:
+  - 175
+  - 640
+  type: tower
+- position:
+  - 698
+  - 985
+  type: tower
+- position:
+  - 1781
+  - 258
+  type: tower
+- position:
+  - 1672
+  - 538
+  type: tower
+- position:
+  - 1633
+  - 1051
+  type: tower
+- position:
+  - 1794
+  - 161
+  type: tower
+- position:
+  - 168
+  - 117
+  type: tower
+- position:
+  - 1234
+  - 710
+  type: tower
+- position:
+  - 763
+  - 65
+  type: tower
+- position:
+  - 584
+  - 322
+  type: rock
+- position:
+  - 273
+  - 156
+  type: rock
+- position:
+  - 466
+  - 12
+  type: rock
+- position:
+  - 1294
+  - 205
+  type: rock
+- position:
+  - 1798
+  - 296
+  type: rock
+- position:
+  - 762
+  - 919
+  type: rock
+- position:
+  - 1165
+  - 522
+  type: rock
+- position:
+  - 619
+  - 433
+  type: rock
+- position:
+  - 512
+  - 816
+  type: rock
+- position:
+  - 1753
+  - 1049
+  type: rock
+- position:
+  - 84
+  - 1018
+  type: rock
+- position:
+  - 1641
+  - 895
+  type: rock
+- position:
+  - 218
+  - 246
+  type: rock
+- position:
+  - 754
+  - 761
+  type: rock
+- position:
+  - 1259
+  - 473
+  type: rock
+- position:
+  - 78
+  - 1042
+  type: rock
+- position:
+  - 563
+  - 372
+  type: rock
+- position:
+  - 539
+  - 918
+  type: rock
+- position:
+  - 1803
+  - 27
+  type: rock
+- position:
+  - 112
+  - 118
+  type: rock
+- position:
+  - 1376
+  - 11
+  type: rock
+- position:
+  - 1438
+  - 1019
+  type: rock
+- position:
+  - 1363
+  - 876
+  type: rock
+- position:
+  - 1882
+  - 876
+  type: rock
+- position:
+  - 281
+  - 662
+  type: rock
+- position:
+  - 434
+  - 464
+  type: rock
+- position:
+  - 1489
+  - 139
+  type: rock
+- position:
+  - 910
+  - 759
+  type: rock
+- position:
+  - 1844
+  - 90
+  type: rock
+- position:
+  - 494
+  - 912
+  type: rock
+start: []

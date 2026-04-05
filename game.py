@@ -498,7 +498,13 @@ def read_map(map, nc_func, graphics):
                 orientation = object['orientation']
             else:
                 orientation = 0
-            items.append(Item(object['position'][0], object['position'][1], orientation, object['type'], item_images[object['type']], None))
+            
+            if object['type'] == 'box':
+                box_type = random.choice(['bullets', 'bricks'])
+            else:
+                box_type = None
+            
+            items.append(Item(object['position'][0], object['position'][1], orientation, object['type'], item_images[object['type']], box_type))
     
     return items, map_data['start'], item_images, map_data['bullets'], map_data['bricks']
 
