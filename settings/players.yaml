@@ -5,3 +5,11 @@
 - name: "Tank rouge"
   program: "exemple.py"
   color: red
+
+- name: "Tank bleu 2"
+  program: "exemple.py"
+  color: yellow
+
+- name: "Tank rouge 2"
+  program: "exemple.py"
+  color: green

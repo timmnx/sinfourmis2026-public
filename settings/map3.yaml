@@ -1,0 +1,552 @@
+bricks: 200
+bullets: 1000
+objects:
+- position:
+  - 960
+  - 80
+  type: wall
+- position:
+  - 960
+  - 100
+  type: wall
+- position:
+  - 960
+  - 120
+  type: wall
+- position:
+  - 960
+  - 140
+  type: wall
+- position:
+  - 960
+  - 160
+  type: wall
+- position:
+  - 960
+  - 180
+  type: wall
+- position:
+  - 960
+  - 200
+  type: wall
+- position:
+  - 960
+  - 220
+  type: wall
+- position:
+  - 960
+  - 240
+  type: wall
+- position:
+  - 960
+  - 260
+  type: wall
+- position:
+  - 960
+  - 280
+  type: wall
+- position:
+  - 960
+  - 300
+  type: wall
+- position:
+  - 960
+  - 320
+  type: wall
+- position:
+  - 960
+  - 340
+  type: wall
+- position:
+  - 960
+  - 360
+  type: wall
+- position:
+  - 960
+  - 380
+  type: wall
+- position:
+  - 960
+  - 400
+  type: wall
+- position:
+  - 960
+  - 420
+  type: wall
+- position:
+  - 960
+  - 440
+  type: wall
+- position:
+  - 960
+  - 460
+  type: wall
+- position:
+  - 960
+  - 480
+  type: wall
+- position:
+  - 960
+  - 500
+  type: wall
+- position:
+  - 960
+  - 520
+  type: wall
+- position:
+  - 960
+  - 540
+  type: wall
+- position:
+  - 960
+  - 560
+  type: wall
+- position:
+  - 960
+  - 580
+  type: wall
+- position:
+  - 960
+  - 600
+  type: wall
+- position:
+  - 960
+  - 620
+  type: wall
+- position:
+  - 960
+  - 640
+  type: wall
+- position:
+  - 960
+  - 660
+  type: wall
+- position:
+  - 960
+  - 680
+  type: wall
+- position:
+  - 960
+  - 700
+  type: wall
+- position:
+  - 960
+  - 720
+  type: wall
+- position:
+  - 960
+  - 740
+  type: wall
+- position:
+  - 960
+  - 760
+  type: wall
+- position:
+  - 960
+  - 780
+  type: wall
+- position:
+  - 960
+  - 800
+  type: wall
+- position:
+  - 960
+  - 820
+  type: wall
+- position:
+  - 960
+  - 840
+  type: wall
+- position:
+  - 960
+  - 860
+  type: wall
+- position:
+  - 960
+  - 880
+  type: wall
+- position:
+  - 960
+  - 900
+  type: wall
+- position:
+  - 960
+  - 920
+  type: wall
+- position:
+  - 960
+  - 940
+  type: wall
+- position:
+  - 960
+  - 960
+  type: wall
+- position:
+  - 80
+  - 540
+  type: wall
+- position:
+  - 100
+  - 540
+  type: wall
+- position:
+  - 120
+  - 540
+  type: wall
+- position:
+  - 140
+  - 540
+  type: wall
+- position:
+  - 160
+  - 540
+  type: wall
+- position:
+  - 180
+  - 540
+  type: wall
+- position:
+  - 200
+  - 540
+  type: wall
+- position:
+  - 220
+  - 540
+  type: wall
+- position:
+  - 240
+  - 540
+  type: wall
+- position:
+  - 260
+  - 540
+  type: wall
+- position:
+  - 280
+  - 540
+  type: wall
+- position:
+  - 300
+  - 540
+  type: wall
+- position:
+  - 320
+  - 540
+  type: wall
+- position:
+  - 340
+  - 540
+  type: wall
+- position:
+  - 360
+  - 540
+  type: wall
+- position:
+  - 380
+  - 540
+  type: wall
+- position:
+  - 400
+  - 540
+  type: wall
+- position:
+  - 420
+  - 540
+  type: wall
+- position:
+  - 440
+  - 540
+  type: wall
+- position:
+  - 460
+  - 540
+  type: wall
+- position:
+  - 480
+  - 540
+  type: wall
+- position:
+  - 500
+  - 540
+  type: wall
+- position:
+  - 520
+  - 540
+  type: wall
+- position:
+  - 540
+  - 540
+  type: wall
+- position:
+  - 560
+  - 540
+  type: wall
+- position:
+  - 580
+  - 540
+  type: wall
+- position:
+  - 600
+  - 540
+  type: wall
+- position:
+  - 620
+  - 540
+  type: wall
+- position:
+  - 640
+  - 540
+  type: wall
+- position:
+  - 660
+  - 540
+  type: wall
+- position:
+  - 680
+  - 540
+  type: wall
+- position:
+  - 700
+  - 540
+  type: wall
+- position:
+  - 720
+  - 540
+  type: wall
+- position:
+  - 740
+  - 540
+  type: wall
+- position:
+  - 760
+  - 540
+  type: wall
+- position:
+  - 780
+  - 540
+  type: wall
+- position:
+  - 800
+  - 540
+  type: wall
+- position:
+  - 820
+  - 540
+  type: wall
+- position:
+  - 840
+  - 540
+  type: wall
+- position:
+  - 860
+  - 540
+  type: wall
+- position:
+  - 880
+  - 540
+  type: wall
+- position:
+  - 900
+  - 540
+  type: wall
+- position:
+  - 920
+  - 540
+  type: wall
+- position:
+  - 940
+  - 540
+  type: wall
+- position:
+  - 960
+  - 540
+  type: wall
+- position:
+  - 980
+  - 540
+  type: wall
+- position:
+  - 1000
+  - 540
+  type: wall
+- position:
+  - 1020
+  - 540
+  type: wall
+- position:
+  - 1040
+  - 540
+  type: wall
+- position:
+  - 1060
+  - 540
+  type: wall
+- position:
+  - 1080
+  - 540
+  type: wall
+- position:
+  - 1100
+  - 540
+  type: wall
+- position:
+  - 1120
+  - 540
+  type: wall
+- position:
+  - 1140
+  - 540
+  type: wall
+- position:
+  - 1160
+  - 540
+  type: wall
+- position:
+  - 1180
+  - 540
+  type: wall
+- position:
+  - 1200
+  - 540
+  type: wall
+- position:
+  - 1220
+  - 540
+  type: wall
+- position:
+  - 1240
+  - 540
+  type: wall
+- position:
+  - 1260
+  - 540
+  type: wall
+- position:
+  - 1280
+  - 540
+  type: wall
+- position:
+  - 1300
+  - 540
+  type: wall
+- position:
+  - 1320
+  - 540
+  type: wall
+- position:
+  - 1340
+  - 540
+  type: wall
+- position:
+  - 1360
+  - 540
+  type: wall
+- position:
+  - 1380
+  - 540
+  type: wall
+- position:
+  - 1400
+  - 540
+  type: wall
+- position:
+  - 1420
+  - 540
+  type: wall
+- position:
+  - 1440
+  - 540
+  type: wall
+- position:
+  - 1460
+  - 540
+  type: wall
+- position:
+  - 1480
+  - 540
+  type: wall
+- position:
+  - 1500
+  - 540
+  type: wall
+- position:
+  - 1520
+  - 540
+  type: wall
+- position:
+  - 1540
+  - 540
+  type: wall
+- position:
+  - 1560
+  - 540
+  type: wall
+- position:
+  - 1580
+  - 540
+  type: wall
+- position:
+  - 1600
+  - 540
+  type: wall
+- position:
+  - 1620
+  - 540
+  type: wall
+- position:
+  - 1640
+  - 540
+  type: wall
+- position:
+  - 1660
+  - 540
+  type: wall
+- position:
+  - 1680
+  - 540
+  type: wall
+- position:
+  - 1700
+  - 540
+  type: wall
+- position:
+  - 1720
+  - 540
+  type: wall
+- position:
+  - 1740
+  - 540
+  type: wall
+- position:
+  - 1760
+  - 540
+  type: wall
+- position:
+  - 1780
+  - 540
+  type: wall
+- position:
+  - 1800
+  - 540
+  type: wall
+- position:
+  - 1820
+  - 540
+  type: wall
+- position:
+  - 1840
+  - 540
+  type: wall
+- position:
+  - 1860
+  - 540
+  type: wall
+start:
+- - 300
+  - 300
+- - 1700
+  - 300
+- - 1700
+  - 800
+- - 300
+  - 800
