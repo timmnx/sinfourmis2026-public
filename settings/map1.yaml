@@ -1,0 +1,2448 @@
+bricks: 0
+bullets: 0
+objects:
+- position:
+  - 300
+  - 50
+  type: tree
+- position:
+  - 300
+  - 124
+  type: tree
+- position:
+  - 300
+  - 198
+  type: tree
+- position:
+  - 300
+  - 272
+  type: tree
+- position:
+  - 300
+  - 346
+  type: tree
+- position:
+  - 300
+  - 420
+  type: tree
+- position:
+  - 300
+  - 494
+  type: tree
+- position:
+  - 300
+  - 568
+  type: tree
+- position:
+  - 300
+  - 642
+  type: tree
+- position:
+  - 300
+  - 716
+  type: tree
+- position:
+  - 300
+  - 790
+  type: tree
+- position:
+  - 300
+  - 864
+  type: tree
+- position:
+  - 300
+  - 938
+  type: tree
+- position:
+  - 300
+  - 1012
+  type: tree
+- position:
+  - 350
+  - 50
+  type: tree
+- position:
+  - 350
+  - 153
+  type: tree
+- position:
+  - 350
+  - 256
+  type: tree
+- position:
+  - 350
+  - 359
+  type: tree
+- position:
+  - 350
+  - 462
+  type: tree
+- position:
+  - 350
+  - 565
+  type: tree
+- position:
+  - 350
+  - 668
+  type: tree
+- position:
+  - 350
+  - 771
+  type: tree
+- position:
+  - 350
+  - 874
+  type: tree
+- position:
+  - 350
+  - 977
+  type: tree
+- position:
+  - 400
+  - 50
+  type: tree
+- position:
+  - 400
+  - 129
+  type: tree
+- position:
+  - 400
+  - 208
+  type: tree
+- position:
+  - 400
+  - 287
+  type: tree
+- position:
+  - 400
+  - 366
+  type: tree
+- position:
+  - 400
+  - 445
+  type: tree
+- position:
+  - 400
+  - 524
+  type: tree
+- position:
+  - 400
+  - 603
+  type: tree
+- position:
+  - 400
+  - 682
+  type: tree
+- position:
+  - 400
+  - 761
+  type: tree
+- position:
+  - 400
+  - 840
+  type: tree
+- position:
+  - 400
+  - 919
+  type: tree
+- position:
+  - 400
+  - 998
+  type: tree
+- position:
+  - 450
+  - 50
+  type: tree
+- position:
+  - 450
+  - 144
+  type: tree
+- position:
+  - 450
+  - 238
+  type: tree
+- position:
+  - 450
+  - 332
+  type: tree
+- position:
+  - 450
+  - 426
+  type: tree
+- position:
+  - 450
+  - 520
+  type: tree
+- position:
+  - 450
+  - 614
+  type: tree
+- position:
+  - 450
+  - 708
+  type: tree
+- position:
+  - 450
+  - 802
+  type: tree
+- position:
+  - 450
+  - 896
+  type: tree
+- position:
+  - 450
+  - 990
+  type: tree
+- position:
+  - 500
+  - 50
+  type: tree
+- position:
+  - 500
+  - 129
+  type: tree
+- position:
+  - 500
+  - 208
+  type: tree
+- position:
+  - 500
+  - 287
+  type: tree
+- position:
+  - 500
+  - 366
+  type: tree
+- position:
+  - 500
+  - 445
+  type: tree
+- position:
+  - 500
+  - 524
+  type: tree
+- position:
+  - 500
+  - 603
+  type: tree
+- position:
+  - 500
+  - 682
+  type: tree
+- position:
+  - 500
+  - 761
+  type: tree
+- position:
+  - 500
+  - 840
+  type: tree
+- position:
+  - 500
+  - 919
+  type: tree
+- position:
+  - 500
+  - 998
+  type: tree
+- position:
+  - 550
+  - 50
+  type: tree
+- position:
+  - 550
+  - 144
+  type: tree
+- position:
+  - 550
+  - 238
+  type: tree
+- position:
+  - 550
+  - 332
+  type: tree
+- position:
+  - 550
+  - 426
+  type: tree
+- position:
+  - 550
+  - 520
+  type: tree
+- position:
+  - 550
+  - 614
+  type: tree
+- position:
+  - 550
+  - 708
+  type: tree
+- position:
+  - 550
+  - 802
+  type: tree
+- position:
+  - 550
+  - 896
+  type: tree
+- position:
+  - 550
+  - 990
+  type: tree
+- position:
+  - 600
+  - 50
+  type: tree
+- position:
+  - 600
+  - 129
+  type: tree
+- position:
+  - 600
+  - 208
+  type: tree
+- position:
+  - 600
+  - 287
+  type: tree
+- position:
+  - 600
+  - 366
+  type: tree
+- position:
+  - 600
+  - 445
+  type: tree
+- position:
+  - 600
+  - 524
+  type: tree
+- position:
+  - 600
+  - 603
+  type: tree
+- position:
+  - 600
+  - 682
+  type: tree
+- position:
+  - 600
+  - 761
+  type: tree
+- position:
+  - 600
+  - 840
+  type: tree
+- position:
+  - 600
+  - 919
+  type: tree
+- position:
+  - 600
+  - 998
+  type: tree
+- position:
+  - 650
+  - 50
+  type: tree
+- position:
+  - 650
+  - 124
+  type: tree
+- position:
+  - 650
+  - 198
+  type: tree
+- position:
+  - 650
+  - 272
+  type: tree
+- position:
+  - 650
+  - 346
+  type: tree
+- position:
+  - 650
+  - 420
+  type: tree
+- position:
+  - 650
+  - 494
+  type: tree
+- position:
+  - 650
+  - 568
+  type: tree
+- position:
+  - 650
+  - 642
+  type: tree
+- position:
+  - 650
+  - 716
+  type: tree
+- position:
+  - 650
+  - 790
+  type: tree
+- position:
+  - 650
+  - 864
+  type: tree
+- position:
+  - 650
+  - 938
+  type: tree
+- position:
+  - 650
+  - 1012
+  type: tree
+- position:
+  - 700
+  - 50
+  type: tree
+- position:
+  - 700
+  - 124
+  type: tree
+- position:
+  - 700
+  - 198
+  type: tree
+- position:
+  - 700
+  - 272
+  type: tree
+- position:
+  - 700
+  - 346
+  type: tree
+- position:
+  - 700
+  - 420
+  type: tree
+- position:
+  - 700
+  - 494
+  type: tree
+- position:
+  - 700
+  - 568
+  type: tree
+- position:
+  - 700
+  - 642
+  type: tree
+- position:
+  - 700
+  - 716
+  type: tree
+- position:
+  - 700
+  - 790
+  type: tree
+- position:
+  - 700
+  - 864
+  type: tree
+- position:
+  - 700
+  - 938
+  type: tree
+- position:
+  - 700
+  - 1012
+  type: tree
+- position:
+  - 750
+  - 50
+  type: tree
+- position:
+  - 750
+  - 144
+  type: tree
+- position:
+  - 750
+  - 238
+  type: tree
+- position:
+  - 750
+  - 332
+  type: tree
+- position:
+  - 750
+  - 426
+  type: tree
+- position:
+  - 750
+  - 520
+  type: tree
+- position:
+  - 750
+  - 614
+  type: tree
+- position:
+  - 750
+  - 708
+  type: tree
+- position:
+  - 750
+  - 802
+  type: tree
+- position:
+  - 750
+  - 896
+  type: tree
+- position:
+  - 750
+  - 990
+  type: tree
+- position:
+  - 800
+  - 50
+  type: tree
+- position:
+  - 800
+  - 124
+  type: tree
+- position:
+  - 800
+  - 198
+  type: tree
+- position:
+  - 800
+  - 272
+  type: tree
+- position:
+  - 800
+  - 346
+  type: tree
+- position:
+  - 800
+  - 420
+  type: tree
+- position:
+  - 800
+  - 494
+  type: tree
+- position:
+  - 800
+  - 568
+  type: tree
+- position:
+  - 800
+  - 642
+  type: tree
+- position:
+  - 800
+  - 716
+  type: tree
+- position:
+  - 800
+  - 790
+  type: tree
+- position:
+  - 800
+  - 864
+  type: tree
+- position:
+  - 800
+  - 938
+  type: tree
+- position:
+  - 800
+  - 1012
+  type: tree
+- position:
+  - 850
+  - 50
+  type: tree
+- position:
+  - 850
+  - 129
+  type: tree
+- position:
+  - 850
+  - 208
+  type: tree
+- position:
+  - 850
+  - 287
+  type: tree
+- position:
+  - 850
+  - 366
+  type: tree
+- position:
+  - 850
+  - 445
+  type: tree
+- position:
+  - 850
+  - 524
+  type: tree
+- position:
+  - 850
+  - 603
+  type: tree
+- position:
+  - 850
+  - 682
+  type: tree
+- position:
+  - 850
+  - 761
+  type: tree
+- position:
+  - 850
+  - 840
+  type: tree
+- position:
+  - 850
+  - 919
+  type: tree
+- position:
+  - 850
+  - 998
+  type: tree
+- position:
+  - 900
+  - 50
+  type: tree
+- position:
+  - 900
+  - 153
+  type: tree
+- position:
+  - 900
+  - 256
+  type: tree
+- position:
+  - 900
+  - 359
+  type: tree
+- position:
+  - 900
+  - 462
+  type: tree
+- position:
+  - 900
+  - 565
+  type: tree
+- position:
+  - 900
+  - 668
+  type: tree
+- position:
+  - 900
+  - 771
+  type: tree
+- position:
+  - 900
+  - 874
+  type: tree
+- position:
+  - 900
+  - 977
+  type: tree
+- position:
+  - 950
+  - 50
+  type: tree
+- position:
+  - 950
+  - 129
+  type: tree
+- position:
+  - 950
+  - 208
+  type: tree
+- position:
+  - 950
+  - 287
+  type: tree
+- position:
+  - 950
+  - 366
+  type: tree
+- position:
+  - 950
+  - 445
+  type: tree
+- position:
+  - 950
+  - 524
+  type: tree
+- position:
+  - 950
+  - 603
+  type: tree
+- position:
+  - 950
+  - 682
+  type: tree
+- position:
+  - 950
+  - 761
+  type: tree
+- position:
+  - 950
+  - 840
+  type: tree
+- position:
+  - 950
+  - 919
+  type: tree
+- position:
+  - 950
+  - 998
+  type: tree
+- position:
+  - 1000
+  - 50
+  type: tree
+- position:
+  - 1000
+  - 144
+  type: tree
+- position:
+  - 1000
+  - 238
+  type: tree
+- position:
+  - 1000
+  - 332
+  type: tree
+- position:
+  - 1000
+  - 426
+  type: tree
+- position:
+  - 1000
+  - 520
+  type: tree
+- position:
+  - 1000
+  - 614
+  type: tree
+- position:
+  - 1000
+  - 708
+  type: tree
+- position:
+  - 1000
+  - 802
+  type: tree
+- position:
+  - 1000
+  - 896
+  type: tree
+- position:
+  - 1000
+  - 990
+  type: tree
+- position:
+  - 1050
+  - 50
+  type: tree
+- position:
+  - 1050
+  - 153
+  type: tree
+- position:
+  - 1050
+  - 256
+  type: tree
+- position:
+  - 1050
+  - 359
+  type: tree
+- position:
+  - 1050
+  - 462
+  type: tree
+- position:
+  - 1050
+  - 565
+  type: tree
+- position:
+  - 1050
+  - 668
+  type: tree
+- position:
+  - 1050
+  - 771
+  type: tree
+- position:
+  - 1050
+  - 874
+  type: tree
+- position:
+  - 1050
+  - 977
+  type: tree
+- position:
+  - 1100
+  - 50
+  type: tree
+- position:
+  - 1100
+  - 164
+  type: tree
+- position:
+  - 1100
+  - 278
+  type: tree
+- position:
+  - 1100
+  - 392
+  type: tree
+- position:
+  - 1100
+  - 506
+  type: tree
+- position:
+  - 1100
+  - 620
+  type: tree
+- position:
+  - 1100
+  - 734
+  type: tree
+- position:
+  - 1100
+  - 848
+  type: tree
+- position:
+  - 1100
+  - 962
+  type: tree
+- position:
+  - 1150
+  - 50
+  type: tree
+- position:
+  - 1150
+  - 136
+  type: tree
+- position:
+  - 1150
+  - 222
+  type: tree
+- position:
+  - 1150
+  - 308
+  type: tree
+- position:
+  - 1150
+  - 394
+  type: tree
+- position:
+  - 1150
+  - 480
+  type: tree
+- position:
+  - 1150
+  - 566
+  type: tree
+- position:
+  - 1150
+  - 652
+  type: tree
+- position:
+  - 1150
+  - 738
+  type: tree
+- position:
+  - 1150
+  - 824
+  type: tree
+- position:
+  - 1150
+  - 910
+  type: tree
+- position:
+  - 1150
+  - 996
+  type: tree
+- position:
+  - 1200
+  - 50
+  type: tree
+- position:
+  - 1200
+  - 153
+  type: tree
+- position:
+  - 1200
+  - 256
+  type: tree
+- position:
+  - 1200
+  - 359
+  type: tree
+- position:
+  - 1200
+  - 462
+  type: tree
+- position:
+  - 1200
+  - 565
+  type: tree
+- position:
+  - 1200
+  - 668
+  type: tree
+- position:
+  - 1200
+  - 771
+  type: tree
+- position:
+  - 1200
+  - 874
+  type: tree
+- position:
+  - 1200
+  - 977
+  type: tree
+- position:
+  - 1250
+  - 50
+  type: tree
+- position:
+  - 1250
+  - 124
+  type: tree
+- position:
+  - 1250
+  - 198
+  type: tree
+- position:
+  - 1250
+  - 272
+  type: tree
+- position:
+  - 1250
+  - 346
+  type: tree
+- position:
+  - 1250
+  - 420
+  type: tree
+- position:
+  - 1250
+  - 494
+  type: tree
+- position:
+  - 1250
+  - 568
+  type: tree
+- position:
+  - 1250
+  - 642
+  type: tree
+- position:
+  - 1250
+  - 716
+  type: tree
+- position:
+  - 1250
+  - 790
+  type: tree
+- position:
+  - 1250
+  - 864
+  type: tree
+- position:
+  - 1250
+  - 938
+  type: tree
+- position:
+  - 1250
+  - 1012
+  type: tree
+- position:
+  - 1300
+  - 50
+  type: tree
+- position:
+  - 1300
+  - 144
+  type: tree
+- position:
+  - 1300
+  - 238
+  type: tree
+- position:
+  - 1300
+  - 332
+  type: tree
+- position:
+  - 1300
+  - 426
+  type: tree
+- position:
+  - 1300
+  - 520
+  type: tree
+- position:
+  - 1300
+  - 614
+  type: tree
+- position:
+  - 1300
+  - 708
+  type: tree
+- position:
+  - 1300
+  - 802
+  type: tree
+- position:
+  - 1300
+  - 896
+  type: tree
+- position:
+  - 1300
+  - 990
+  type: tree
+- position:
+  - 1350
+  - 50
+  type: tree
+- position:
+  - 1350
+  - 136
+  type: tree
+- position:
+  - 1350
+  - 222
+  type: tree
+- position:
+  - 1350
+  - 308
+  type: tree
+- position:
+  - 1350
+  - 394
+  type: tree
+- position:
+  - 1350
+  - 480
+  type: tree
+- position:
+  - 1350
+  - 566
+  type: tree
+- position:
+  - 1350
+  - 652
+  type: tree
+- position:
+  - 1350
+  - 738
+  type: tree
+- position:
+  - 1350
+  - 824
+  type: tree
+- position:
+  - 1350
+  - 910
+  type: tree
+- position:
+  - 1350
+  - 996
+  type: tree
+- position:
+  - 1400
+  - 50
+  type: tree
+- position:
+  - 1400
+  - 136
+  type: tree
+- position:
+  - 1400
+  - 222
+  type: tree
+- position:
+  - 1400
+  - 308
+  type: tree
+- position:
+  - 1400
+  - 394
+  type: tree
+- position:
+  - 1400
+  - 480
+  type: tree
+- position:
+  - 1400
+  - 566
+  type: tree
+- position:
+  - 1400
+  - 652
+  type: tree
+- position:
+  - 1400
+  - 738
+  type: tree
+- position:
+  - 1400
+  - 824
+  type: tree
+- position:
+  - 1400
+  - 910
+  type: tree
+- position:
+  - 1400
+  - 996
+  type: tree
+- position:
+  - 1450
+  - 50
+  type: tree
+- position:
+  - 1450
+  - 129
+  type: tree
+- position:
+  - 1450
+  - 208
+  type: tree
+- position:
+  - 1450
+  - 287
+  type: tree
+- position:
+  - 1450
+  - 366
+  type: tree
+- position:
+  - 1450
+  - 445
+  type: tree
+- position:
+  - 1450
+  - 524
+  type: tree
+- position:
+  - 1450
+  - 603
+  type: tree
+- position:
+  - 1450
+  - 682
+  type: tree
+- position:
+  - 1450
+  - 761
+  type: tree
+- position:
+  - 1450
+  - 840
+  type: tree
+- position:
+  - 1450
+  - 919
+  type: tree
+- position:
+  - 1450
+  - 998
+  type: tree
+- position:
+  - 1500
+  - 50
+  type: tree
+- position:
+  - 1500
+  - 153
+  type: tree
+- position:
+  - 1500
+  - 256
+  type: tree
+- position:
+  - 1500
+  - 359
+  type: tree
+- position:
+  - 1500
+  - 462
+  type: tree
+- position:
+  - 1500
+  - 565
+  type: tree
+- position:
+  - 1500
+  - 668
+  type: tree
+- position:
+  - 1500
+  - 771
+  type: tree
+- position:
+  - 1500
+  - 874
+  type: tree
+- position:
+  - 1500
+  - 977
+  type: tree
+- position:
+  - 1550
+  - 50
+  type: tree
+- position:
+  - 1550
+  - 124
+  type: tree
+- position:
+  - 1550
+  - 198
+  type: tree
+- position:
+  - 1550
+  - 272
+  type: tree
+- position:
+  - 1550
+  - 346
+  type: tree
+- position:
+  - 1550
+  - 420
+  type: tree
+- position:
+  - 1550
+  - 494
+  type: tree
+- position:
+  - 1550
+  - 568
+  type: tree
+- position:
+  - 1550
+  - 642
+  type: tree
+- position:
+  - 1550
+  - 716
+  type: tree
+- position:
+  - 1550
+  - 790
+  type: tree
+- position:
+  - 1550
+  - 864
+  type: tree
+- position:
+  - 1550
+  - 938
+  type: tree
+- position:
+  - 1550
+  - 1012
+  type: tree
+- position:
+  - 1600
+  - 50
+  type: tree
+- position:
+  - 1600
+  - 129
+  type: tree
+- position:
+  - 1600
+  - 208
+  type: tree
+- position:
+  - 1600
+  - 287
+  type: tree
+- position:
+  - 1600
+  - 366
+  type: tree
+- position:
+  - 1600
+  - 445
+  type: tree
+- position:
+  - 1600
+  - 524
+  type: tree
+- position:
+  - 1600
+  - 603
+  type: tree
+- position:
+  - 1600
+  - 682
+  type: tree
+- position:
+  - 1600
+  - 761
+  type: tree
+- position:
+  - 1600
+  - 840
+  type: tree
+- position:
+  - 1600
+  - 919
+  type: tree
+- position:
+  - 1600
+  - 998
+  type: tree
+- position:
+  - 1650
+  - 50
+  type: tree
+- position:
+  - 1650
+  - 124
+  type: tree
+- position:
+  - 1650
+  - 198
+  type: tree
+- position:
+  - 1650
+  - 272
+  type: tree
+- position:
+  - 1650
+  - 346
+  type: tree
+- position:
+  - 1650
+  - 420
+  type: tree
+- position:
+  - 1650
+  - 494
+  type: tree
+- position:
+  - 1650
+  - 568
+  type: tree
+- position:
+  - 1650
+  - 642
+  type: tree
+- position:
+  - 1650
+  - 716
+  type: tree
+- position:
+  - 1650
+  - 790
+  type: tree
+- position:
+  - 1650
+  - 864
+  type: tree
+- position:
+  - 1650
+  - 938
+  type: tree
+- position:
+  - 1650
+  - 1012
+  type: tree
+- position:
+  - 0
+  - 300
+  type: tree
+- position:
+  - 0
+  - 371
+  type: tree
+- position:
+  - 0
+  - 442
+  type: tree
+- position:
+  - 0
+  - 513
+  type: tree
+- position:
+  - 0
+  - 584
+  type: tree
+- position:
+  - 0
+  - 655
+  type: tree
+- position:
+  - 0
+  - 726
+  type: tree
+- position:
+  - 50
+  - 300
+  type: tree
+- position:
+  - 50
+  - 383
+  type: tree
+- position:
+  - 50
+  - 466
+  type: tree
+- position:
+  - 50
+  - 549
+  type: tree
+- position:
+  - 50
+  - 632
+  type: tree
+- position:
+  - 50
+  - 715
+  type: tree
+- position:
+  - 100
+  - 300
+  type: tree
+- position:
+  - 100
+  - 371
+  type: tree
+- position:
+  - 100
+  - 442
+  type: tree
+- position:
+  - 100
+  - 513
+  type: tree
+- position:
+  - 100
+  - 584
+  type: tree
+- position:
+  - 100
+  - 655
+  type: tree
+- position:
+  - 100
+  - 726
+  type: tree
+- position:
+  - 150
+  - 300
+  type: tree
+- position:
+  - 150
+  - 383
+  type: tree
+- position:
+  - 150
+  - 466
+  type: tree
+- position:
+  - 150
+  - 549
+  type: tree
+- position:
+  - 150
+  - 632
+  type: tree
+- position:
+  - 150
+  - 715
+  type: tree
+- position:
+  - 200
+  - 300
+  type: tree
+- position:
+  - 200
+  - 371
+  type: tree
+- position:
+  - 200
+  - 442
+  type: tree
+- position:
+  - 200
+  - 513
+  type: tree
+- position:
+  - 200
+  - 584
+  type: tree
+- position:
+  - 200
+  - 655
+  type: tree
+- position:
+  - 200
+  - 726
+  type: tree
+- position:
+  - 250
+  - 300
+  type: tree
+- position:
+  - 250
+  - 383
+  type: tree
+- position:
+  - 250
+  - 466
+  type: tree
+- position:
+  - 250
+  - 549
+  type: tree
+- position:
+  - 250
+  - 632
+  type: tree
+- position:
+  - 250
+  - 715
+  type: tree
+- position:
+  - 1700
+  - 300
+  type: tree
+- position:
+  - 1700
+  - 400
+  type: tree
+- position:
+  - 1700
+  - 500
+  type: tree
+- position:
+  - 1700
+  - 600
+  type: tree
+- position:
+  - 1700
+  - 700
+  type: tree
+- position:
+  - 1750
+  - 300
+  type: tree
+- position:
+  - 1750
+  - 371
+  type: tree
+- position:
+  - 1750
+  - 442
+  type: tree
+- position:
+  - 1750
+  - 513
+  type: tree
+- position:
+  - 1750
+  - 584
+  type: tree
+- position:
+  - 1750
+  - 655
+  type: tree
+- position:
+  - 1750
+  - 726
+  type: tree
+- position:
+  - 1800
+  - 300
+  type: tree
+- position:
+  - 1800
+  - 371
+  type: tree
+- position:
+  - 1800
+  - 442
+  type: tree
+- position:
+  - 1800
+  - 513
+  type: tree
+- position:
+  - 1800
+  - 584
+  type: tree
+- position:
+  - 1800
+  - 655
+  type: tree
+- position:
+  - 1800
+  - 726
+  type: tree
+- position:
+  - 1850
+  - 300
+  type: tree
+- position:
+  - 1850
+  - 383
+  type: tree
+- position:
+  - 1850
+  - 466
+  type: tree
+- position:
+  - 1850
+  - 549
+  type: tree
+- position:
+  - 1850
+  - 632
+  type: tree
+- position:
+  - 1850
+  - 715
+  type: tree
+- position:
+  - 1900
+  - 300
+  type: tree
+- position:
+  - 1900
+  - 383
+  type: tree
+- position:
+  - 1900
+  - 466
+  type: tree
+- position:
+  - 1900
+  - 549
+  type: tree
+- position:
+  - 1900
+  - 632
+  type: tree
+- position:
+  - 1900
+  - 715
+  type: tree
+- position:
+  - 218
+  - 81
+  type: box
+- position:
+  - 199
+  - 66
+  type: box
+- position:
+  - 185
+  - 133
+  type: box
+- position:
+  - 105
+  - 114
+  type: box
+- position:
+  - 216
+  - 180
+  type: box
+- position:
+  - 172
+  - 151
+  type: box
+- position:
+  - 135
+  - 320
+  type: box
+- position:
+  - 164
+  - 152
+  type: box
+- position:
+  - 197
+  - 122
+  type: box
+- position:
+  - 226
+  - 144
+  type: box
+- position:
+  - 107
+  - 133
+  type: box
+- position:
+  - 112
+  - 164
+  type: box
+- position:
+  - 145
+  - 109
+  type: box
+- position:
+  - 215
+  - 180
+  type: box
+- position:
+  - 78
+  - 95
+  type: box
+- position:
+  - 185
+  - 118
+  type: box
+- position:
+  - 106
+  - 88
+  type: box
+- position:
+  - 71
+  - 108
+  type: box
+- position:
+  - 75
+  - 91
+  type: box
+- position:
+  - 133
+  - 188
+  type: box
+- position:
+  - 234
+  - 121
+  type: box
+- position:
+  - 106
+  - 112
+  type: box
+- position:
+  - 146
+  - 100
+  type: box
+- position:
+  - 214
+  - 60
+  type: box
+- position:
+  - 96
+  - 104
+  type: box
+- position:
+  - 92
+  - 166
+  type: box
+- position:
+  - 184
+  - 239
+  type: box
+- position:
+  - 171
+  - 161
+  type: box
+- position:
+  - 126
+  - 24
+  type: box
+- position:
+  - 191
+  - 218
+  type: box
+- position:
+  - 112
+  - 83
+  type: box
+- position:
+  - 223
+  - 222
+  type: box
+- position:
+  - 170
+  - 196
+  type: box
+- position:
+  - 154
+  - 136
+  type: box
+- position:
+  - 181
+  - 148
+  type: box
+- position:
+  - 161
+  - 126
+  type: box
+- position:
+  - 186
+  - 124
+  type: box
+- position:
+  - 112
+  - 40
+  type: box
+- position:
+  - 174
+  - 118
+  type: box
+- position:
+  - 189
+  - 43
+  type: box
+- position:
+  - 115
+  - 128
+  type: box
+- position:
+  - 115
+  - 197
+  type: box
+- position:
+  - 218
+  - 77
+  type: box
+- position:
+  - 119
+  - 157
+  type: box
+- position:
+  - 56
+  - 206
+  type: box
+- position:
+  - 58
+  - 166
+  type: box
+- position:
+  - 194
+  - 132
+  type: box
+- position:
+  - 154
+  - 188
+  type: box
+- position:
+  - 197
+  - 155
+  type: box
+- position:
+  - 145
+  - 164
+  type: box
+- position:
+  - 1899
+  - 120
+  type: box
+- position:
+  - 1907
+  - 189
+  type: box
+- position:
+  - 2006
+  - 127
+  type: box
+- position:
+  - 1854
+  - 255
+  type: box
+- position:
+  - 1919
+  - 214
+  type: box
+- position:
+  - 1818
+  - 223
+  type: box
+- position:
+  - 1804
+  - 98
+  type: box
+- position:
+  - 1916
+  - 101
+  type: box
+- position:
+  - 1975
+  - 204
+  type: box
+- position:
+  - 1910
+  - 140
+  type: box
+- position:
+  - 1899
+  - 194
+  type: box
+- position:
+  - 1807
+  - 145
+  type: box
+- position:
+  - 1870
+  - 154
+  type: box
+- position:
+  - 1763
+  - 95
+  type: box
+- position:
+  - 1817
+  - -11
+  type: box
+- position:
+  - 1841
+  - 203
+  type: box
+- position:
+  - 1907
+  - 63
+  type: box
+- position:
+  - 1920
+  - 248
+  type: box
+- position:
+  - 1748
+  - 199
+  type: box
+- position:
+  - 1865
+  - 178
+  type: box
+- position:
+  - 1835
+  - 222
+  type: box
+- position:
+  - 1859
+  - 163
+  type: box
+- position:
+  - 1802
+  - 157
+  type: box
+- position:
+  - 1778
+  - 184
+  type: box
+- position:
+  - 1868
+  - 141
+  type: box
+- position:
+  - 1870
+  - 173
+  type: box
+- position:
+  - 1774
+  - 167
+  type: box
+- position:
+  - 1857
+  - 183
+  type: box
+- position:
+  - 1774
+  - 108
+  type: box
+- position:
+  - 1898
+  - 105
+  type: box
+- position:
+  - 1866
+  - 69
+  type: box
+- position:
+  - 1910
+  - 169
+  type: box
+- position:
+  - 1859
+  - 185
+  type: box
+- position:
+  - 1887
+  - 232
+  type: box
+- position:
+  - 1905
+  - 114
+  type: box
+- position:
+  - 1773
+  - 161
+  type: box
+- position:
+  - 1900
+  - 163
+  type: box
+- position:
+  - 1907
+  - 186
+  type: box
+- position:
+  - 1928
+  - 82
+  type: box
+- position:
+  - 1925
+  - 208
+  type: box
+- position:
+  - 1866
+  - 165
+  type: box
+- position:
+  - 1872
+  - 124
+  type: box
+- position:
+  - 1879
+  - 214
+  type: box
+- position:
+  - 1789
+  - 77
+  type: box
+- position:
+  - 1884
+  - 128
+  type: box
+- position:
+  - 1824
+  - -11
+  type: box
+- position:
+  - 1785
+  - 158
+  type: box
+- position:
+  - 1784
+  - 181
+  type: box
+- position:
+  - 1861
+  - 109
+  type: box
+- position:
+  - 1829
+  - 213
+  type: box
+- position:
+  - 1817
+  - 858
+  type: box
+- position:
+  - 1728
+  - 985
+  type: box
+- position:
+  - 1785
+  - 886
+  type: box
+- position:
+  - 1879
+  - 1000
+  type: box
+- position:
+  - 1879
+  - 987
+  type: box
+- position:
+  - 1808
+  - 920
+  type: box
+- position:
+  - 1918
+  - 904
+  type: box
+- position:
+  - 1857
+  - 1025
+  type: box
+- position:
+  - 1824
+  - 989
+  type: box
+- position:
+  - 1752
+  - 893
+  type: box
+- position:
+  - 1833
+  - 1007
+  type: box
+- position:
+  - 1840
+  - 840
+  type: box
+- position:
+  - 1798
+  - 1009
+  type: box
+- position:
+  - 1769
+  - 1045
+  type: box
+- position:
+  - 1810
+  - 949
+  type: box
+- position:
+  - 1848
+  - 902
+  type: box
+- position:
+  - 1867
+  - 849
+  type: box
+- position:
+  - 1805
+  - 966
+  type: box
+- position:
+  - 1841
+  - 963
+  type: box
+- position:
+  - 1847
+  - 950
+  type: box
+- position:
+  - 1793
+  - 929
+  type: box
+- position:
+  - 1836
+  - 1024
+  type: box
+- position:
+  - 1912
+  - 859
+  type: box
+- position:
+  - 1859
+  - 969
+  type: box
+- position:
+  - 1939
+  - 1040
+  type: box
+- position:
+  - 1911
+  - 976
+  type: box
+- position:
+  - 1871
+  - 932
+  type: box
+- position:
+  - 1841
+  - 991
+  type: box
+- position:
+  - 1834
+  - 883
+  type: box
+- position:
+  - 1768
+  - 966
+  type: box
+- position:
+  - 1811
+  - 938
+  type: box
+- position:
+  - 1912
+  - 920
+  type: box
+- position:
+  - 1730
+  - 984
+  type: box
+- position:
+  - 1867
+  - 908
+  type: box
+- position:
+  - 1831
+  - 1020
+  type: box
+- position:
+  - 1850
+  - 929
+  type: box
+- position:
+  - 1912
+  - 1001
+  type: box
+- position:
+  - 1894
+  - 946
+  type: box
+- position:
+  - 1765
+  - 949
+  type: box
+- position:
+  - 1881
+  - 907
+  type: box
+- position:
+  - 1920
+  - 960
+  type: box
+- position:
+  - 1911
+  - 934
+  type: box
+- position:
+  - 1830
+  - 934
+  type: box
+- position:
+  - 1900
+  - 915
+  type: box
+- position:
+  - 1856
+  - 967
+  type: box
+- position:
+  - 1888
+  - 921
+  type: box
+- position:
+  - 1835
+  - 1005
+  type: box
+- position:
+  - 1830
+  - 852
+  type: box
+- position:
+  - 1780
+  - 933
+  type: box
+- position:
+  - 1844
+  - 1028
+  type: box
+- position:
+  - 126
+  - 927
+  type: box
+- position:
+  - 61
+  - 1002
+  type: box
+- position:
+  - 91
+  - 947
+  type: box
+- position:
+  - 215
+  - 955
+  type: box
+- position:
+  - 242
+  - 901
+  type: box
+- position:
+  - 131
+  - 926
+  type: box
+- position:
+  - 152
+  - 859
+  type: box
+- position:
+  - 202
+  - 997
+  type: box
+- position:
+  - 124
+  - 1002
+  type: box
+- position:
+  - 102
+  - 991
+  type: box
+- position:
+  - 199
+  - 941
+  type: box
+- position:
+  - 144
+  - 1008
+  type: box
+- position:
+  - 166
+  - 972
+  type: box
+- position:
+  - 143
+  - 983
+  type: box
+- position:
+  - 209
+  - 1005
+  type: box
+- position:
+  - 189
+  - 884
+  type: box
+- position:
+  - 245
+  - 998
+  type: box
+- position:
+  - 185
+  - 863
+  type: box
+- position:
+  - 141
+  - 875
+  type: box
+- position:
+  - 89
+  - 994
+  type: box
+- position:
+  - 261
+  - 998
+  type: box
+- position:
+  - 209
+  - 895
+  type: box
+- position:
+  - 136
+  - 918
+  type: box
+- position:
+  - 122
+  - 922
+  type: box
+- position:
+  - 200
+  - 912
+  type: box
+- position:
+  - 151
+  - 1049
+  type: box
+- position:
+  - 138
+  - 820
+  type: box
+- position:
+  - 203
+  - 951
+  type: box
+- position:
+  - 174
+  - 1016
+  type: box
+- position:
+  - 165
+  - 895
+  type: box
+- position:
+  - 211
+  - 905
+  type: box
+- position:
+  - 77
+  - 877
+  type: box
+- position:
+  - 199
+  - 953
+  type: box
+- position:
+  - 91
+  - 967
+  type: box
+- position:
+  - -1
+  - 916
+  type: box
+- position:
+  - 138
+  - 965
+  type: box
+- position:
+  - 127
+  - 973
+  type: box
+- position:
+  - 121
+  - 1013
+  type: box
+- position:
+  - 208
+  - 994
+  type: box
+- position:
+  - 130
+  - 913
+  type: box
+- position:
+  - 96
+  - 953
+  type: box
+- position:
+  - 100
+  - 912
+  type: box
+- position:
+  - 152
+  - 863
+  type: box
+- position:
+  - 25
+  - 987
+  type: box
+- position:
+  - 149
+  - 953
+  type: box
+- position:
+  - 162
+  - 989
+  type: box
+- position:
+  - 103
+  - 857
+  type: box
+- position:
+  - 75
+  - 915
+  type: box
+- position:
+  - 156
+  - 989
+  type: box
+- position:
+  - 155
+  - 956
+  type: box
+start:
+- - 150
+  - 150
+- - 1850
+  - 150
+- - 1850
+  - 950
+- - 150
+  - 950

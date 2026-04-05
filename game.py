@@ -492,12 +492,13 @@ def read_map(map, nc_func, graphics):
     map_data = load_map(map)
     item_images = load_item_images(nc_func, graphics)
 
-    for object in map_data['objects']:
-        if 'orientation' in object:
-            orientation = object['orientation']
-        else:
-            orientation = 0
-        items.append(Item(object['position'][0], object['position'][1], orientation, object['type'], item_images[object['type']], None))
+    if 'objects' in map_data:
+        for object in map_data['objects']:
+            if 'orientation' in object:
+                orientation = object['orientation']
+            else:
+                orientation = 0
+            items.append(Item(object['position'][0], object['position'][1], orientation, object['type'], item_images[object['type']], None))
     
     return items, map_data['start'], item_images, map_data['bullets'], map_data['bricks']
 
