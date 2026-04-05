@@ -1,0 +1,2412 @@
+bricks: 0
+bullets: 20
+objects:
+- orientation: 180.0
+  position:
+  - 500.0
+  - 300.0
+  type: wall
+- orientation: 176.4
+  position:
+  - 499.6053456856543
+  - 312.55810390586265
+  type: wall
+- orientation: 172.8
+  position:
+  - 498.42294026289557
+  - 325.06664671286086
+  type: wall
+- orientation: 169.2
+  position:
+  - 496.45745014573777
+  - 337.47626291714494
+  type: wall
+- orientation: 165.6
+  position:
+  - 493.71663222572624
+  - 349.737977432971
+  type: wall
+- orientation: 162.0
+  position:
+  - 490.21130325903073
+  - 361.80339887498945
+  type: wall
+- orientation: 158.4
+  position:
+  - 485.9552971776503
+  - 373.6249105369356
+  type: wall
+- orientation: 154.8
+  position:
+  - 480.9654104932039
+  - 385.1558583130145
+  type: wall
+- orientation: 151.2
+  position:
+  - 475.26133600877273
+  - 396.35073482034306
+  type: wall
+- orientation: 147.60000000000002
+  position:
+  - 468.865585100403
+  - 407.1653589957993
+  type: wall
+- orientation: 144.0
+  position:
+  - 461.8033988749895
+  - 417.5570504584946
+  type: wall
+- orientation: 140.4
+  position:
+  - 454.1026485551579
+  - 427.4847979497379
+  type: wall
+- orientation: 136.8
+  position:
+  - 445.79372548428233
+  - 436.9094211857377
+  type: wall
+- orientation: 133.20000000000002
+  position:
+  - 436.90942118573776
+  - 445.7937254842823
+  type: wall
+- orientation: 129.60000000000002
+  position:
+  - 427.484797949738
+  - 454.10264855515777
+  type: wall
+- orientation: 126.00000000000001
+  position:
+  - 417.5570504584947
+  - 461.80339887498945
+  type: wall
+- orientation: 122.4
+  position:
+  - 407.16535899579935
+  - 468.865585100403
+  type: wall
+- orientation: 118.80000000000001
+  position:
+  - 396.35073482034306
+  - 475.26133600877273
+  type: wall
+- orientation: 115.2
+  position:
+  - 385.1558583130145
+  - 480.9654104932039
+  type: wall
+- orientation: 111.6
+  position:
+  - 373.62491053693554
+  - 485.9552971776503
+  type: wall
+- orientation: 107.99999999999999
+  position:
+  - 361.80339887498945
+  - 490.21130325903073
+  type: wall
+- orientation: 104.39999999999998
+  position:
+  - 349.7379774329709
+  - 493.71663222572624
+  type: wall
+- orientation: 100.79999999999998
+  position:
+  - 337.4762629171449
+  - 496.45745014573777
+  type: wall
+- orientation: 97.19999999999997
+  position:
+  - 325.06664671286075
+  - 498.42294026289557
+  type: wall
+- orientation: 93.59999999999997
+  position:
+  - 312.5581039058626
+  - 499.6053456856543
+  type: wall
+- orientation: 89.99999999999996
+  position:
+  - 299.9999999999999
+  - 500.0
+  type: wall
+- orientation: 86.39999999999996
+  position:
+  - 287.4418960941372
+  - 499.6053456856543
+  type: wall
+- orientation: 82.79999999999995
+  position:
+  - 274.93335328713897
+  - 498.42294026289557
+  type: wall
+- orientation: 79.19999999999995
+  position:
+  - 262.5237370828549
+  - 496.4574501457377
+  type: wall
+- orientation: 75.59999999999995
+  position:
+  - 250.26202256702885
+  - 493.71663222572613
+  type: wall
+- orientation: 71.99999999999994
+  position:
+  - 238.19660112501032
+  - 490.2113032590306
+  type: wall
+- orientation: 68.39999999999993
+  position:
+  - 226.3750894630642
+  - 485.9552971776502
+  type: wall
+- orientation: 64.79999999999994
+  position:
+  - 214.8441416869853
+  - 480.9654104932038
+  type: wall
+- orientation: 61.19999999999993
+  position:
+  - 203.64926517965677
+  - 475.2613360087726
+  type: wall
+- orientation: 57.59999999999994
+  position:
+  - 192.83464100420048
+  - 468.8655851004029
+  type: wall
+- orientation: 53.99999999999993
+  position:
+  - 182.4429495415052
+  - 461.80339887498934
+  type: wall
+- orientation: 50.39999999999992
+  position:
+  - 172.51520205026185
+  - 454.10264855515766
+  type: wall
+- orientation: 46.799999999999926
+  position:
+  - 163.09057881426205
+  - 445.7937254842821
+  type: wall
+- orientation: 43.1999999999999
+  position:
+  - 154.2062745157175
+  - 436.90942118573753
+  type: wall
+- orientation: 39.59999999999991
+  position:
+  - 145.89735144484195
+  - 427.4847979497377
+  type: wall
+- orientation: 35.999999999999886
+  position:
+  - 138.19660112501032
+  - 417.55705045849436
+  type: wall
+- orientation: 32.39999999999989
+  position:
+  - 131.13441489959678
+  - 407.165358995799
+  type: wall
+- orientation: 28.799999999999898
+  position:
+  - 124.7386639912271
+  - 396.3507348203427
+  type: wall
+- orientation: 25.199999999999875
+  position:
+  - 119.03458950679592
+  - 385.15585831301416
+  type: wall
+- orientation: 21.59999999999988
+  position:
+  - 114.04470282234956
+  - 373.6249105369352
+  type: wall
+- orientation: 17.999999999999886
+  position:
+  - 109.78869674096916
+  - 361.80339887498906
+  type: wall
+- orientation: 14.399999999999864
+  position:
+  - 106.28336777427367
+  - 349.7379774329705
+  type: wall
+- orientation: 10.79999999999987
+  position:
+  - 103.54254985426218
+  - 337.4762629171445
+  type: wall
+- orientation: 7.199999999999875
+  position:
+  - 101.57705973710438
+  - 325.0666467128604
+  type: wall
+- orientation: 3.599999999999852
+  position:
+  - 100.39465431434567
+  - 312.5581039058622
+  type: wall
+- orientation: 359.99999999999983
+  position:
+  - 100.0
+  - 299.9999999999995
+  type: wall
+- orientation: 356.39999999999986
+  position:
+  - 100.3946543143457
+  - 287.4418960941368
+  type: wall
+- orientation: 352.79999999999984
+  position:
+  - 101.57705973710449
+  - 274.93335328713863
+  type: wall
+- orientation: 349.1999999999998
+  position:
+  - 103.54254985426238
+  - 262.5237370828545
+  type: wall
+- orientation: 345.5999999999998
+  position:
+  - 106.28336777427393
+  - 250.26202256702848
+  type: wall
+- orientation: 341.99999999999983
+  position:
+  - 109.78869674096947
+  - 238.19660112500995
+  type: wall
+- orientation: 338.3999999999998
+  position:
+  - 114.04470282234996
+  - 226.37508946306383
+  type: wall
+- orientation: 334.79999999999984
+  position:
+  - 119.03458950679638
+  - 214.8441416869849
+  type: wall
+- orientation: 331.1999999999998
+  position:
+  - 124.73866399122758
+  - 203.64926517965637
+  type: wall
+- orientation: 327.5999999999998
+  position:
+  - 131.13441489959735
+  - 192.8346410042001
+  type: wall
+- orientation: 323.9999999999998
+  position:
+  - 138.19660112501091
+  - 182.44294954150482
+  type: wall
+- orientation: 320.3999999999998
+  position:
+  - 145.8973514448426
+  - 172.5152020502615
+  type: wall
+- orientation: 316.79999999999984
+  position:
+  - 154.20627451571818
+  - 163.09057881426173
+  type: wall
+- orientation: 313.1999999999998
+  position:
+  - 163.0905788142628
+  - 154.2062745157172
+  type: wall
+- orientation: 309.5999999999998
+  position:
+  - 172.51520205026264
+  - 145.8973514448417
+  type: wall
+- orientation: 305.9999999999998
+  position:
+  - 182.44294954150593
+  - 138.19660112501012
+  type: wall
+- orientation: 302.39999999999986
+  position:
+  - 192.83464100420116
+  - 131.13441489959666
+  type: wall
+- orientation: 298.79999999999984
+  position:
+  - 203.64926517965742
+  - 124.73866399122701
+  type: wall
+- orientation: 295.1999999999999
+  position:
+  - 214.8441416869859
+  - 119.0345895067959
+  type: wall
+- orientation: 291.59999999999985
+  position:
+  - 226.37508946306477
+  - 114.04470282234956
+  type: wall
+- orientation: 287.9999999999999
+  position:
+  - 238.19660112501083
+  - 109.78869674096919
+  type: wall
+- orientation: 284.3999999999999
+  position:
+  - 250.26202256702928
+  - 106.28336777427373
+  type: wall
+- orientation: 280.79999999999995
+  position:
+  - 262.52373708285523
+  - 103.54254985426223
+  type: wall
+- orientation: 277.2
+  position:
+  - 274.93335328713925
+  - 101.57705973710443
+  type: wall
+- orientation: 273.59999999999997
+  position:
+  - 287.44189609413735
+  - 100.3946543143457
+  type: wall
+- orientation: 270.0
+  position:
+  - 299.99999999999994
+  - 100.0
+  type: wall
+- orientation: 266.40000000000003
+  position:
+  - 312.5581039058626
+  - 100.3946543143457
+  type: wall
+- orientation: 262.8
+  position:
+  - 325.0666467128607
+  - 101.5770597371044
+  type: wall
+- orientation: 259.20000000000005
+  position:
+  - 337.4762629171447
+  - 103.5425498542622
+  type: wall
+- orientation: 255.60000000000008
+  position:
+  - 349.73797743297064
+  - 106.2833677742737
+  type: wall
+- orientation: 252.0000000000001
+  position:
+  - 361.8033988749891
+  - 109.78869674096916
+  type: wall
+- orientation: 248.40000000000015
+  position:
+  - 373.62491053693515
+  - 114.04470282234956
+  type: wall
+- orientation: 244.80000000000013
+  position:
+  - 385.15585831301405
+  - 119.03458950679587
+  type: wall
+- orientation: 241.20000000000016
+  position:
+  - 396.3507348203425
+  - 124.73866399122699
+  type: wall
+- orientation: 237.6000000000002
+  position:
+  - 407.1653589957988
+  - 131.13441489959663
+  type: wall
+- orientation: 234.00000000000023
+  position:
+  - 417.557050458494
+  - 138.19660112501006
+  type: wall
+- orientation: 230.4000000000002
+  position:
+  - 427.4847979497373
+  - 145.89735144484163
+  type: wall
+- orientation: 226.80000000000024
+  position:
+  - 436.9094211857371
+  - 154.2062745157171
+  type: wall
+- orientation: 223.20000000000027
+  position:
+  - 445.79372548428165
+  - 163.09057881426156
+  type: wall
+- orientation: 219.60000000000025
+  position:
+  - 454.1026485551572
+  - 172.51520205026125
+  type: wall
+- orientation: 216.00000000000028
+  position:
+  - 461.80339887498883
+  - 182.4429495415045
+  type: wall
+- orientation: 212.40000000000032
+  position:
+  - 468.8655851004024
+  - 192.83464100419968
+  type: wall
+- orientation: 208.80000000000035
+  position:
+  - 475.2613360087721
+  - 203.64926517965586
+  type: wall
+- orientation: 205.2000000000004
+  position:
+  - 480.9654104932033
+  - 214.84414168698427
+  type: wall
+- orientation: 201.60000000000036
+  position:
+  - 485.95529717764975
+  - 226.3750894630631
+  type: wall
+- orientation: 198.0000000000004
+  position:
+  - 490.2113032590303
+  - 238.19660112500912
+  type: wall
+- orientation: 194.40000000000043
+  position:
+  - 493.71663222572585
+  - 250.26202256702754
+  type: wall
+- orientation: 190.80000000000047
+  position:
+  - 496.4574501457374
+  - 262.5237370828535
+  type: wall
+- orientation: 187.2000000000005
+  position:
+  - 498.4229402628954
+  - 274.9333532871375
+  type: wall
+- orientation: 183.60000000000048
+  position:
+  - 499.60534568565424
+  - 287.4418960941356
+  type: wall
+- orientation: 180.0
+  position:
+  - 1900.0
+  - 300.0
+  type: wall
+- orientation: 176.4
+  position:
+  - 1899.6053456856544
+  - 312.55810390586265
+  type: wall
+- orientation: 172.8
+  position:
+  - 1898.4229402628955
+  - 325.06664671286086
+  type: wall
+- orientation: 169.2
+  position:
+  - 1896.4574501457378
+  - 337.47626291714494
+  type: wall
+- orientation: 165.6
+  position:
+  - 1893.7166322257262
+  - 349.737977432971
+  type: wall
+- orientation: 162.0
+  position:
+  - 1890.2113032590307
+  - 361.80339887498945
+  type: wall
+- orientation: 158.4
+  position:
+  - 1885.9552971776502
+  - 373.6249105369356
+  type: wall
+- orientation: 154.8
+  position:
+  - 1880.965410493204
+  - 385.1558583130145
+  type: wall
+- orientation: 151.2
+  position:
+  - 1875.2613360087728
+  - 396.35073482034306
+  type: wall
+- orientation: 147.60000000000002
+  position:
+  - 1868.865585100403
+  - 407.1653589957993
+  type: wall
+- orientation: 144.0
+  position:
+  - 1861.8033988749894
+  - 417.5570504584946
+  type: wall
+- orientation: 140.4
+  position:
+  - 1854.1026485551579
+  - 427.4847979497379
+  type: wall
+- orientation: 136.8
+  position:
+  - 1845.7937254842823
+  - 436.9094211857377
+  type: wall
+- orientation: 133.20000000000002
+  position:
+  - 1836.9094211857378
+  - 445.7937254842823
+  type: wall
+- orientation: 129.60000000000002
+  position:
+  - 1827.4847979497379
+  - 454.10264855515777
+  type: wall
+- orientation: 126.00000000000001
+  position:
+  - 1817.5570504584946
+  - 461.80339887498945
+  type: wall
+- orientation: 122.4
+  position:
+  - 1807.1653589957994
+  - 468.865585100403
+  type: wall
+- orientation: 118.80000000000001
+  position:
+  - 1796.350734820343
+  - 475.26133600877273
+  type: wall
+- orientation: 115.2
+  position:
+  - 1785.1558583130145
+  - 480.9654104932039
+  type: wall
+- orientation: 111.6
+  position:
+  - 1773.6249105369357
+  - 485.9552971776503
+  type: wall
+- orientation: 107.99999999999999
+  position:
+  - 1761.8033988749894
+  - 490.21130325903073
+  type: wall
+- orientation: 104.39999999999998
+  position:
+  - 1749.7379774329709
+  - 493.71663222572624
+  type: wall
+- orientation: 100.79999999999998
+  position:
+  - 1737.4762629171448
+  - 496.45745014573777
+  type: wall
+- orientation: 97.19999999999997
+  position:
+  - 1725.0666467128608
+  - 498.42294026289557
+  type: wall
+- orientation: 93.59999999999997
+  position:
+  - 1712.5581039058625
+  - 499.6053456856543
+  type: wall
+- orientation: 89.99999999999996
+  position:
+  - 1699.9999999999998
+  - 500.0
+  type: wall
+- orientation: 86.39999999999996
+  position:
+  - 1687.4418960941373
+  - 499.6053456856543
+  type: wall
+- orientation: 82.79999999999995
+  position:
+  - 1674.933353287139
+  - 498.42294026289557
+  type: wall
+- orientation: 79.19999999999995
+  position:
+  - 1662.523737082855
+  - 496.4574501457377
+  type: wall
+- orientation: 75.59999999999995
+  position:
+  - 1650.262022567029
+  - 493.71663222572613
+  type: wall
+- orientation: 71.99999999999994
+  position:
+  - 1638.1966011250104
+  - 490.2113032590306
+  type: wall
+- orientation: 68.39999999999993
+  position:
+  - 1626.3750894630641
+  - 485.9552971776502
+  type: wall
+- orientation: 64.79999999999994
+  position:
+  - 1614.8441416869853
+  - 480.9654104932038
+  type: wall
+- orientation: 61.19999999999993
+  position:
+  - 1603.6492651796568
+  - 475.2613360087726
+  type: wall
+- orientation: 57.59999999999994
+  position:
+  - 1592.8346410042004
+  - 468.8655851004029
+  type: wall
+- orientation: 53.99999999999993
+  position:
+  - 1582.4429495415052
+  - 461.80339887498934
+  type: wall
+- orientation: 50.39999999999992
+  position:
+  - 1572.515202050262
+  - 454.10264855515766
+  type: wall
+- orientation: 46.799999999999926
+  position:
+  - 1563.090578814262
+  - 445.7937254842821
+  type: wall
+- orientation: 43.1999999999999
+  position:
+  - 1554.2062745157175
+  - 436.90942118573753
+  type: wall
+- orientation: 39.59999999999991
+  position:
+  - 1545.897351444842
+  - 427.4847979497377
+  type: wall
+- orientation: 35.999999999999886
+  position:
+  - 1538.1966011250104
+  - 417.55705045849436
+  type: wall
+- orientation: 32.39999999999989
+  position:
+  - 1531.1344148995968
+  - 407.165358995799
+  type: wall
+- orientation: 28.799999999999898
+  position:
+  - 1524.738663991227
+  - 396.3507348203427
+  type: wall
+- orientation: 25.199999999999875
+  position:
+  - 1519.034589506796
+  - 385.15585831301416
+  type: wall
+- orientation: 21.59999999999988
+  position:
+  - 1514.0447028223496
+  - 373.6249105369352
+  type: wall
+- orientation: 17.999999999999886
+  position:
+  - 1509.788696740969
+  - 361.80339887498906
+  type: wall
+- orientation: 14.399999999999864
+  position:
+  - 1506.2833677742738
+  - 349.7379774329705
+  type: wall
+- orientation: 10.79999999999987
+  position:
+  - 1503.5425498542622
+  - 337.4762629171445
+  type: wall
+- orientation: 7.199999999999875
+  position:
+  - 1501.5770597371043
+  - 325.0666467128604
+  type: wall
+- orientation: 3.599999999999852
+  position:
+  - 1500.3946543143456
+  - 312.5581039058622
+  type: wall
+- orientation: 359.99999999999983
+  position:
+  - 1500.0
+  - 299.9999999999995
+  type: wall
+- orientation: 356.39999999999986
+  position:
+  - 1500.3946543143456
+  - 287.4418960941368
+  type: wall
+- orientation: 352.79999999999984
+  position:
+  - 1501.5770597371045
+  - 274.93335328713863
+  type: wall
+- orientation: 349.1999999999998
+  position:
+  - 1503.5425498542625
+  - 262.5237370828545
+  type: wall
+- orientation: 345.5999999999998
+  position:
+  - 1506.283367774274
+  - 250.26202256702848
+  type: wall
+- orientation: 341.99999999999983
+  position:
+  - 1509.7886967409695
+  - 238.19660112500995
+  type: wall
+- orientation: 338.3999999999998
+  position:
+  - 1514.04470282235
+  - 226.37508946306383
+  type: wall
+- orientation: 334.79999999999984
+  position:
+  - 1519.0345895067965
+  - 214.8441416869849
+  type: wall
+- orientation: 331.1999999999998
+  position:
+  - 1524.7386639912277
+  - 203.64926517965637
+  type: wall
+- orientation: 327.5999999999998
+  position:
+  - 1531.1344148995972
+  - 192.8346410042001
+  type: wall
+- orientation: 323.9999999999998
+  position:
+  - 1538.1966011250108
+  - 182.44294954150482
+  type: wall
+- orientation: 320.3999999999998
+  position:
+  - 1545.8973514448426
+  - 172.5152020502615
+  type: wall
+- orientation: 316.79999999999984
+  position:
+  - 1554.2062745157182
+  - 163.09057881426173
+  type: wall
+- orientation: 313.1999999999998
+  position:
+  - 1563.0905788142627
+  - 154.2062745157172
+  type: wall
+- orientation: 309.5999999999998
+  position:
+  - 1572.5152020502626
+  - 145.8973514448417
+  type: wall
+- orientation: 305.9999999999998
+  position:
+  - 1582.4429495415059
+  - 138.19660112501012
+  type: wall
+- orientation: 302.39999999999986
+  position:
+  - 1592.834641004201
+  - 131.13441489959666
+  type: wall
+- orientation: 298.79999999999984
+  position:
+  - 1603.6492651796575
+  - 124.73866399122701
+  type: wall
+- orientation: 295.1999999999999
+  position:
+  - 1614.844141686986
+  - 119.0345895067959
+  type: wall
+- orientation: 291.59999999999985
+  position:
+  - 1626.3750894630648
+  - 114.04470282234956
+  type: wall
+- orientation: 287.9999999999999
+  position:
+  - 1638.1966011250108
+  - 109.78869674096919
+  type: wall
+- orientation: 284.3999999999999
+  position:
+  - 1650.2620225670294
+  - 106.28336777427373
+  type: wall
+- orientation: 280.79999999999995
+  position:
+  - 1662.5237370828552
+  - 103.54254985426223
+  type: wall
+- orientation: 277.2
+  position:
+  - 1674.9333532871392
+  - 101.57705973710443
+  type: wall
+- orientation: 273.59999999999997
+  position:
+  - 1687.4418960941373
+  - 100.3946543143457
+  type: wall
+- orientation: 270.0
+  position:
+  - 1700.0
+  - 100.0
+  type: wall
+- orientation: 266.40000000000003
+  position:
+  - 1712.5581039058625
+  - 100.3946543143457
+  type: wall
+- orientation: 262.8
+  position:
+  - 1725.0666467128606
+  - 101.5770597371044
+  type: wall
+- orientation: 259.20000000000005
+  position:
+  - 1737.4762629171446
+  - 103.5425498542622
+  type: wall
+- orientation: 255.60000000000008
+  position:
+  - 1749.7379774329706
+  - 106.2833677742737
+  type: wall
+- orientation: 252.0000000000001
+  position:
+  - 1761.8033988749892
+  - 109.78869674096916
+  type: wall
+- orientation: 248.40000000000015
+  position:
+  - 1773.6249105369352
+  - 114.04470282234956
+  type: wall
+- orientation: 244.80000000000013
+  position:
+  - 1785.155858313014
+  - 119.03458950679587
+  type: wall
+- orientation: 241.20000000000016
+  position:
+  - 1796.3507348203425
+  - 124.73866399122699
+  type: wall
+- orientation: 237.6000000000002
+  position:
+  - 1807.1653589957987
+  - 131.13441489959663
+  type: wall
+- orientation: 234.00000000000023
+  position:
+  - 1817.5570504584941
+  - 138.19660112501006
+  type: wall
+- orientation: 230.4000000000002
+  position:
+  - 1827.4847979497372
+  - 145.89735144484163
+  type: wall
+- orientation: 226.80000000000024
+  position:
+  - 1836.909421185737
+  - 154.2062745157171
+  type: wall
+- orientation: 223.20000000000027
+  position:
+  - 1845.7937254842816
+  - 163.09057881426156
+  type: wall
+- orientation: 219.60000000000025
+  position:
+  - 1854.1026485551572
+  - 172.51520205026125
+  type: wall
+- orientation: 216.00000000000028
+  position:
+  - 1861.803398874989
+  - 182.4429495415045
+  type: wall
+- orientation: 212.40000000000032
+  position:
+  - 1868.8655851004023
+  - 192.83464100419968
+  type: wall
+- orientation: 208.80000000000035
+  position:
+  - 1875.261336008772
+  - 203.64926517965586
+  type: wall
+- orientation: 205.2000000000004
+  position:
+  - 1880.9654104932033
+  - 214.84414168698427
+  type: wall
+- orientation: 201.60000000000036
+  position:
+  - 1885.9552971776498
+  - 226.3750894630631
+  type: wall
+- orientation: 198.0000000000004
+  position:
+  - 1890.2113032590303
+  - 238.19660112500912
+  type: wall
+- orientation: 194.40000000000043
+  position:
+  - 1893.7166322257258
+  - 250.26202256702754
+  type: wall
+- orientation: 190.80000000000047
+  position:
+  - 1896.4574501457373
+  - 262.5237370828535
+  type: wall
+- orientation: 187.2000000000005
+  position:
+  - 1898.4229402628953
+  - 274.9333532871375
+  type: wall
+- orientation: 183.60000000000048
+  position:
+  - 1899.6053456856541
+  - 287.4418960941356
+  type: wall
+- orientation: 180.0
+  position:
+  - 1900.0
+  - 800.0
+  type: wall
+- orientation: 176.4
+  position:
+  - 1899.6053456856544
+  - 812.5581039058627
+  type: wall
+- orientation: 172.8
+  position:
+  - 1898.4229402628955
+  - 825.0666467128608
+  type: wall
+- orientation: 169.2
+  position:
+  - 1896.4574501457378
+  - 837.4762629171449
+  type: wall
+- orientation: 165.6
+  position:
+  - 1893.7166322257262
+  - 849.737977432971
+  type: wall
+- orientation: 162.0
+  position:
+  - 1890.2113032590307
+  - 861.8033988749895
+  type: wall
+- orientation: 158.4
+  position:
+  - 1885.9552971776502
+  - 873.6249105369355
+  type: wall
+- orientation: 154.8
+  position:
+  - 1880.965410493204
+  - 885.1558583130145
+  type: wall
+- orientation: 151.2
+  position:
+  - 1875.2613360087728
+  - 896.3507348203431
+  type: wall
+- orientation: 147.60000000000002
+  position:
+  - 1868.865585100403
+  - 907.1653589957994
+  type: wall
+- orientation: 144.0
+  position:
+  - 1861.8033988749894
+  - 917.5570504584946
+  type: wall
+- orientation: 140.4
+  position:
+  - 1854.1026485551579
+  - 927.4847979497379
+  type: wall
+- orientation: 136.8
+  position:
+  - 1845.7937254842823
+  - 936.9094211857378
+  type: wall
+- orientation: 133.20000000000002
+  position:
+  - 1836.9094211857378
+  - 945.7937254842823
+  type: wall
+- orientation: 129.60000000000002
+  position:
+  - 1827.4847979497379
+  - 954.1026485551578
+  type: wall
+- orientation: 126.00000000000001
+  position:
+  - 1817.5570504584946
+  - 961.8033988749894
+  type: wall
+- orientation: 122.4
+  position:
+  - 1807.1653589957994
+  - 968.865585100403
+  type: wall
+- orientation: 118.80000000000001
+  position:
+  - 1796.350734820343
+  - 975.2613360087728
+  type: wall
+- orientation: 115.2
+  position:
+  - 1785.1558583130145
+  - 980.9654104932039
+  type: wall
+- orientation: 111.6
+  position:
+  - 1773.6249105369357
+  - 985.9552971776503
+  type: wall
+- orientation: 107.99999999999999
+  position:
+  - 1761.8033988749894
+  - 990.2113032590307
+  type: wall
+- orientation: 104.39999999999998
+  position:
+  - 1749.7379774329709
+  - 993.7166322257262
+  type: wall
+- orientation: 100.79999999999998
+  position:
+  - 1737.4762629171448
+  - 996.4574501457378
+  type: wall
+- orientation: 97.19999999999997
+  position:
+  - 1725.0666467128608
+  - 998.4229402628955
+  type: wall
+- orientation: 93.59999999999997
+  position:
+  - 1712.5581039058625
+  - 999.6053456856544
+  type: wall
+- orientation: 89.99999999999996
+  position:
+  - 1699.9999999999998
+  - 1000.0
+  type: wall
+- orientation: 86.39999999999996
+  position:
+  - 1687.4418960941373
+  - 999.6053456856544
+  type: wall
+- orientation: 82.79999999999995
+  position:
+  - 1674.933353287139
+  - 998.4229402628955
+  type: wall
+- orientation: 79.19999999999995
+  position:
+  - 1662.523737082855
+  - 996.4574501457378
+  type: wall
+- orientation: 75.59999999999995
+  position:
+  - 1650.262022567029
+  - 993.7166322257261
+  type: wall
+- orientation: 71.99999999999994
+  position:
+  - 1638.1966011250104
+  - 990.2113032590306
+  type: wall
+- orientation: 68.39999999999993
+  position:
+  - 1626.3750894630641
+  - 985.9552971776502
+  type: wall
+- orientation: 64.79999999999994
+  position:
+  - 1614.8441416869853
+  - 980.9654104932038
+  type: wall
+- orientation: 61.19999999999993
+  position:
+  - 1603.6492651796568
+  - 975.2613360087726
+  type: wall
+- orientation: 57.59999999999994
+  position:
+  - 1592.8346410042004
+  - 968.8655851004029
+  type: wall
+- orientation: 53.99999999999993
+  position:
+  - 1582.4429495415052
+  - 961.8033988749894
+  type: wall
+- orientation: 50.39999999999992
+  position:
+  - 1572.515202050262
+  - 954.1026485551577
+  type: wall
+- orientation: 46.799999999999926
+  position:
+  - 1563.090578814262
+  - 945.793725484282
+  type: wall
+- orientation: 43.1999999999999
+  position:
+  - 1554.2062745157175
+  - 936.9094211857375
+  type: wall
+- orientation: 39.59999999999991
+  position:
+  - 1545.897351444842
+  - 927.4847979497378
+  type: wall
+- orientation: 35.999999999999886
+  position:
+  - 1538.1966011250104
+  - 917.5570504584944
+  type: wall
+- orientation: 32.39999999999989
+  position:
+  - 1531.1344148995968
+  - 907.165358995799
+  type: wall
+- orientation: 28.799999999999898
+  position:
+  - 1524.738663991227
+  - 896.3507348203427
+  type: wall
+- orientation: 25.199999999999875
+  position:
+  - 1519.034589506796
+  - 885.1558583130142
+  type: wall
+- orientation: 21.59999999999988
+  position:
+  - 1514.0447028223496
+  - 873.6249105369352
+  type: wall
+- orientation: 17.999999999999886
+  position:
+  - 1509.788696740969
+  - 861.803398874989
+  type: wall
+- orientation: 14.399999999999864
+  position:
+  - 1506.2833677742738
+  - 849.7379774329705
+  type: wall
+- orientation: 10.79999999999987
+  position:
+  - 1503.5425498542622
+  - 837.4762629171445
+  type: wall
+- orientation: 7.199999999999875
+  position:
+  - 1501.5770597371043
+  - 825.0666467128603
+  type: wall
+- orientation: 3.599999999999852
+  position:
+  - 1500.3946543143456
+  - 812.5581039058621
+  type: wall
+- orientation: 359.99999999999983
+  position:
+  - 1500.0
+  - 799.9999999999995
+  type: wall
+- orientation: 356.39999999999986
+  position:
+  - 1500.3946543143456
+  - 787.4418960941368
+  type: wall
+- orientation: 352.79999999999984
+  position:
+  - 1501.5770597371045
+  - 774.9333532871386
+  type: wall
+- orientation: 349.1999999999998
+  position:
+  - 1503.5425498542625
+  - 762.5237370828545
+  type: wall
+- orientation: 345.5999999999998
+  position:
+  - 1506.283367774274
+  - 750.2620225670285
+  type: wall
+- orientation: 341.99999999999983
+  position:
+  - 1509.7886967409695
+  - 738.1966011250099
+  type: wall
+- orientation: 338.3999999999998
+  position:
+  - 1514.04470282235
+  - 726.3750894630639
+  type: wall
+- orientation: 334.79999999999984
+  position:
+  - 1519.0345895067965
+  - 714.8441416869849
+  type: wall
+- orientation: 331.1999999999998
+  position:
+  - 1524.7386639912277
+  - 703.6492651796564
+  type: wall
+- orientation: 327.5999999999998
+  position:
+  - 1531.1344148995972
+  - 692.8346410042001
+  type: wall
+- orientation: 323.9999999999998
+  position:
+  - 1538.1966011250108
+  - 682.4429495415048
+  type: wall
+- orientation: 320.3999999999998
+  position:
+  - 1545.8973514448426
+  - 672.5152020502616
+  type: wall
+- orientation: 316.79999999999984
+  position:
+  - 1554.2062745157182
+  - 663.0905788142618
+  type: wall
+- orientation: 313.1999999999998
+  position:
+  - 1563.0905788142627
+  - 654.2062745157173
+  type: wall
+- orientation: 309.5999999999998
+  position:
+  - 1572.5152020502626
+  - 645.8973514448417
+  type: wall
+- orientation: 305.9999999999998
+  position:
+  - 1582.4429495415059
+  - 638.1966011250101
+  type: wall
+- orientation: 302.39999999999986
+  position:
+  - 1592.834641004201
+  - 631.1344148995967
+  type: wall
+- orientation: 298.79999999999984
+  position:
+  - 1603.6492651796575
+  - 624.738663991227
+  type: wall
+- orientation: 295.1999999999999
+  position:
+  - 1614.844141686986
+  - 619.0345895067959
+  type: wall
+- orientation: 291.59999999999985
+  position:
+  - 1626.3750894630648
+  - 614.0447028223496
+  type: wall
+- orientation: 287.9999999999999
+  position:
+  - 1638.1966011250108
+  - 609.7886967409692
+  type: wall
+- orientation: 284.3999999999999
+  position:
+  - 1650.2620225670294
+  - 606.2833677742738
+  type: wall
+- orientation: 280.79999999999995
+  position:
+  - 1662.5237370828552
+  - 603.5425498542622
+  type: wall
+- orientation: 277.2
+  position:
+  - 1674.9333532871392
+  - 601.5770597371045
+  type: wall
+- orientation: 273.59999999999997
+  position:
+  - 1687.4418960941373
+  - 600.3946543143456
+  type: wall
+- orientation: 270.0
+  position:
+  - 1700.0
+  - 600.0
+  type: wall
+- orientation: 266.40000000000003
+  position:
+  - 1712.5581039058625
+  - 600.3946543143456
+  type: wall
+- orientation: 262.8
+  position:
+  - 1725.0666467128606
+  - 601.5770597371044
+  type: wall
+- orientation: 259.20000000000005
+  position:
+  - 1737.4762629171446
+  - 603.5425498542622
+  type: wall
+- orientation: 255.60000000000008
+  position:
+  - 1749.7379774329706
+  - 606.2833677742738
+  type: wall
+- orientation: 252.0000000000001
+  position:
+  - 1761.8033988749892
+  - 609.7886967409692
+  type: wall
+- orientation: 248.40000000000015
+  position:
+  - 1773.6249105369352
+  - 614.0447028223496
+  type: wall
+- orientation: 244.80000000000013
+  position:
+  - 1785.155858313014
+  - 619.0345895067959
+  type: wall
+- orientation: 241.20000000000016
+  position:
+  - 1796.3507348203425
+  - 624.738663991227
+  type: wall
+- orientation: 237.6000000000002
+  position:
+  - 1807.1653589957987
+  - 631.1344148995967
+  type: wall
+- orientation: 234.00000000000023
+  position:
+  - 1817.5570504584941
+  - 638.19660112501
+  type: wall
+- orientation: 230.4000000000002
+  position:
+  - 1827.4847979497372
+  - 645.8973514448417
+  type: wall
+- orientation: 226.80000000000024
+  position:
+  - 1836.909421185737
+  - 654.206274515717
+  type: wall
+- orientation: 223.20000000000027
+  position:
+  - 1845.7937254842816
+  - 663.0905788142616
+  type: wall
+- orientation: 219.60000000000025
+  position:
+  - 1854.1026485551572
+  - 672.5152020502612
+  type: wall
+- orientation: 216.00000000000028
+  position:
+  - 1861.803398874989
+  - 682.4429495415045
+  type: wall
+- orientation: 212.40000000000032
+  position:
+  - 1868.8655851004023
+  - 692.8346410041996
+  type: wall
+- orientation: 208.80000000000035
+  position:
+  - 1875.261336008772
+  - 703.6492651796558
+  type: wall
+- orientation: 205.2000000000004
+  position:
+  - 1880.9654104932033
+  - 714.8441416869842
+  type: wall
+- orientation: 201.60000000000036
+  position:
+  - 1885.9552971776498
+  - 726.3750894630631
+  type: wall
+- orientation: 198.0000000000004
+  position:
+  - 1890.2113032590303
+  - 738.1966011250091
+  type: wall
+- orientation: 194.40000000000043
+  position:
+  - 1893.7166322257258
+  - 750.2620225670275
+  type: wall
+- orientation: 190.80000000000047
+  position:
+  - 1896.4574501457373
+  - 762.5237370828535
+  type: wall
+- orientation: 187.2000000000005
+  position:
+  - 1898.4229402628953
+  - 774.9333532871375
+  type: wall
+- orientation: 183.60000000000048
+  position:
+  - 1899.6053456856541
+  - 787.4418960941356
+  type: wall
+- orientation: 180.0
+  position:
+  - 500.0
+  - 800.0
+  type: wall
+- orientation: 176.4
+  position:
+  - 499.6053456856543
+  - 812.5581039058627
+  type: wall
+- orientation: 172.8
+  position:
+  - 498.42294026289557
+  - 825.0666467128608
+  type: wall
+- orientation: 169.2
+  position:
+  - 496.45745014573777
+  - 837.4762629171449
+  type: wall
+- orientation: 165.6
+  position:
+  - 493.71663222572624
+  - 849.737977432971
+  type: wall
+- orientation: 162.0
+  position:
+  - 490.21130325903073
+  - 861.8033988749895
+  type: wall
+- orientation: 158.4
+  position:
+  - 485.9552971776503
+  - 873.6249105369355
+  type: wall
+- orientation: 154.8
+  position:
+  - 480.9654104932039
+  - 885.1558583130145
+  type: wall
+- orientation: 151.2
+  position:
+  - 475.26133600877273
+  - 896.3507348203431
+  type: wall
+- orientation: 147.60000000000002
+  position:
+  - 468.865585100403
+  - 907.1653589957994
+  type: wall
+- orientation: 144.0
+  position:
+  - 461.8033988749895
+  - 917.5570504584946
+  type: wall
+- orientation: 140.4
+  position:
+  - 454.1026485551579
+  - 927.4847979497379
+  type: wall
+- orientation: 136.8
+  position:
+  - 445.79372548428233
+  - 936.9094211857378
+  type: wall
+- orientation: 133.20000000000002
+  position:
+  - 436.90942118573776
+  - 945.7937254842823
+  type: wall
+- orientation: 129.60000000000002
+  position:
+  - 427.484797949738
+  - 954.1026485551578
+  type: wall
+- orientation: 126.00000000000001
+  position:
+  - 417.5570504584947
+  - 961.8033988749894
+  type: wall
+- orientation: 122.4
+  position:
+  - 407.16535899579935
+  - 968.865585100403
+  type: wall
+- orientation: 118.80000000000001
+  position:
+  - 396.35073482034306
+  - 975.2613360087728
+  type: wall
+- orientation: 115.2
+  position:
+  - 385.1558583130145
+  - 980.9654104932039
+  type: wall
+- orientation: 111.6
+  position:
+  - 373.62491053693554
+  - 985.9552971776503
+  type: wall
+- orientation: 107.99999999999999
+  position:
+  - 361.80339887498945
+  - 990.2113032590307
+  type: wall
+- orientation: 104.39999999999998
+  position:
+  - 349.7379774329709
+  - 993.7166322257262
+  type: wall
+- orientation: 100.79999999999998
+  position:
+  - 337.4762629171449
+  - 996.4574501457378
+  type: wall
+- orientation: 97.19999999999997
+  position:
+  - 325.06664671286075
+  - 998.4229402628955
+  type: wall
+- orientation: 93.59999999999997
+  position:
+  - 312.5581039058626
+  - 999.6053456856544
+  type: wall
+- orientation: 89.99999999999996
+  position:
+  - 299.9999999999999
+  - 1000.0
+  type: wall
+- orientation: 86.39999999999996
+  position:
+  - 287.4418960941372
+  - 999.6053456856544
+  type: wall
+- orientation: 82.79999999999995
+  position:
+  - 274.93335328713897
+  - 998.4229402628955
+  type: wall
+- orientation: 79.19999999999995
+  position:
+  - 262.5237370828549
+  - 996.4574501457378
+  type: wall
+- orientation: 75.59999999999995
+  position:
+  - 250.26202256702885
+  - 993.7166322257261
+  type: wall
+- orientation: 71.99999999999994
+  position:
+  - 238.19660112501032
+  - 990.2113032590306
+  type: wall
+- orientation: 68.39999999999993
+  position:
+  - 226.3750894630642
+  - 985.9552971776502
+  type: wall
+- orientation: 64.79999999999994
+  position:
+  - 214.8441416869853
+  - 980.9654104932038
+  type: wall
+- orientation: 61.19999999999993
+  position:
+  - 203.64926517965677
+  - 975.2613360087726
+  type: wall
+- orientation: 57.59999999999994
+  position:
+  - 192.83464100420048
+  - 968.8655851004029
+  type: wall
+- orientation: 53.99999999999993
+  position:
+  - 182.4429495415052
+  - 961.8033988749894
+  type: wall
+- orientation: 50.39999999999992
+  position:
+  - 172.51520205026185
+  - 954.1026485551577
+  type: wall
+- orientation: 46.799999999999926
+  position:
+  - 163.09057881426205
+  - 945.793725484282
+  type: wall
+- orientation: 43.1999999999999
+  position:
+  - 154.2062745157175
+  - 936.9094211857375
+  type: wall
+- orientation: 39.59999999999991
+  position:
+  - 145.89735144484195
+  - 927.4847979497378
+  type: wall
+- orientation: 35.999999999999886
+  position:
+  - 138.19660112501032
+  - 917.5570504584944
+  type: wall
+- orientation: 32.39999999999989
+  position:
+  - 131.13441489959678
+  - 907.165358995799
+  type: wall
+- orientation: 28.799999999999898
+  position:
+  - 124.7386639912271
+  - 896.3507348203427
+  type: wall
+- orientation: 25.199999999999875
+  position:
+  - 119.03458950679592
+  - 885.1558583130142
+  type: wall
+- orientation: 21.59999999999988
+  position:
+  - 114.04470282234956
+  - 873.6249105369352
+  type: wall
+- orientation: 17.999999999999886
+  position:
+  - 109.78869674096916
+  - 861.803398874989
+  type: wall
+- orientation: 14.399999999999864
+  position:
+  - 106.28336777427367
+  - 849.7379774329705
+  type: wall
+- orientation: 10.79999999999987
+  position:
+  - 103.54254985426218
+  - 837.4762629171445
+  type: wall
+- orientation: 7.199999999999875
+  position:
+  - 101.57705973710438
+  - 825.0666467128603
+  type: wall
+- orientation: 3.599999999999852
+  position:
+  - 100.39465431434567
+  - 812.5581039058621
+  type: wall
+- orientation: 359.99999999999983
+  position:
+  - 100.0
+  - 799.9999999999995
+  type: wall
+- orientation: 356.39999999999986
+  position:
+  - 100.3946543143457
+  - 787.4418960941368
+  type: wall
+- orientation: 352.79999999999984
+  position:
+  - 101.57705973710449
+  - 774.9333532871386
+  type: wall
+- orientation: 349.1999999999998
+  position:
+  - 103.54254985426238
+  - 762.5237370828545
+  type: wall
+- orientation: 345.5999999999998
+  position:
+  - 106.28336777427393
+  - 750.2620225670285
+  type: wall
+- orientation: 341.99999999999983
+  position:
+  - 109.78869674096947
+  - 738.1966011250099
+  type: wall
+- orientation: 338.3999999999998
+  position:
+  - 114.04470282234996
+  - 726.3750894630639
+  type: wall
+- orientation: 334.79999999999984
+  position:
+  - 119.03458950679638
+  - 714.8441416869849
+  type: wall
+- orientation: 331.1999999999998
+  position:
+  - 124.73866399122758
+  - 703.6492651796564
+  type: wall
+- orientation: 327.5999999999998
+  position:
+  - 131.13441489959735
+  - 692.8346410042001
+  type: wall
+- orientation: 323.9999999999998
+  position:
+  - 138.19660112501091
+  - 682.4429495415048
+  type: wall
+- orientation: 320.3999999999998
+  position:
+  - 145.8973514448426
+  - 672.5152020502616
+  type: wall
+- orientation: 316.79999999999984
+  position:
+  - 154.20627451571818
+  - 663.0905788142618
+  type: wall
+- orientation: 313.1999999999998
+  position:
+  - 163.0905788142628
+  - 654.2062745157173
+  type: wall
+- orientation: 309.5999999999998
+  position:
+  - 172.51520205026264
+  - 645.8973514448417
+  type: wall
+- orientation: 305.9999999999998
+  position:
+  - 182.44294954150593
+  - 638.1966011250101
+  type: wall
+- orientation: 302.39999999999986
+  position:
+  - 192.83464100420116
+  - 631.1344148995967
+  type: wall
+- orientation: 298.79999999999984
+  position:
+  - 203.64926517965742
+  - 624.738663991227
+  type: wall
+- orientation: 295.1999999999999
+  position:
+  - 214.8441416869859
+  - 619.0345895067959
+  type: wall
+- orientation: 291.59999999999985
+  position:
+  - 226.37508946306477
+  - 614.0447028223496
+  type: wall
+- orientation: 287.9999999999999
+  position:
+  - 238.19660112501083
+  - 609.7886967409692
+  type: wall
+- orientation: 284.3999999999999
+  position:
+  - 250.26202256702928
+  - 606.2833677742738
+  type: wall
+- orientation: 280.79999999999995
+  position:
+  - 262.52373708285523
+  - 603.5425498542622
+  type: wall
+- orientation: 277.2
+  position:
+  - 274.93335328713925
+  - 601.5770597371045
+  type: wall
+- orientation: 273.59999999999997
+  position:
+  - 287.44189609413735
+  - 600.3946543143456
+  type: wall
+- orientation: 270.0
+  position:
+  - 299.99999999999994
+  - 600.0
+  type: wall
+- orientation: 266.40000000000003
+  position:
+  - 312.5581039058626
+  - 600.3946543143456
+  type: wall
+- orientation: 262.8
+  position:
+  - 325.0666467128607
+  - 601.5770597371044
+  type: wall
+- orientation: 259.20000000000005
+  position:
+  - 337.4762629171447
+  - 603.5425498542622
+  type: wall
+- orientation: 255.60000000000008
+  position:
+  - 349.73797743297064
+  - 606.2833677742738
+  type: wall
+- orientation: 252.0000000000001
+  position:
+  - 361.8033988749891
+  - 609.7886967409692
+  type: wall
+- orientation: 248.40000000000015
+  position:
+  - 373.62491053693515
+  - 614.0447028223496
+  type: wall
+- orientation: 244.80000000000013
+  position:
+  - 385.15585831301405
+  - 619.0345895067959
+  type: wall
+- orientation: 241.20000000000016
+  position:
+  - 396.3507348203425
+  - 624.738663991227
+  type: wall
+- orientation: 237.6000000000002
+  position:
+  - 407.1653589957988
+  - 631.1344148995967
+  type: wall
+- orientation: 234.00000000000023
+  position:
+  - 417.557050458494
+  - 638.19660112501
+  type: wall
+- orientation: 230.4000000000002
+  position:
+  - 427.4847979497373
+  - 645.8973514448417
+  type: wall
+- orientation: 226.80000000000024
+  position:
+  - 436.9094211857371
+  - 654.206274515717
+  type: wall
+- orientation: 223.20000000000027
+  position:
+  - 445.79372548428165
+  - 663.0905788142616
+  type: wall
+- orientation: 219.60000000000025
+  position:
+  - 454.1026485551572
+  - 672.5152020502612
+  type: wall
+- orientation: 216.00000000000028
+  position:
+  - 461.80339887498883
+  - 682.4429495415045
+  type: wall
+- orientation: 212.40000000000032
+  position:
+  - 468.8655851004024
+  - 692.8346410041996
+  type: wall
+- orientation: 208.80000000000035
+  position:
+  - 475.2613360087721
+  - 703.6492651796558
+  type: wall
+- orientation: 205.2000000000004
+  position:
+  - 480.9654104932033
+  - 714.8441416869842
+  type: wall
+- orientation: 201.60000000000036
+  position:
+  - 485.95529717764975
+  - 726.3750894630631
+  type: wall
+- orientation: 198.0000000000004
+  position:
+  - 490.2113032590303
+  - 738.1966011250091
+  type: wall
+- orientation: 194.40000000000043
+  position:
+  - 493.71663222572585
+  - 750.2620225670275
+  type: wall
+- orientation: 190.80000000000047
+  position:
+  - 496.4574501457374
+  - 762.5237370828535
+  type: wall
+- orientation: 187.2000000000005
+  position:
+  - 498.4229402628954
+  - 774.9333532871375
+  type: wall
+- orientation: 183.60000000000048
+  position:
+  - 499.60534568565424
+  - 787.4418960941356
+  type: wall
+- position:
+  - 908
+  - 608
+  type: box
+- position:
+  - 972
+  - 352
+  type: box
+- position:
+  - 1123
+  - 574
+  type: box
+- position:
+  - 982
+  - 733
+  type: box
+- position:
+  - 935
+  - 625
+  type: box
+- position:
+  - 961
+  - 348
+  type: box
+- position:
+  - 918
+  - 514
+  type: box
+- position:
+  - 1167
+  - 437
+  type: box
+- position:
+  - 991
+  - 617
+  type: box
+- position:
+  - 917
+  - 575
+  type: box
+- position:
+  - 948
+  - 510
+  type: box
+- position:
+  - 839
+  - 548
+  type: box
+- position:
+  - 835
+  - 623
+  type: box
+- position:
+  - 1019
+  - 565
+  type: box
+- position:
+  - 992
+  - 492
+  type: box
+- position:
+  - 932
+  - 500
+  type: box
+- position:
+  - 884
+  - 514
+  type: box
+- position:
+  - 956
+  - 457
+  type: box
+- position:
+  - 1082
+  - 659
+  type: box
+- position:
+  - 1063
+  - 465
+  type: box
+- position:
+  - 985
+  - 455
+  type: box
+- position:
+  - 891
+  - 595
+  type: box
+- position:
+  - 1108
+  - 682
+  type: box
+- position:
+  - 861
+  - 561
+  type: box
+- position:
+  - 766
+  - 551
+  type: box
+- position:
+  - 900
+  - 743
+  type: box
+- position:
+  - 945
+  - 426
+  type: box
+- position:
+  - 1014
+  - 624
+  type: box
+- position:
+  - 1051
+  - 477
+  type: box
+- position:
+  - 844
+  - 394
+  type: box
+- position:
+  - 1000
+  - 610
+  type: box
+- position:
+  - 1354
+  - 535
+  type: box
+- position:
+  - 789
+  - 456
+  type: box
+- position:
+  - 925
+  - 456
+  type: box
+- position:
+  - 858
+  - 457
+  type: box
+- position:
+  - 970
+  - 472
+  type: box
+- position:
+  - 956
+  - 630
+  type: box
+- position:
+  - 1052
+  - 530
+  type: box
+- position:
+  - 879
+  - 604
+  type: box
+- position:
+  - 1022
+  - 604
+  type: box
+- position:
+  - 963
+  - 566
+  type: box
+- position:
+  - 868
+  - 462
+  type: box
+- position:
+  - 940
+  - 627
+  type: box
+- position:
+  - 911
+  - 557
+  type: box
+- position:
+  - 937
+  - 562
+  type: box
+- position:
+  - 1026
+  - 645
+  type: box
+- position:
+  - 904
+  - 702
+  type: box
+- position:
+  - 960
+  - 534
+  type: box
+- position:
+  - 1001
+  - 517
+  type: box
+- position:
+  - 1086
+  - 469
+  type: box
+- position:
+  - 960
+  - 580
+  type: box
+- position:
+  - 772
+  - 687
+  type: box
+- position:
+  - 1004
+  - 461
+  type: box
+- position:
+  - 1012
+  - 536
+  type: box
+- position:
+  - 872
+  - 553
+  type: box
+- position:
+  - 770
+  - 510
+  type: box
+- position:
+  - 907
+  - 637
+  type: box
+- position:
+  - 935
+  - 598
+  type: box
+- position:
+  - 866
+  - 531
+  type: box
+- position:
+  - 940
+  - 402
+  type: box
+- position:
+  - 801
+  - 263
+  type: box
+- position:
+  - 682
+  - 557
+  type: box
+- position:
+  - 965
+  - 385
+  type: box
+- position:
+  - 977
+  - 381
+  type: box
+- position:
+  - 851
+  - 545
+  type: box
+- position:
+  - 991
+  - 712
+  type: box
+- position:
+  - 922
+  - 565
+  type: box
+- position:
+  - 1059
+  - 568
+  type: box
+- position:
+  - 1000
+  - 580
+  type: box
+- position:
+  - 855
+  - 608
+  type: box
+- position:
+  - 918
+  - 699
+  type: box
+- position:
+  - 1123
+  - 533
+  type: box
+- position:
+  - 993
+  - 416
+  type: box
+- position:
+  - 1001
+  - 592
+  type: box
+- position:
+  - 979
+  - 563
+  type: box
+- position:
+  - 840
+  - 515
+  type: box
+- position:
+  - 883
+  - 496
+  type: box
+- position:
+  - 887
+  - 675
+  type: box
+- position:
+  - 939
+  - 591
+  type: box
+- position:
+  - 935
+  - 536
+  type: box
+- position:
+  - 861
+  - 473
+  type: box
+- position:
+  - 766
+  - 299
+  type: box
+- position:
+  - 943
+  - 379
+  type: box
+- position:
+  - 982
+  - 805
+  type: box
+- position:
+  - 831
+  - 511
+  type: box
+- position:
+  - 1072
+  - 469
+  type: box
+- position:
+  - 932
+  - 612
+  type: box
+- position:
+  - 932
+  - 658
+  type: box
+- position:
+  - 825
+  - 432
+  type: box
+- position:
+  - 1009
+  - 619
+  type: box
+- position:
+  - 935
+  - 422
+  type: box
+- position:
+  - 914
+  - 562
+  type: box
+- position:
+  - 1085
+  - 686
+  type: box
+- position:
+  - 893
+  - 515
+  type: box
+- position:
+  - 730
+  - 518
+  type: box
+- position:
+  - 979
+  - 558
+  type: box
+- position:
+  - 916
+  - 453
+  type: box
+- position:
+  - 1002
+  - 568
+  type: box
+- position:
+  - 956
+  - 501
+  type: box
+- position:
+  - 966
+  - 650
+  type: box
+start:
+- - 300
+  - 300
+- - 1700
+  - 300
+- - 1700
+  - 800
+- - 300
+  - 800
