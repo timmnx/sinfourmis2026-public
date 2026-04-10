@@ -1,13 +1,11 @@
 import os
 import sys
-import ssl
 import yaml
 import math
 import time
 import ctypes
 import pickle
 import random
-import socket
 import argparse
 import threading
 import multiprocessing
@@ -17,8 +15,6 @@ FORWARD_DOP = 3
 BACKWARD_DOP = -1
 
 os.environ['PYGAME_HIDE_SUPPORT_PROMPT'] = "hide"
-multiprocessing.set_start_method("fork", force=True)
-
 
 class UselessClock:
     def __init__(self):
