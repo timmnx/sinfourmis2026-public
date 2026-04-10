@@ -1,5 +1,5 @@
 bricks: 0
-bullets: 20
+bullets: 200
 objects:
 - orientation: 180.0
   position:
@@ -2002,404 +2002,404 @@ objects:
   - 787.4418960941356
   type: wall
 - position:
-  - 908
-  - 608
+  - 1042
+  - 643
   type: box
 - position:
-  - 972
-  - 352
-  type: box
-- position:
-  - 1123
-  - 574
-  type: box
-- position:
-  - 982
-  - 733
-  type: box
-- position:
-  - 935
-  - 625
-  type: box
-- position:
-  - 961
-  - 348
-  type: box
-- position:
-  - 918
-  - 514
-  type: box
-- position:
-  - 1167
-  - 437
-  type: box
-- position:
-  - 991
-  - 617
-  type: box
-- position:
-  - 917
-  - 575
-  type: box
-- position:
-  - 948
-  - 510
+  - 1116
+  - 398
   type: box
 - position:
   - 839
-  - 548
-  type: box
-- position:
-  - 835
-  - 623
-  type: box
-- position:
-  - 1019
-  - 565
-  type: box
-- position:
-  - 992
-  - 492
-  type: box
-- position:
-  - 932
-  - 500
-  type: box
-- position:
-  - 884
-  - 514
-  type: box
-- position:
-  - 956
-  - 457
-  type: box
-- position:
-  - 1082
-  - 659
-  type: box
-- position:
-  - 1063
-  - 465
-  type: box
-- position:
-  - 985
-  - 455
-  type: box
-- position:
-  - 891
-  - 595
-  type: box
-- position:
-  - 1108
-  - 682
-  type: box
-- position:
-  - 861
-  - 561
-  type: box
-- position:
-  - 766
-  - 551
-  type: box
-- position:
-  - 900
-  - 743
-  type: box
-- position:
-  - 945
-  - 426
-  type: box
-- position:
-  - 1014
-  - 624
-  type: box
-- position:
-  - 1051
-  - 477
-  type: box
-- position:
-  - 844
-  - 394
-  type: box
-- position:
-  - 1000
-  - 610
-  type: box
-- position:
-  - 1354
-  - 535
-  type: box
-- position:
-  - 789
-  - 456
-  type: box
-- position:
-  - 925
-  - 456
-  type: box
-- position:
-  - 858
-  - 457
-  type: box
-- position:
-  - 970
-  - 472
-  type: box
-- position:
-  - 956
-  - 630
-  type: box
-- position:
-  - 1052
-  - 530
-  type: box
-- position:
-  - 879
-  - 604
-  type: box
-- position:
-  - 1022
-  - 604
-  type: box
-- position:
-  - 963
-  - 566
-  type: box
-- position:
-  - 868
-  - 462
-  type: box
-- position:
-  - 940
-  - 627
-  type: box
-- position:
-  - 911
-  - 557
-  type: box
-- position:
-  - 937
-  - 562
-  type: box
-- position:
-  - 1026
-  - 645
-  type: box
-- position:
-  - 904
-  - 702
-  type: box
-- position:
-  - 960
-  - 534
-  type: box
-- position:
-  - 1001
-  - 517
-  type: box
-- position:
-  - 1086
-  - 469
-  type: box
-- position:
-  - 960
-  - 580
-  type: box
-- position:
-  - 772
-  - 687
-  type: box
-- position:
-  - 1004
-  - 461
-  type: box
-- position:
-  - 1012
-  - 536
-  type: box
-- position:
-  - 872
-  - 553
-  type: box
-- position:
-  - 770
-  - 510
-  type: box
-- position:
-  - 907
-  - 637
-  type: box
-- position:
-  - 935
-  - 598
-  type: box
-- position:
-  - 866
-  - 531
-  type: box
-- position:
-  - 940
-  - 402
-  type: box
-- position:
-  - 801
-  - 263
-  type: box
-- position:
-  - 682
-  - 557
-  type: box
-- position:
-  - 965
-  - 385
-  type: box
-- position:
-  - 977
-  - 381
-  type: box
-- position:
-  - 851
-  - 545
-  type: box
-- position:
-  - 991
-  - 712
-  type: box
-- position:
-  - 922
-  - 565
-  type: box
-- position:
-  - 1059
-  - 568
-  type: box
-- position:
-  - 1000
-  - 580
-  type: box
-- position:
-  - 855
-  - 608
-  type: box
-- position:
-  - 918
-  - 699
-  type: box
-- position:
-  - 1123
-  - 533
-  type: box
-- position:
-  - 993
-  - 416
-  type: box
-- position:
-  - 1001
-  - 592
-  type: box
-- position:
-  - 979
-  - 563
-  type: box
-- position:
-  - 840
-  - 515
-  type: box
-- position:
-  - 883
-  - 496
-  type: box
-- position:
-  - 887
-  - 675
+  - 507
   type: box
 - position:
   - 939
-  - 591
+  - 597
   type: box
 - position:
-  - 935
-  - 536
+  - 985
+  - 614
   type: box
 - position:
-  - 861
-  - 473
+  - 921
+  - 428
   type: box
 - position:
-  - 766
-  - 299
+  - 973
+  - 520
   type: box
 - position:
-  - 943
-  - 379
+  - 984
+  - 328
+  type: box
+- position:
+  - 1059
+  - 573
+  type: box
+- position:
+  - 890
+  - 514
+  type: box
+- position:
+  - 854
+  - 503
+  type: box
+- position:
+  - 1055
+  - 509
+  type: box
+- position:
+  - 846
+  - 574
+  type: box
+- position:
+  - 810
+  - 449
+  type: box
+- position:
+  - 1017
+  - 484
+  type: box
+- position:
+  - 1076
+  - 596
+  type: box
+- position:
+  - 912
+  - 574
+  type: box
+- position:
+  - 967
+  - 623
+  type: box
+- position:
+  - 930
+  - 586
+  type: box
+- position:
+  - 1080
+  - 566
+  type: box
+- position:
+  - 801
+  - 563
+  type: box
+- position:
+  - 927
+  - 643
+  type: box
+- position:
+  - 1056
+  - 606
+  type: box
+- position:
+  - 954
+  - 545
   type: box
 - position:
   - 982
-  - 805
-  type: box
-- position:
-  - 831
-  - 511
-  type: box
-- position:
-  - 1072
-  - 469
-  type: box
-- position:
-  - 932
-  - 612
-  type: box
-- position:
-  - 932
-  - 658
-  type: box
-- position:
-  - 825
-  - 432
-  type: box
-- position:
-  - 1009
-  - 619
-  type: box
-- position:
-  - 935
-  - 422
-  type: box
-- position:
-  - 914
-  - 562
-  type: box
-- position:
-  - 1085
-  - 686
-  type: box
-- position:
-  - 893
-  - 515
-  type: box
-- position:
-  - 730
-  - 518
-  type: box
-- position:
-  - 979
-  - 558
-  type: box
-- position:
-  - 916
-  - 453
-  type: box
-- position:
-  - 1002
   - 568
   type: box
 - position:
-  - 956
-  - 501
+  - 909
+  - 651
+  type: box
+- position:
+  - 1062
+  - 474
+  type: box
+- position:
+  - 1092
+  - 539
+  type: box
+- position:
+  - 924
+  - 552
+  type: box
+- position:
+  - 853
+  - 649
+  type: box
+- position:
+  - 1098
+  - 555
+  type: box
+- position:
+  - 884
+  - 673
+  type: box
+- position:
+  - 954
+  - 601
+  type: box
+- position:
+  - 833
+  - 325
+  type: box
+- position:
+  - 1012
+  - 586
+  type: box
+- position:
+  - 951
+  - 570
+  type: box
+- position:
+  - 811
+  - 613
+  type: box
+- position:
+  - 953
+  - 519
+  type: box
+- position:
+  - 977
+  - 605
+  type: box
+- position:
+  - 982
+  - 606
+  type: box
+- position:
+  - 978
+  - 656
+  type: box
+- position:
+  - 918
+  - 516
+  type: box
+- position:
+  - 995
+  - 674
   type: box
 - position:
   - 966
-  - 650
+  - 514
+  type: box
+- position:
+  - 638
+  - 589
+  type: box
+- position:
+  - 906
+  - 452
+  type: box
+- position:
+  - 933
+  - 472
+  type: box
+- position:
+  - 982
+  - 643
+  type: box
+- position:
+  - 1030
+  - 617
+  type: box
+- position:
+  - 1092
+  - 467
+  type: box
+- position:
+  - 1087
+  - 593
+  type: box
+- position:
+  - 1141
+  - 660
+  type: box
+- position:
+  - 1034
+  - 504
+  type: box
+- position:
+  - 817
+  - 487
+  type: box
+- position:
+  - 958
+  - 564
+  type: box
+- position:
+  - 1000
+  - 435
+  type: box
+- position:
+  - 1128
+  - 510
+  type: box
+- position:
+  - 873
+  - 611
+  type: box
+- position:
+  - 1117
+  - 322
+  type: box
+- position:
+  - 946
+  - 324
+  type: box
+- position:
+  - 1146
+  - 525
+  type: box
+- position:
+  - 890
+  - 658
+  type: box
+- position:
+  - 1058
+  - 535
+  type: box
+- position:
+  - 899
+  - 358
+  type: box
+- position:
+  - 986
+  - 417
+  type: box
+- position:
+  - 1008
+  - 610
+  type: box
+- position:
+  - 982
+  - 483
+  type: box
+- position:
+  - 951
+  - 590
+  type: box
+- position:
+  - 984
+  - 583
+  type: box
+- position:
+  - 901
+  - 741
+  type: box
+- position:
+  - 1007
+  - 548
+  type: box
+- position:
+  - 910
+  - 393
+  type: box
+- position:
+  - 942
+  - 569
+  type: box
+- position:
+  - 986
+  - 522
+  type: box
+- position:
+  - 761
+  - 574
+  type: box
+- position:
+  - 1053
+  - 545
+  type: box
+- position:
+  - 968
+  - 337
+  type: box
+- position:
+  - 773
+  - 434
+  type: box
+- position:
+  - 1113
+  - 557
+  type: box
+- position:
+  - 1071
+  - 541
+  type: box
+- position:
+  - 909
+  - 606
+  type: box
+- position:
+  - 1008
+  - 613
+  type: box
+- position:
+  - 1024
+  - 439
+  type: box
+- position:
+  - 848
+  - 569
+  type: box
+- position:
+  - 996
+  - 434
+  type: box
+- position:
+  - 975
+  - 506
+  type: box
+- position:
+  - 875
+  - 595
+  type: box
+- position:
+  - 837
+  - 420
+  type: box
+- position:
+  - 908
+  - 488
+  type: box
+- position:
+  - 890
+  - 425
+  type: box
+- position:
+  - 927
+  - 547
+  type: box
+- position:
+  - 884
+  - 415
+  type: box
+- position:
+  - 1112
+  - 368
+  type: box
+- position:
+  - 870
+  - 515
+  type: box
+- position:
+  - 992
+  - 700
+  type: box
+- position:
+  - 1016
+  - 501
+  type: box
+- position:
+  - 885
+  - 627
+  type: box
+- position:
+  - 870
+  - 521
+  type: box
+- position:
+  - 1106
+  - 694
+  type: box
+- position:
+  - 756
+  - 475
   type: box
 start:
 - - 300

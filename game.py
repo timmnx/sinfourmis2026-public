@@ -1,32 +1,23 @@
 import os
 import sys
+import ssl
 import yaml
 import math
 import time
 import ctypes
+import pickle
 import random
+import socket
 import argparse
 import threading
 import multiprocessing
-if __name__ != '__main__':
-    import pygame
+
 
 FORWARD_DOP = 3
 BACKWARD_DOP = -1
-LEGAL_CHEATING_SCORE = 500
-MAX_CHEATING_SCORE = 2000
 
-
-if 'linux' in sys.platform:
-    import signal
-    multiprocessing.set_start_method("fork")
-
-
-def platformSpecificExit():
-    if 'linux' in sys.platform:
-        os.kill(os.getpid(), 9)
-    else:
-        sys.exit()
+os.environ['PYGAME_HIDE_SUPPORT_PROMPT'] = "hide"
+multiprocessing.set_start_method("fork", force=True)
 
 
 class UselessClock:
@@ -36,51 +27,23 @@ class UselessClock:
         pass
 
 
-
-class Wrapper:
-    def __init__(self, function):
-        self.function = function
-    
-    def call(self, *args, **kwargs):
-        return super().__getattribute__('function')(*args, **kwargs)
-
-    def __getattribute__(self, name):
-        if name == 'call':
-            return super().__getattribute__('call')
-
-def make_func(function, request, clock):
-    name = ''.join([chr(random.randint(97, 122)) for _ in range(random.randint(100, 200))])
-    code = \
-        "class " + name + """:
-            def __init__(self, function, request, clock = None):
-                self.__function = function
-                self.__request = request
-                self.__clock = clock
-            
-            def call(self, *args, **kwargs):
-                return self.__function(self.__request, self.__clock, *args, *kwargs)"""
-    
-    namespace = {}
-    exec(code, namespace)
-    obj_call = namespace[name](function, request, clock).call
-
-    def func(*args):
-        return obj_call(*args)
-
-    return Wrapper(func).call
-
-
+def hardCopy(object):
+    return pickle.loads(pickle.dumps(object))
 
 
 
 class Item:
-    def __init__(self, xpos, ypos, orientation, type, image, box_type):
+    def __init__(self, xpos, ypos, orientation, type, image, box_type = None):
         self.xpos = xpos
         self.ypos = ypos
         self.image = image
         self.type = type
         self.box_type = box_type
         self.orientation = orientation
+
+        # pré-calcule l'image pivotée de l'objet
+        if image:
+            self.image = pygame.transform.rotate(image, orientation)
         
         if type == 'tree':
             self.ttl = 1
@@ -93,9 +56,8 @@ class Item:
         return type(obj) == Item and (self.xpos, self.ypos, self.type) == (obj.xpos, obj.ypos, obj.type)
     
     def display(self, game):
-        rotated_image = pygame.transform.rotate(self.image, self.orientation)
-        rect = rotated_image.get_rect(center = game.nc(self.xpos,self.ypos))
-        game.screen.blit(rotated_image, rect.topleft)
+        rect = self.image.get_rect(center = game.nc(self.xpos,self.ypos))
+        game.screen.blit(self.image, rect.topleft)
 
 
 
@@ -128,12 +90,6 @@ class Bullet:
 
 
 
-def skip_request(reqType, tank):
-    return random.random() <= tank.cheating_proba() and reqType in ("setState", "addBullet", "addWall")
-
-
-
-
 class Tank:
     def __init__(self, xpos, ypos, file, image, name, bullets = 200, bricks = 0):
         self.xpos = xpos
@@ -146,27 +102,13 @@ class Tank:
         self.image = image
         self.name = name
         self.lastshot = 0
-        self.cheating_score = 0
-        self.nb_requests = 0
+        self.process = None
+
 
         # Précalcul de l'image du tank pour toutes les orientations
         if self.image: # On ne précalcule les rotations que si self.image est une image valide
             self.angles = [pygame.transform.rotate(self.image, angle) for angle in range(360)]
     
-
-    def update_cheating_score(self, args1, args2, norm):
-        self.cheating_score = (self.cheating_score * self.nb_requests + cheating_score(args1, args2, norm))/(self.nb_requests + 1)
-        self.nb_requests += 1
-    
-    def cheating_proba(self):
-        if self.cheating_score < LEGAL_CHEATING_SCORE:
-            return 0
-        elif self.cheating_score > MAX_CHEATING_SCORE:
-            return 1
-        else:
-            # probabilité que l'on n'exécute pas une requête
-            proba = (self.cheating_score - LEGAL_CHEATING_SCORE)/(MAX_CHEATING_SCORE - LEGAL_CHEATING_SCORE)
-            return proba
     
     def display(self, game):
         # display the sprite
@@ -174,6 +116,24 @@ class Tank:
         rect = rotated_image.get_rect(center = game.nc(self.xpos,self.ypos))
         game.screen.blit(rotated_image, rect.topleft)
 
+        # Affichage du nom du joueur
+
+        # Création de l'objet Font
+        font = pygame.font.Font(None, game.nx(30))
+        font.bold = False
+
+        # Création de l'objet texte
+        text = font.render(self.name, False, (0, 0, 0))
+        x_text = game.nx(self.xpos) - text.get_width()/2
+        y_text = game.ny(self.ypos) - game.ny(50)
+
+        # Ajout d'un rectangle transparent en dessous
+        bg = pygame.Surface((text.get_width()+4, text.get_height()+2), pygame.SRCALPHA)
+        bg.fill((0, 255, 0, 70)) # noir semi-transparent
+        game.screen.blit(bg, (x_text-2, y_text-1))
+        game.screen.blit(text, (x_text, y_text))
+
+        # Affichage de la barre de vie
         bar_width = 70
         bar_height = 5
 
@@ -203,63 +163,70 @@ class Tank:
 
 
 class Request:
-    def __init__(self, requestEntry, responseEnd):
+    def __init__(self, name, requestEntry, responseEnd):
         self.requestEntry = requestEntry
         self.responseEnd = responseEnd
+        self.name = name
     
-    def safe_recv(self):
-        try:
-            response = self.responseEnd.recv()
-        except:
-            response = "DIEPLZ"
-        
-        if response == "DIEPLZ":
-            #self.responseEnd.close()
-            self.requestEntry.send("OKIMDEAD")
-            #self.requestEntry.close()
-            platformSpecificExit()
-        else:
-            return response
+    def __getstate__(self):
+        return {"name": self.name, "requestEntry": self.requestEntry, "responseEnd": self.responseEnd}
     
     def make_request(*args):
         self = args[0]
         self.requestEntry.send(args[1:])
-        return self.safe_recv()
+        return self.responseEnd.recv()
 
     def make_unidirectional_request(*args): # pour les requêtes n'attendant pas de réponse
         self = args[0]
         self.requestEntry.send(args[1:])
     
-    def validate_position(self, xp, yp, x, y):
-        return self.make_request("validatePosition", xp, yp, x, y)
-
-    def getState(self): # renvoie un tuple (xpos, ypos, orientation, health, nb_bullets, nb_bricks, lastshot)
-        return self.make_request("getState")
-    
-    def setState(self, xpos, ypos, orientation, health, nb_bullets, nb_bricks, lastshot): # attend en argument un tuple (xpos, ypos, orientation, health, nb_bullets)
-        return self.make_unidirectional_request("setState", xpos, ypos, orientation, health, nb_bullets, nb_bricks, lastshot)
-    
-    def addBullet(self, x, y, orientation, ttl = 30):
-        return self.make_unidirectional_request("addBullet", x, y, orientation, ttl)
-    
-    def removeBox(self, x, y):
-        return self.make_unidirectional_request("removeBox", x, y)
-    
-    def addWall(self, x, y, theta):
-        return self.make_unidirectional_request("addWall", x, y, theta)
+    def add_wall(self):
+        return self.make_request("add_wall")
     
     def getItems(self):
         return self.make_request("getItems")
     
     def getTanks(self):
         return self.make_request("getTanks")
-
-
-
-def cheating_score(args1, args2, norm):
-    assert len(args1) == len(args2)
-    score = sum([abs(arg1-arg2)*10000/max_value for (arg1, arg2, max_value) in zip(args1, args2, norm)])/len(args1)
-    return score
+    
+    def get_position(self):
+        return self.make_request("get_position")
+    
+    def get_orientation(self):
+        return self.make_request("get_orientation")
+    
+    def get_health(self):
+        return self.make_request("get_health")
+    
+    def get_nb_bricks(self):
+        return self.make_request("get_nb_bricks")
+    
+    def get_nb_bullets(self):
+        return self.make_request("get_nb_bullets")
+    
+    def move(self):
+        self.make_unidirectional_request("move")
+    
+    def back(self):
+        self.make_unidirectional_request("back")
+    
+    def rotate_right(self):
+        self.make_unidirectional_request("rotate_right")
+    
+    def rotate_left(self):
+        self.make_unidirectional_request("rotate_left")
+    
+    def fire(self):
+        self.make_request("fire")
+    
+    def grab_box(self):
+        self.make_request("grab_box")
+    
+    def detect(self):
+        return self.make_request("detect")
+    
+    def suicide(self):
+        self.make_unidirectional_request("suicide")
 
 
 
@@ -267,86 +234,171 @@ def serverFunction(requestEnd, responseEntry, game, name):
     tank = game.tanks[name]
 
     while True:
-        # Si le tank est mort, on close la connexion pour qu'il soit au courant qu'il est mort, et on arrête le serveur de requêtes
-        if tank.health < 0:
-            responseEntry.send("DIEPLZ")
-            #responseEntry.close()
-            
-            response = None
-            while response != "OKIMDEAD":
-                try:
-                    response = requestEnd.recv()
-                except:
-                    break
-            #requestEnd.close()
-            del game.tanks[name]
-            return
-
         # Attente d'une requête
-        try:
-            request = requestEnd.recv()
-        except:
-            return
+        request = requestEnd.recv()
 
         reqType = request[0]
         args = request[1:]
         
-        # Liste des requêtes "critiques", que l'on s'autorise à skipper
-        if skip_request(reqType, tank):
-            continue
 
-        if reqType == "getState":
-            ret = (tank.xpos, tank.ypos, tank.orientation, tank.health, tank.nb_bullets, tank.nb_bricks, tank.lastshot)
-            responseEntry.send(ret)
-        
-        elif reqType == "setState":
-            tank.update_cheating_score(
-                [tank.xpos, tank.ypos, tank.orientation, tank.health],
-                args[:-3],
-                [1920, 1080, 360, 100]
-            )
-
-            tank.xpos, tank.ypos, tank.orientation, tank.health, tank.nb_bullets, tank.nb_bricks, tank.lastshot = args
-
-        elif reqType == "addBullet":
-            xpos, ypos, orientation, ttl = args
-            tank.update_cheating_score(
-                [xpos, ypos, orientation, ttl**2],
-                [tank.xpos, tank.ypos, tank.orientation, 30**2],
-                [1920, 1080, 360, 100]
-            )
-            game.bullets.append(Bullet(xpos, ypos, orientation, name, game.bullet_image, ttl))
-        
-        elif reqType == "addWall":
-            xpos, ypos, theta = args
-            tank.update_cheating_score(
-                [xpos, ypos, theta],
-                [tank.xpos, tank.ypos, tank.orientation],
-                [1920, 1080, 360]
-            )
-            game.items.append(Item(xpos, ypos, theta, 'wall', game.item_images['wall'], None))
-        
-
-        elif reqType == "removeBox":
-            x, y = args            
-            for i, it in enumerate(game.items):
-                if it.type == 'box' and (it.xpos, it.ypos) == (x, y):
-                    del game.items[i]
-                    break
+        if reqType == "add_wall":
+            dx = math.cos(tank.orientation/180*math.pi) * 50
+            dy = -math.sin(tank.orientation/180*math.pi) * 50
+            wall_x, wall_y = tank.xpos + dx, tank.ypos + dy
             
-        elif reqType == "getItems":
-            responseEntry.send([Item(item.xpos, item.ypos, item.orientation, item.type, None, item.box_type) for item in game.items])
-            
-        elif reqType == "getTanks":
-            tanks = game.get_tanks()
-            responseEntry.send([Tank(tank.xpos, tank.ypos, None, None, tank.name) for tank in tanks])
+            if tank.nb_bricks > 0 and game.validate_position(wall_x, wall_y, wall_x, wall_y):
+                tank.nb_bricks -= 1
+                game.items.append(Item(wall_x, wall_y, tank.orientation, 'wall', game.item_images['wall']))
+                responseEntry.send(True)
+            else:
+                responseEntry.send(False)
         
-        elif reqType == "validatePosition":
-            xp, yp, x, y = args
-            responseEntry.send(game.validate_position(xp, yp, x, y))
+        elif reqType == "get_position":
+            responseEntry.send((tank.xpos, tank.ypos))
+        
+        elif reqType == "get_orientation":
+            responseEntry.send(tank.orientation)
+        
+        elif reqType == "get_health":
+            responseEntry.send(tank.health)
+        
+        elif reqType == "get_nb_bricks":
+            responseEntry.send(tank.nb_bricks)
+        
+        elif reqType == "get_nb_bullets":
+            responseEntry.send(tank.nb_bullets)
+        
+        elif reqType == "move":
+            dx = math.cos(tank.orientation/180*math.pi) * FORWARD_DOP
+            dy = -math.sin(tank.orientation/180*math.pi) * FORWARD_DOP
+            if game.validate_position(tank.xpos, tank.ypos, tank.xpos + dx, tank.ypos + dy): # permet de tester les collisions
+                tank.xpos += dx
+                tank.ypos += dy
+                game.clock.tick(60)
+        
+        elif reqType == "back":
+            dx = math.cos(tank.orientation/180*math.pi) * BACKWARD_DOP
+            dy = -math.sin(tank.orientation/180*math.pi) * BACKWARD_DOP
+            if game.validate_position(tank.xpos, tank.ypos, tank.xpos + dx, tank.ypos + dy): # permet de tester les collisions
+                tank.xpos += dx
+                tank.ypos += dy
+                game.clock.tick(200)
+        
+        elif reqType == "rotate_right":
+            dtheta = 1
+            tank.orientation = (tank.orientation - 1) % 360
+            game.clock.tick(250)
+        
+        elif reqType == "rotate_left":
+            dtheta = 1
+            tank.orientation = (tank.orientation + 1) % 360
+            game.clock.tick(250)
+        
+        elif reqType == "fire":
+            if tank.nb_bullets <= 0 or time.monotonic() - tank.lastshot < 0.3 :
+                responseEntry.send(False) # on ne peut plus tirer, il n'y a plus de projectiles
+            else:
+                tank.nb_bullets -= 1
+                tank.lastshot = time.monotonic()
+                game.bullets.append(Bullet(tank.xpos, tank.ypos, tank.orientation, tank.name, game.bullet_image))
+                responseEntry.send(True)
+        
+        elif reqType == "grab_box":
+            items = game.items.copy()
+            response = False
+            
+            for obj in items:
+                if obj.type == 'box' and distance(tank.xpos, tank.ypos, obj.xpos, obj.ypos) < 20: # la boite peut être attrapée
+                    game.items.remove(obj)
+                    if obj.box_type == 'bullets':
+                        tank.nb_bullets += 200
+                    elif obj.box_type == 'bricks':
+                        tank.nb_bricks += 20
+                    response = True
+            
+            responseEntry.send(response)
+        
+        elif reqType == "detect":
+            # calcul de la droite de vision du tank
+            if tank.orientation in (90, 270):
+                on_trajectory = lambda x, y : x == tank.xpos
+            else:
+                coeff_dir = -math.tan(math.radians(tank.orientation))
+                ordon_orig = tank.ypos - coeff_dir * tank.xpos
+                on_trajectory = lambda x, y : abs(coeff_dir * x + ordon_orig - y) < 20
+            
+            # calcul du cadran dans lequel regarde le tank
+            if tank.orientation <= 90: # 1er cadran
+                quadrant = lambda obj : obj.xpos >= tank.xpos and obj.ypos <= tank.ypos
+            elif tank.orientation <= 180: # deuxième cadran
+                quadrant = lambda obj : obj.xpos <= tank.xpos and obj.ypos <= tank.ypos
+            elif tank.orientation <= 270: # troisième cadran
+                quadrant = lambda obj : obj.xpos <= tank.xpos and obj.ypos >= tank.ypos
+            else: # dernier cadran
+                quadrant = lambda obj : obj.xpos >= tank.xpos and obj.ypos >= tank.ypos
+            
+            # parcours des objets
+            items = filter(quadrant, game.items)
+            tanks = filter(quadrant, game.get_tanks())
+            
+            # Liste des objets détectés
+            detected = []
+
+            for item in items:
+                if diff_collision(tank, item) or on_trajectory(item.xpos, item.ypos):
+                    detected.append((item.type, distance(tank.xpos, tank.ypos, item.xpos, item.ypos)))
+            
+            for other_tank in tanks:
+                if other_tank.name != tank.name and (
+                diff_collision_tank(tank, other_tank) or on_trajectory(other_tank.xpos, other_tank.ypos)):
+                    detected.append(('tank', distance(tank.xpos, tank.ypos, other_tank.xpos, other_tank.ypos)))
+
+            responseEntry.send(detected)
+
+        
+        elif reqType == "suicide":
+            responseEntry.close()
+            requestEnd.close()
+            tank.request.responseEnd.close()
+            tank.request.requestEntry.close()
+            if tank.process.is_alive():
+                tank.process.kill()
+            del game.tanks[tank.name]
+            return
 
 
 
+
+def clientFunction(code, request):
+    # Copie de la requête avant l'envoi pour conserver une requête intègre
+    sentRequest = hardCopy(request)
+    variables = {
+        "fire":             sentRequest.fire,
+        "get_position":     sentRequest.get_position,
+        "get_health":       sentRequest.get_health,
+        "get_orientation":  sentRequest.get_orientation,
+        "get_nb_bullets":   sentRequest.get_nb_bullets,
+        "get_nb_bricks":    sentRequest.get_nb_bricks,
+        "move":             sentRequest.move,
+        "back":             sentRequest.back,
+        "rotate_right":     sentRequest.rotate_right,
+        "rotate_left":      sentRequest.rotate_left,
+        "grab_box":         sentRequest.grab_box,
+        "add_wall":         sentRequest.add_wall,
+        "detect":           sentRequest.detect,
+        "distance":         distance,
+        "math":             math,
+        "time":             time,
+        "random":           random,
+        "__playername":     sentRequest.name
+    }
+
+    try:
+        exec(code, variables)
+    except:
+        print(f"{variables['__playername']} a crashé")
+    
+    request.suicide()
 
 
 
@@ -402,18 +454,6 @@ def distance(xa, ya, xb, yb):
 
 
 
-def diff_collision(x, y, angle, obj):
-    dx = math.cos(angle/180*math.pi) * FORWARD_DOP
-    dy = -math.sin(angle/180*math.pi) * FORWARD_DOP
-    return collision(x+dx, y+dy, obj)
-
-
-def diff_collision_tank(x,y,angle,xo, yo):
-    dx = math.cos(angle/180*math.pi) * FORWARD_DOP
-    dy = -math.sin(angle/180*math.pi) * FORWARD_DOP
-    return collision_tank(x+dx, y+dy, xo, yo)
-    
-
 def collision_tank(x,y, xo, yo):
     return distance(x,y,xo,yo) < 40
 
@@ -441,46 +481,16 @@ def collision(x,y,obj):
 
 
 
+def diff_collision(tank, obj):
+    dx = math.cos(tank.orientation/180*math.pi) * FORWARD_DOP * 1.5
+    dy = -math.sin(tank.orientation/180*math.pi) * FORWARD_DOP * 1.5
+    return collision(tank.xpos + dx, tank.ypos + dy, obj)
 
 
-
-def diff_angle(theta0, theta1): # estime à quel point deux angles sont différents
-    diff = abs(theta0 - theta1)
-    return diff if diff < math.pi/2 else math.pi - diff
-
-
-
-
-
-def on_trajectory(x, y, theta0, x2, y2):    
-    
-    if x != x2:
-        angle_coeff = math.atan(-(y-y2)/(x-x2))
-    else:
-        angle_coeff = math.pi/2
-    # calcule l'angle formé entre player et l'objet
-    
-    theta = theta0 * math.pi/180
-    if theta > math.pi:
-        theta = theta - 2*math.pi
-    # theta est entre pi et -pi
-    if theta > math.pi/2:
-        theta -= math.pi
-    elif theta < -math.pi/2:
-        theta += math.pi
-        
-    # vérifie que l'objet est sur la bonne droite
-    bo = diff_angle(theta, angle_coeff) < 0.1 # en radians
-    
-    # on a vérifié les histoires de direction, maintenant, on vérifie que c'est le bon sens
-    if theta0 <= 90: # 1er cadran
-        return bo and x2 >= x and y2 <= y
-    elif theta0 <= 180:#deuxième cadran
-        return bo and x2 <= x and y2 <= y
-    elif theta0 <= 270: # troisième cadran
-        return bo and x2 <= x and y2 >= y
-    else:#dernier cadran
-        return bo and x2 >= x and y2 >= y
+def diff_collision_tank(tank, tank2):
+    dx = math.cos(tank.orientation/180*math.pi) * FORWARD_DOP * 1.5
+    dy = -math.sin(tank.orientation/180*math.pi) * FORWARD_DOP * 1.5
+    return collision_tank(tank.xpos + dx, tank.ypos + dy, tank2.xpos, tank2.ypos)
 
 
 # Lit la map et crée les objets
@@ -590,15 +600,20 @@ class Game:
     def get_tanks(self):
         return list(self.tanks.values()).copy()
 
-
+    def kill(self, tank):
+        tank.request.suicide()
 
     def validate_position(self, xp, yp, x, y): # renvoie si une certaine position est correcte d'un point de vue de collision
         # (xp, yp) est la position actuelle du joueur si c'est un joueur et (x, y) est la position visée
         # calcule la distance avec tous les objets
         
-        if x > self.reference_width-20 or x < 20 or y > self.reference_height-20 or y < 20:
+        if x > self.reference_width - 20 or x < 20 or y > self.reference_height - 20 or y < 20:
             return False
 
+        # Premier filtre pour calculer moins de distances
+        close_items = filter(lambda obj : distance(x, y, obj.xpos, obj.ypos) < 100, self.items)
+
+        # Calcul des collisions sur les objets proches
         for obj in self.items:
             if collision(x, y, obj): # on a trouvé un truc trop près
                 return False
@@ -607,7 +622,6 @@ class Game:
         for tank in tanks: # pour ne pas entrer en collision avec un autre tank
             if (tank.xpos, tank.ypos) != (xp,yp) and tank.health >= 0 and collision_tank(x, y, tank.xpos, tank.ypos):
                 return False
-        
         return True
     
     def get_free_coord(self):
@@ -640,8 +654,8 @@ class Game:
                 tank.health -= 10 # on inflige des dégâts au tank
                 
                 if tank.health < 0: # le tank va mourir, mais il va mourir de lui-même lorsqu'il verra que sa vie sera < 0
+                    tank.request.suicide()
                     print(tank.name, "s'est fait tuer par", tankname)
-                    print(f"{tank.name} est estimé à {int(tank.cheating_proba()*100)}% comme étant un tricheur\n")
                 return True
         
         return False
@@ -732,13 +746,11 @@ class Game:
 
         if w != None:
             print("Le gagnant est", w.name)
-            print(f"{w.name} est estimé à {int(w.cheating_proba()*100)}% comme étant un tricheur\n")
         
         tanks = self.get_tanks()
         for tank in tanks:
-            tank.health = -1
-
-
+            self.kill(tank)
+        
     def wait_key(self):
         if self.graphics:
             while True:
@@ -782,219 +794,38 @@ class Game:
 
     def launch_players(self):
         # lancement des programmes associés à chaque joueur
-        for name in self.tanks:
+        tanks = self.get_tanks()
+        for tank in tanks:
             # récupère le code à exécuter pour ce tank
-            f = open('computers/' + self.tanks[name].file, 'r')
+            f = open('computers/' + tank.file, 'r')
             code = f.read()
             f.close()
             
             # pipes de connextion entre le processus et son thread
             requestEnd, requestEntry = multiprocessing.Pipe(duplex = False)
             responseEnd, responseEntry = multiprocessing.Pipe(duplex = False)
-            request = Request(requestEntry, responseEnd)
-
-            variables = {
-                "fire":             make_func(fire, request, self.clock),
-                "get_position":     make_func(get_position, request, self.clock),
-                "get_health":       make_func(get_health, request, self.clock),
-                "get_orientation":  make_func(get_orientation, request, self.clock),
-                "get_nb_bullets":   make_func(get_nb_bullets, request, self.clock),
-                "get_nb_bricks":    make_func(get_nb_bricks, request, self.clock),
-                "move":             make_func(move, request, self.clock),
-                "back":             make_func(back, request, self.clock),
-                "rotate_right":     make_func(rotate_right, request, self.clock),
-                "rotate_left":      make_func(rotate_left, request, self.clock),
-                "grab_box":         make_func(grab_box, request, self.clock),
-                "add_wall":         make_func(add_wall, request, self.clock),
-                "detect":           make_func(detect, request, self.clock),
-                "distance":         distance,
-                "time":             time,
-                "math":             math,
-                "random":           random,
-                "__playername":     name
-            }
+            tank.request = Request(tank.name, requestEntry, responseEnd)
 
             # certaines plateformes d'exécution (autres que Linux) ne supportent pas bien le multiprocessing
-            if 'linux' in sys.platform:
-                tankProcess = multiprocessing.Process(target = exec, args = (code, variables)) # crée le fil d'exécution de ce joueur
-            else:
-                tankProcess = threading.Thread(target = exec, args = (code, variables)) # crée le fil d'exécution de ce joueur
-            
-            tankProcess.start()
+            tank.process = multiprocessing.Process(target = clientFunction, args = (code, tank.request)) # crée le fil d'exécution de ce joueur
+            tank.process.start()
             
             # démarrage du serveur
-            serverThread = threading.Thread(target = serverFunction, args = (requestEnd, responseEntry, self, name))
+            serverThread = threading.Thread(target = serverFunction, args = (requestEnd, responseEntry, self, tank.name))
             serverThread.start()
 
 
 
-######################## FONCTIONS D'INTERFACE DES TANKS #############################
 
-'''
-Ces fonction s'exécutent dans le processus du tank qui les lancent,
-elles utilisent des pipes pour communiquer avec leur thread serveur
-'''
-
-def get_position(request, clock):
-    xpos, ypos, _, _, _, _, _ = request.getState()
-    return xpos, ypos
-    
-
-def get_health(request, clock):
-    _, _, _, health, _, _, _ = request.getState()
-    return health
-
-
-def get_orientation(request, clock):
-    _, _, orientation, _, _, _, _ = request.getState()
-    return orientation
-
-def get_nb_bricks(request, clock):
-    _, _, _, _, _, nb_bricks, _ = request.getState()
-    return nb_bricks
-
-
-def get_nb_bullets(request, clock):
-    _, _, _, _, nb_bullets, _, _ = request.getState()
-    return nb_bullets
-
-
-# bibliothèque de déplacement des joueurs
-def move(request, clock):    
-    x, y, theta, health, nb_bullets, nb_bricks, lastshot = request.getState()
-
-    dx = math.cos(theta/180*math.pi) * FORWARD_DOP
-    dy = -math.sin(theta/180*math.pi) * FORWARD_DOP
-    if request.validate_position(x, y, x+dx, y+dy): # permet de tester les collisions
-        request.setState(x+dx, y+dy, theta, health, nb_bullets, nb_bricks, lastshot)
-    
-    clock.tick(60)
-    
-
-
-
-
-
-def back(request, clock):    
-    x, y, theta, health, nb_bullets, nb_bricks, lastshot = request.getState()
-
-    dx = math.cos(theta/180*math.pi) * BACKWARD_DOP
-    dy = -math.sin(theta/180*math.pi) * BACKWARD_DOP
-    if request.validate_position(x, y, x+dx, y+dy): # permet de tester les collisions
-        request.setState(x+dx, y+dy, theta, health, nb_bullets, nb_bricks, lastshot)
-    
-    clock.tick(200)
-
-
-
-def rotate_right(request, clock):    
-    x, y, theta, health, nb_bullets, nb_bricks, lastshot = request.getState()
-
-    dtheta = 1
-    theta -= dtheta
-    if theta < 0:
-        theta += 360
-    
-    request.setState(x, y, theta, health, nb_bullets, nb_bricks, lastshot)
-    clock.tick(250)
-    
-
-
-
-def rotate_left(request, clock):
-    x, y, theta, health, nb_bullets, nb_bricks, lastshot = request.getState()
-
-    dtheta = 1
-    theta += dtheta
-    if theta > 360:
-        theta -= 360
-    
-    request.setState(x, y, theta, health, nb_bullets, nb_bricks, lastshot)
-
-    clock.tick(250)
-    
-
-
-
-def fire(request, clock):
-    x, y, theta, health, nb_bullets, nb_bricks, lastshot = request.getState()
-
-    if nb_bullets <= 0 or time.monotonic() - lastshot < 0.3 :
-        return False # on ne peut plus tirer, il n'y a plus de projectiles
-    
-    request.setState(x, y, theta, health, nb_bullets - 1, nb_bricks, time.monotonic())
-    request.addBullet(x, y, theta)
-    return True
-
-
-
-
-def detect(request, clock): # chaque tank est doté d'un capteur qui pointe devant lui et renvoie une liste des objets rencontrés et leur distance
-    x, y, theta, health, _, _, _ = request.getState()
-
-    items = request.getItems()
-    tanks = request.getTanks()
-    
-    detected = []
-    # boucle sur les objets pour savoir si un objet se situe sur l'hypoténuse du triangle rectangle formé par les coordonnées du tank
-    for obj in items:
-        if diff_collision(x,y,theta,obj) or on_trajectory(x, y, theta, obj.xpos, obj.ypos):
-            detected.append((obj.type, distance(x,y,obj.xpos,obj.ypos)))
-    
-    for tank in tanks:
-        xo, yo = tank.xpos, tank.ypos
-        if (xo,yo) != (x,y) and tank.health >= 0 and (diff_collision_tank(x,y,theta,xo,yo) or on_trajectory(x, y, theta, xo, yo)): # en collision avec le tank ou il est devant
-            detected.append(('tank', distance(x,y,xo,yo)))
-    
-    return detected
-    
-
-
-
-
-
-def grab_box(request, clock):    
-    xpos, ypos, theta, health, nb_bullets, nb_bricks, lastshot = request.getState()
-
-    items = request.getItems()
-    
-    for obj in items:
-        if obj.type == 'box' and distance(xpos, ypos, obj.xpos, obj.ypos) < 20: # la boite peut être attrapée
-            request.removeBox(obj.xpos, obj.ypos)
-            if obj.box_type == 'bullets':
-                request.setState(xpos, ypos, theta, health, nb_bullets + 200, nb_bricks, lastshot)
-            elif obj.box_type == 'bricks':
-                request.setState(xpos, ypos, theta, health, nb_bullets, nb_bricks + 20, lastshot)
-            return True
-    
-    return False
-
-
-def add_wall(request, clock):    
-    xpos, ypos, theta, health, nb_bullets, nb_bricks, lastshot = request.getState()
-    dx = math.cos(theta/180*math.pi) * 50
-    dy = -math.sin(theta/180*math.pi) * 50
-    wall_x, wall_y = xpos + dx, ypos + dy
-    
-    if nb_bricks > 0 and request.validate_position(wall_x, wall_y, wall_x, wall_y):
-        request.setState(xpos, ypos, theta, health, nb_bullets, nb_bricks - 1, lastshot)
-        request.addWall(wall_x, wall_y, theta)
-        return True
-    else:
-        return False
-
-
-################################ FIN FONCTION INTERFACE TANKS ############################
-
-
-
-def launch_game(players, map, graphics, fullscreen):
+def launch_game(players, map, graphics, fullscreen, countdown):
     # ignore le facteur d'agrandissement d'interface de windows
     if 'win' in sys.platform:
         ctypes.windll.user32.SetProcessDPIAware()
 
     game = Game(players, map, graphics, fullscreen)
-    #game.countdown()
+    
+    if countdown:
+        game.countdown()
 
     game.launch_players()
 
@@ -1041,6 +872,7 @@ if __name__ == '__main__':
     parser.add_argument('--players', nargs = 1, default = ["settings/players.yaml"], help = "YAML file to use for the players")
     parser.add_argument('--nographics', nargs = '?', const = True, help = "Disables graphics")
     parser.add_argument('--fullscreen', nargs = '?', const = True, help = "Opens the game in fullscreen mode")
+    parser.add_argument('--countdown', nargs = '?', const = True, help = "Plays a countdown before launching game")
 
     args = parser.parse_args()
 
@@ -1048,8 +880,12 @@ if __name__ == '__main__':
     players = args.players[0]
     graphics = args.nographics is None
     fullscreen = not (args.fullscreen is None)
+    countdown = not (args.countdown is None)
 
     if graphics:
         import pygame
-
-    launch_game(players, map, graphics, fullscreen)
+    
+    try:
+        launch_game(players, map, graphics, fullscreen, countdown)
+    except KeyboardInterrupt:
+        pass
