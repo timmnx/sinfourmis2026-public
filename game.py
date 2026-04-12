@@ -105,7 +105,9 @@ class Tank:
         if self.image: # On ne précalcule les rotations que si self.image est une image valide
             self.angles = [pygame.transform.rotate(self.image, angle) for angle in range(360)]
     
-    
+    def is_close(self, obj):
+        return distance(self.xpos, self.ypos, obj.xpos, obj.ypos) < 60
+
     def display(self, game):
         # display the sprite
         rotated_image = self.angles[int(self.orientation)%360]
@@ -213,13 +215,16 @@ class Request:
         self.make_unidirectional_request("rotate_left")
     
     def fire(self):
-        self.make_request("fire")
+        return self.make_request("fire")
     
     def grab_box(self):
-        self.make_request("grab_box")
+        return self.make_request("grab_box")
     
     def detect(self):
         return self.make_request("detect")
+    
+    def listen(self):
+        return self.make_request("listen")
     
     def suicide(self):
         self.make_unidirectional_request("suicide")
@@ -236,8 +241,17 @@ def serverFunction(requestEnd, responseEntry, game, name):
         reqType = request[0]
         args = request[1:]
         
-
-        if reqType == "add_wall":
+        if reqType == "suicide" or tank.health < 0:
+            responseEntry.close()
+            requestEnd.close()
+            tank.request.responseEnd.close()
+            tank.request.requestEntry.close()
+            if tank.process.is_alive():
+                tank.process.kill()
+            del game.tanks[tank.name]
+            return
+        
+        elif reqType == "add_wall":
             dx = math.cos(tank.orientation/180*math.pi) * 50
             dy = -math.sin(tank.orientation/180*math.pi) * 50
             wall_x, wall_y = tank.xpos + dx, tank.ypos + dy
@@ -321,46 +335,43 @@ def serverFunction(requestEnd, responseEntry, game, name):
             else:
                 coeff_dir = -math.tan(math.radians(tank.orientation))
                 ordon_orig = tank.ypos - coeff_dir * tank.xpos
-                on_trajectory = lambda x, y : abs(coeff_dir * x + ordon_orig - y) < 20
+                on_trajectory = lambda x, y : abs(coeff_dir * x + ordon_orig - y) < 30
             
-            # calcul du cadran dans lequel regarde le tank
+            # calcul de la zone dans laquelle on voit les objets
             if tank.orientation <= 90: # 1er cadran
-                quadrant = lambda obj : obj.xpos >= tank.xpos and obj.ypos <= tank.ypos
+                check_area = lambda obj : (obj.xpos >= tank.xpos and obj.ypos <= tank.ypos) or tank.is_close(obj)
             elif tank.orientation <= 180: # deuxième cadran
-                quadrant = lambda obj : obj.xpos <= tank.xpos and obj.ypos <= tank.ypos
+                check_area = lambda obj : (obj.xpos <= tank.xpos and obj.ypos <= tank.ypos) or tank.is_close(obj)
             elif tank.orientation <= 270: # troisième cadran
-                quadrant = lambda obj : obj.xpos <= tank.xpos and obj.ypos >= tank.ypos
+                check_area = lambda obj : (obj.xpos <= tank.xpos and obj.ypos >= tank.ypos) or tank.is_close(obj)
             else: # dernier cadran
-                quadrant = lambda obj : obj.xpos >= tank.xpos and obj.ypos >= tank.ypos
+                check_area = lambda obj : (obj.xpos >= tank.xpos and obj.ypos >= tank.ypos) or tank.is_close(obj)
             
             # parcours des objets
-            items = filter(quadrant, game.items)
-            tanks = filter(quadrant, game.get_tanks())
+            items = filter(check_area, game.items)
+            tanks = filter(check_area, game.get_tanks())
             
             # Liste des objets détectés
             detected = []
 
             for item in items:
-                if diff_collision(tank, item) or on_trajectory(item.xpos, item.ypos):
+                if collision(tank.xpos, tank.ypos, item) or diff_collision(tank, item) or on_trajectory(item.xpos, item.ypos):
                     detected.append((item.type, distance(tank.xpos, tank.ypos, item.xpos, item.ypos)))
             
             for other_tank in tanks:
-                if other_tank.name != tank.name and (
+                if other_tank.name != tank.name and (collision_tank(tank.xpos, tank.ypos, other_tank.xpos, other_tank.ypos) or
                 diff_collision_tank(tank, other_tank) or on_trajectory(other_tank.xpos, other_tank.ypos)):
                     detected.append(('tank', distance(tank.xpos, tank.ypos, other_tank.xpos, other_tank.ypos)))
 
             responseEntry.send(detected)
-
         
-        elif reqType == "suicide":
-            responseEntry.close()
-            requestEnd.close()
-            tank.request.responseEnd.close()
-            tank.request.requestEntry.close()
-            if tank.process.is_alive():
-                tank.process.kill()
-            del game.tanks[tank.name]
-            return
+        elif reqType == "listen":
+            s = 0
+            for bullet in game.bullets.copy():
+                s += math.exp(-(dist_obj(tank, bullet)/200)**2) * 100
+            
+            responseEntry.send(int(s))
+
 
 
 
@@ -382,6 +393,7 @@ def clientFunction(code, request):
         "grab_box":         sentRequest.grab_box,
         "add_wall":         sentRequest.add_wall,
         "detect":           sentRequest.detect,
+        "listen":           sentRequest.listen,
         "distance":         distance,
         "math":             math,
         "time":             time,
@@ -447,6 +459,10 @@ def load_players(filename): # charge le dictionnaire contenant les données de c
 
 def distance(xa, ya, xb, yb):
     return math.sqrt((xa-xb)**2 + (ya-yb)**2)
+
+
+def dist_obj(obj1, obj2):
+    return distance(obj1.xpos, obj1.ypos, obj2.xpos, obj2.ypos)
 
 
 
@@ -610,7 +626,7 @@ class Game:
         close_items = filter(lambda obj : distance(x, y, obj.xpos, obj.ypos) < 100, self.items)
 
         # Calcul des collisions sur les objets proches
-        for obj in self.items:
+        for obj in close_items:
             if collision(x, y, obj): # on a trouvé un truc trop près
                 return False
         
